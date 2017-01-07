@@ -2,7 +2,7 @@
 
 A general purpose button component.
 
-## Status
+## Example
 
 ```javascript
 <Button onClick={this.handleClick} variant="primary">Button<Button>

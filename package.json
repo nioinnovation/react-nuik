@@ -1,6 +1,10 @@
 {
   "name": "nuik",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nioinnovation/nuik"
+  },
   "description": "nio UI Kit",
   "main": "index.js",
   "scripts": {

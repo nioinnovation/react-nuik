@@ -19,7 +19,7 @@
     "pretest": "npm run check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "n.io <info@n.io>",,
+  "author": "n.io <info@n.io>",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",

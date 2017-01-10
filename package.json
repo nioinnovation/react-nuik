@@ -1,12 +1,11 @@
 {
-  "name": "nuik",
+  "name": "react-nuik",
   "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/nioinnovation/nuik"
   },
-  "description": "nio UI Kit",
-  "main": "index.js",
+  "description": "nio UI Kit for react",
   "scripts": {
     "build": "npm run build:js",
     "build:js": "babel ./components --out-dir ./lib",
@@ -20,8 +19,8 @@
     "pretest": "npm run check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "MIT",
+  "author": "n.io <info@n.io>",,
+  "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.1",

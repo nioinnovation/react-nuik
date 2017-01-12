@@ -7,8 +7,7 @@
   },
   "description": "nio UI Kit for react",
   "scripts": {
-    "build": "npm run build:js",
-    "build:js": "babel ./components --out-dir ./lib",
+    "build": "babel ./components --out-dir ./lib",
     "check": "npm run check:lint && npm run check:types",
     "check:types": "flow check",
     "clean": "rimraf ./lib",

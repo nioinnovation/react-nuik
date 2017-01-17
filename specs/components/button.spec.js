@@ -16,6 +16,8 @@ describe('Button', () => {
   it('should return a link if it has an href property', () => {
     const href = 'html://www.example.com';
     const wrapper = shallow(<Button href={href} />);
+    console.log(wrapper.children());
     // expect(wrapper.type()).to.equal('a');
+    expect(wrapper.childAt(0).type()).to.equal('a');
   });
 });

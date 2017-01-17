@@ -1,22 +1,21 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 
 import Button from '../../lib/button/index.js';
 
 describe('Button', () => {
-  it('should be a button element with a bunch of variants', () => {
+  it('should be a Button with that can be assigned variants and sizes', () => {
     const variant = 'primary';
+    const size = 'large';
+    const wrapper = shallow(<Button variant={variant} size={size}/>);
+    expect(wrapper.props().variant).to.equal('primary');
+    expect(wrapper.props().size).to.equal('large');
+    expect(wrapper.name()).to.equal('Button');
+  });
+  it('should return a link if it has an href property', () => {
     const href = 'html://www.example.com';
-    const wrapper = shallow(<Button variant={variant} />);
-    console.log(wrapper);
-    expect(wrapper.props().varient).to.equal('primary');
-
-    expect(wrapper.contains(<button />)).to.equal(true);
-    // expect(wrapper.find('svg')).to.have.length(1);
-    // expect(wrapper.hasClass('dashboard__window-icon')).to.equal(true);
-    // expect(wrapper.find('use')).to.have.length(1);
-    // expect(wrapper.node.props.children.props).to.have.key('xlinkHref');
-    // expect(wrapper.node.props.children.props.xlinkHref).to.equal('./images/icons.svg#water');
+    const wrapper = shallow(<Button href={href} />);
+    // expect(wrapper.type()).to.equal('a');
   });
 });

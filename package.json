@@ -17,15 +17,15 @@
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "pretest": "npm run check",
-    "test": "mocha ./specs/**/*.spec.js --timeout 5000 --compilers js:babel-register -R nyan -w"
+    "test": "mocha ./specs/**/*.spec.js --timeout 2000 --compilers js:babel-register -R nyan",
+    "test:watch": "mocha ./specs/**/*.spec.js --timeout 2000 --compilers js:babel-register -R nyan -w"
   },
   "author": "n.io <info@n.io>",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.1",
-    "react-css-themr": "^1.7.1",
-    "react-dom": "^15.4.2"
+    "react-css-themr": "^1.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -47,6 +47,8 @@
     "flow-bin": "^0.37.4",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
-    "rimraf": "^2.5.4"
+    "react-dom": "^15.4.2",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.7"
   }
 }

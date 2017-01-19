@@ -46,10 +46,10 @@ class TextInput extends Component {
     }).isRequired,
   };
 
-  textInput: HTMLElement;
+  input: HTMLElement;
 
   handleMouseUp = (e: MouseEvent) => {
-    if (this.textInput) this.textInput.blur();
+    if (this.input) this.input.blur();
     if (this.props.onMouseUp) this.props.onMouseUp(e);
   }
 
@@ -70,7 +70,7 @@ class TextInput extends Component {
     const component = variant === 'multiLine' ? 'text-area' : 'input';
 
     const modClassNames =
-        Array.isArray(mod) ? mod.map(m => theme[m])
+      Array.isArray(mod) ? mod.map(m => theme[m])
       : mod ? theme[mod]
       : undefined;
 
@@ -91,7 +91,7 @@ class TextInput extends Component {
       label,
       helper,
       required,
-      ref: (el: HTMLElement) => { this.textInput = el; },
+      ref: (el: HTMLElement) => { this.input = el; },
       onMouseUp: this.handleMouseUp,
     };
 

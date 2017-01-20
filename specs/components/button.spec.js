@@ -7,28 +7,26 @@ import uniqueid from 'lodash.uniqueid';
 import { Button } from '../../components/button';
 
 describe('A Button', () => {
-  const child = uniqueid();
 
   it('should have an onMouseUp property that is a function.', () => {
     const handleMouseUp = sinon.spy();
-    const wrapper = shallow(<Button theme={{button: 'button'}} onMouseUp={handleMouseUp}>{child}</Button>);
+    const wrapper = shallow(<Button theme={{button: 'button'}} onMouseUp={handleMouseUp}/>);
     wrapper.find('button').simulate('mouseUp');
     expect(handleMouseUp.calledOnce).to.equal(true);
   });
 
-
   it('should render its children.', () => {
+    const child = uniqueid();
     const anotherChild = uniqueid();
     const wrapper = shallow(<Button theme={{button: 'button'}}>{child}{anotherChild}</Button>);
     expect(wrapper.contains(child, anotherChild)).to.be.true;
   });
 
-
   it('should render a button element.', () => {
     const theme = {
       button: uniqueid()
     };
-    const wrapper = shallow(<Button theme={theme}>{child}</Button>);
+    const wrapper = shallow(<Button theme={theme}/>);
     expect(wrapper.type()).to.equal('button');
   });
 
@@ -36,16 +34,23 @@ describe('A Button', () => {
     const theme = {
       button: uniqueid()
     };
-    const wrapper = shallow(<Button theme={theme}>{child}</Button>);
+    const wrapper = shallow(<Button theme={theme}/>);
     expect(wrapper.hasClass(theme.button)).to.be.true;
   });
 
   describe('with an href property', () => {
+    const href = uniqueid();
 
     it('should return a link.', () => {
-      const href = uniqueid();
-      const wrapper = shallow(<Button href={href} theme={{button: 'button'}}>{child}</Button>);
+      const wrapper = shallow(<Button href={href} theme={{button: 'button'}}/>);
       expect(wrapper.type()).to.equal('a');
+    });
+
+    it('should render its children.', () => {
+      const child = uniqueid();
+      const anotherChild = uniqueid();
+      const wrapper = shallow(<Button href={href} theme={{button: 'button'}}>{child}{anotherChild}</Button>);
+      expect(wrapper.contains(child, anotherChild)).to.be.true;
     });
 
   });
@@ -74,7 +79,7 @@ describe('A Button', () => {
         'danger'
       ]
       variantOptions.map(v => {
-        const wrapper = shallow(<Button theme={theme} variant={v}>{child}</Button>);
+        const wrapper = shallow(<Button theme={theme} variant={v}/>);
         expect(wrapper.hasClass(theme[v])).to.be.true
       })
 
@@ -88,7 +93,7 @@ describe('A Button', () => {
         'tiny'
       ]
       sizeOptions.map(s => {
-        const wrapper = shallow(<Button theme={theme} size={s}>{child}</Button>);
+        const wrapper = shallow(<Button theme={theme} size={s}/>);
         expect(wrapper.hasClass(theme[s])).to.be.true
       })
     });
@@ -104,22 +109,16 @@ describe('A Button', () => {
     };
 
     it('should support a single mod.', () => {
-      const wrapper = shallow(<Button theme={theme} mod="mod1">{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} mod="mod1"/>);
       expect(wrapper.hasClass(theme.mod1)).to.be.true;
     });
 
     it('should support an array of mods.', () => {
-      const wrapper = shallow(<Button theme={theme} mod={['mod1', 'mod2']}>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} mod={['mod1', 'mod2']}/>);
       expect(wrapper.hasClass(theme.mod1)).to.be.true;
       expect(wrapper.hasClass(theme.mod2)).to.be.true;
     });
 
-    it('should ignore mods it can\'t resolve.', () => {
-      const wrapper = shallow(<Button theme={theme} mod={['mod0', 'mod1', 'mod2']}>{child}</Button>);
-      expect(wrapper.hasClass(theme.mod1)).to.be.true;
-      expect(wrapper.hasClass(theme.mod2)).to.be.true;
-      expect(wrapper.hasClass(theme.mod0)).to.be.false;
-    });
   });
 
   describe('with a minimal theme,', () => {
@@ -129,27 +128,27 @@ describe('A Button', () => {
     };
 
     it('should ignore variants it can\'t resolve.', () => {
-      const wrapper = shallow(<Button theme={theme} variant={'primary'}>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} variant={'primary'}/>);
       expect(wrapper.hasClass(theme.primary)).to.be.false;
     });
 
     it('should ignore sizes it can\'t resolve.', () => {
-      const wrapper = shallow(<Button theme={theme} size={'large'}>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} size={'large'}/>);
       expect(wrapper.hasClass(theme.large)).to.be.false;
     });
 
     it('should not have a class of "undefined" if the variant is not in the theme.', () => {
-      const wrapper = shallow(<Button theme={theme} variant='primary'>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} variant='primary'/>);
       expect(wrapper.hasClass('undefined')).to.be.false;
     });
 
     it('should not have a class of "undefined" if the size is not in the theme.', () => {
-      const wrapper = shallow(<Button theme={theme} size='large'>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} size='large'/>);
       expect(wrapper.hasClass('undefined')).to.be.false;
     });
 
     it('should not have a class of "undefined" if the mod is not in the theme.', () => {
-      const wrapper = shallow(<Button theme={theme} mod='custom'>{child}</Button>);
+      const wrapper = shallow(<Button theme={theme} mod='custom'/>);
       expect(wrapper.hasClass('undefined')).to.be.false;
     });
 

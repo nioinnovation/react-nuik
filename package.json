@@ -7,8 +7,7 @@
   },
   "description": "nio UI Kit for react",
   "scripts": {
-    "build": "npm run build:js",
-    "build:js": "babel ./src --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib",
     "check": "npm run check:lint && npm run check:types",
     "check:types": "flow check",
     "clean": "rimraf ./lib",
@@ -16,15 +15,16 @@
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "pretest": "npm run check",
-    "test": "mocha ./specs/**/*.spec.jsx --timeout 5000 --compilers js:babel-register -R nyan"
+    "test": "mocha ./specs/**/*.spec.jsx --timeout 2000 --compilers js:babel-register -R tap",
+    "test:watch": "mocha ./specs/**/*.spec.jsx --timeout 2000 --compilers js:babel-register -R tap -w",
+    "watch": "chokidar 'components/**/*.js' -c 'npm run build'"
   },
   "author": "n.io <info@n.io>",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.1",
-    "react-css-themr": "^1.7.1",
-    "react-dom": "^15.4.2"
+    "react-css-themr": "^1.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
+    "chokidar-cli": "^1.2.0",
     "enzyme": "^2.7.0",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
@@ -42,8 +43,11 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0",
     "flow-bin": "^0.37.4",
+    "lodash.uniqueid": "^4.0.1",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
-    "rimraf": "^2.5.4"
+    "react-dom": "^15.4.2",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.7"
   }
 }

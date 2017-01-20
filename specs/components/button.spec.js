@@ -20,19 +20,24 @@ describe('A Button', () => {
   it('should render its children.', () => {
     const anotherChild = uniqueid();
     const wrapper = shallow(<Button theme={{button: 'button'}}>{child}{anotherChild}</Button>);
-    expect(wrapper.contains(child)).to.be.true;
-    expect(wrapper.contains(anotherChild)).to.be.true;
+    expect(wrapper.contains(child, anotherChild)).to.be.true;
   });
 
 
-  it('should render a button that has a theme with at least a button class.', () => {
+  it('should render a button element.', () => {
+    const theme = {
+      button: uniqueid()
+    };
+    const wrapper = shallow(<Button theme={theme}>{child}</Button>);
+    expect(wrapper.type()).to.equal('button');
+  });
+
+  it('should have a button class.', () => {
     const theme = {
       button: uniqueid()
     };
     const wrapper = shallow(<Button theme={theme}>{child}</Button>);
     expect(wrapper.hasClass(theme.button)).to.be.true;
-    expect(wrapper.type()).to.equal('button');
-    expect(wrapper.contains(child)).to.be.true;
   });
 
   describe('with an href property', () => {
@@ -45,7 +50,7 @@ describe('A Button', () => {
 
   });
 
-  describe('with a complete theme,', () => {
+  describe('with a complete theme', () => {
 
     const theme = {
       button: uniqueid(),
@@ -60,7 +65,7 @@ describe('A Button', () => {
       tiny: uniqueid()
     };
 
-    it('should map a variant to a class that matches the variant\'s theme definition.', () => {
+    it('should contain a class that matches the variant\'s theme definition.', () => {
       const variantOptions = [
         'primary',
         'alternate',
@@ -75,7 +80,7 @@ describe('A Button', () => {
 
     });
 
-    it('should map a size to a class that matches the size\'s theme definition.', () => {
+    it('should contain a class that matches the size\'s theme definition.', () => {
       const sizeOptions = [
         'huge',
         'large',
@@ -130,7 +135,7 @@ describe('A Button', () => {
 
     it('should ignore sizes it can\'t resolve.', () => {
       const wrapper = shallow(<Button theme={theme} size={'large'}>{child}</Button>);
-      // expect(wrapper.hasClass(theme.large)).to.be.false;
+      expect(wrapper.hasClass(theme.large)).to.be.false;
     });
 
     it('should not have a class of "undefined" if the variant is not in the theme.', () => {
@@ -140,7 +145,7 @@ describe('A Button', () => {
 
     it('should not have a class of "undefined" if the size is not in the theme.', () => {
       const wrapper = shallow(<Button theme={theme} size='large'>{child}</Button>);
-      // expect(wrapper.hasClass('undefined')).to.be.false;
+      expect(wrapper.hasClass('undefined')).to.be.false;
     });
 
     it('should not have a class of "undefined" if the mod is not in the theme.', () => {

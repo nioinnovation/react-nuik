@@ -77,7 +77,7 @@ class Button extends Component {
     const component = href ? 'a' : 'button';
 
     const modClassNames =
-        Array.isArray(mod) ? mod.map(m => theme[m])
+      Array.isArray(mod) ? mod.map(m => theme[m])
       : mod ? theme[mod]
       : undefined;
 

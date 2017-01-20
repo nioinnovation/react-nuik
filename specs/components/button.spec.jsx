@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { Button } from '../../components/button';
+import { Button } from '../../src/components/button';
 
 describe('Button', () => {
   // buttons are required to have a theme object with at least a button class

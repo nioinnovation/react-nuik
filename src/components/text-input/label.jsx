@@ -13,8 +13,6 @@ const Label = (props: *) => {
 Label.propTypes = {
   theme: PropTypes.shape({
     label: PropTypes.string,
-    labelHasFocus: PropTypes.string,
-    labelHasValue: PropTypes.string,
   }),
   className: PropTypes.string,
   children: PropTypes.node,

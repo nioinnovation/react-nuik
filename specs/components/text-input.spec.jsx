@@ -6,7 +6,6 @@ import { shallow } from 'enzyme';
 import { TextInput } from '../../src/components/text-input';
 
 describe('A TextInput', () => {
-  // buttons are required to have a theme object with at least a button class
   const theme = {
     textInput: uniqueid(),
   };

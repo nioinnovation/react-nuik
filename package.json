@@ -1,24 +1,23 @@
 {
   "name": "react-nuik",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/nioinnovation/nuik"
   },
   "description": "nio UI Kit for react",
   "scripts": {
-    "build": "babel ./components --out-dir ./lib",
+    "build": "babel ./src --out-dir ./lib",
     "check": "npm run check:lint && npm run check:types",
     "check:types": "flow check",
     "clean": "rimraf ./lib",
-    "check:lint": "npm run check:lint:js",
-    "check:lint:js": "eslint ./components",
+    "check:lint": "eslint --ext .js,.jsx ./src ",
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "pretest": "npm run check",
-    "test": "mocha ./specs/**/*.spec.js --timeout 2000 --compilers js:babel-register -R tap",
-    "test:watch": "mocha ./specs/**/*.spec.js --timeout 2000 --compilers js:babel-register -R tap -w",
-    "watch": "chokidar 'components/**/*.js' -c 'npm run build'"
+    "test": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --recursive -R tap ./specs",
+    "test:watch": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --recursive -R nyan -w ./specs",
+    "watch": "chokidar 'src/**/*.js' 'src/**/*.jsx' -c 'npm run build'"
   },
   "author": "n.io <info@n.io>",
   "license": "ISC",

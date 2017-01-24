@@ -4,14 +4,17 @@ import { PropTypes, createElement, Component } from 'react';
 import { themr } from 'react-css-themr';
 import classNames from 'classnames';
 
+import resolveMods from '../../helpers/resolve-mods';
+
 class Button extends Component {
+
+  static defaultProps = {
+    type: 'button',
+  };
 
   static propTypes = {
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-    ]),
+    children: PropTypes.node,
 
     href: PropTypes.string,
     onMouseUp: PropTypes.func,
@@ -34,6 +37,13 @@ class Button extends Component {
     mod: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.string,
+    ]),
+
+    type: PropTypes.oneOf([
+      'button',
+      'submit',
+      'reset',
+      'menu',
     ]),
 
     theme: PropTypes.shape({
@@ -76,18 +86,11 @@ class Button extends Component {
 
     const component = href ? 'a' : 'button';
 
-    const modClassNames =
-      Array.isArray(mod) ? mod.map(m => theme[m])
-      : mod ? theme[mod]
-      : undefined;
-
     const className = classNames(
       theme.button,
-      {
-        [theme[variant]]: !!variant,
-        [theme[size]]: !!size,
-      },
-      modClassNames,
+      !!variant && theme[variant],
+      !!size && theme[size],
+      resolveMods(theme, mod),
       propsClassName,
     );
 

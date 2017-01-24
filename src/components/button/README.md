@@ -1,4 +1,4 @@
-# Button ![status: Proposal](https://img.shields.io/badge/status-proposal-red.svg)
+# Button ![status: Beta](https://img.shields.io/badge/status-beta-yellow.svg)
 
 A general purpose button component.
 

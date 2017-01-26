@@ -52,7 +52,7 @@ class Checkbox extends Component {
     return (
       <div className={className} >
         <input {...componentProps} />
-        <label htmlFor={this.state.id}>{label}</label>
+        <label htmlFor={this.state.inputId}>{label}</label>
       </div>
     );
   }

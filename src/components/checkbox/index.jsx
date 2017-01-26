@@ -48,12 +48,6 @@ class Checkbox extends Component {
       resolveMods(theme, mod),
       propsClassName,
     );
-    console.log('className', className);
-
-    // const labelClassName = classNames(
-    //   this.state.isFocused && theme.labelWithFocus,
-    //   value && theme.labelWithValue,
-    // );
 
     return (
       <div className={className} >
@@ -80,9 +74,6 @@ Checkbox.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.string,
   ]),
-
-  // onFocus: PropTypes.func,
-  // onBlur: PropTypes.func,
 
   theme: PropTypes.shape({
     // Base

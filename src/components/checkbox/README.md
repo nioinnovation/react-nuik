@@ -5,11 +5,8 @@ Gives the ability to select an item.
 ## Example
 
 ```javascript
-<Checkbox variant='block' label='Won Tons' value='item59'/>
-<Checkbox variant='block' label='Spring Rolls' value='item63'/>
-<Checkbox variant='inline' label='small' value='small'/>
-<Checkbox variant='inline' label='medium' value='medium'/>
-<Checkbox variant='inline' label='large' value='large'/>
+<Checkbox label='choice1' value='choice1' onClick={() => this.handleClick('choice1')} checked={this.state.choice1} />
+<Checkbox label='disabled' value='none' onClick={() => this.handleClick('disabled')} disabled />
 ```
 ## Properties
 

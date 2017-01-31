@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "documentation for react-nuik",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nioinnovation/react-nuik.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "n.io"
+  ],
+  "author": "n.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nioinnovation/react-nuik/issues"
+  },
+  "homepage": "https://github.com/nioinnovation/react-nuik#readme"
+}

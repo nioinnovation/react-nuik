@@ -1,11 +1,11 @@
-# Text Input ![status: Prototype](https://img.shields.io/badge/status-beta-yellow.svg)
+# Checkbox ![status: Prototype](https://img.shields.io/badge/status-beta-yellow.svg)
 
 A simple checkbox.
 
 ## Example
 
 ```javascript
-<TextInput onClick={this.handleClick} />
+<Checkbox onClick={this.handleClick} />
 ```
 
 ## Try it

@@ -49,6 +49,7 @@ class Button extends Component {
     theme: PropTypes.shape({
       // Base
       button: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
 
       // Variants
       primary: PropTypes.string,
@@ -88,6 +89,7 @@ class Button extends Component {
 
     const className = classNames(
       theme.button,
+      !!href && theme.link,
       !!variant && theme[variant],
       !!size && theme[size],
       resolveMods(theme, mod),

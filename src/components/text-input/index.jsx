@@ -14,19 +14,25 @@ import SingleLine from './single-line';
 
 class TextInput extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       inputId: id(),
       isFocused: false,
+      isFilled: !!props.value,
     };
   }
 
   state: {
     inputId: string,
     isFocused: boolean,
+    isFilled: boolean,
   };
   input: HTMLElement;
+
+  willReceiveProps(props) {
+    this.setState({ isFilled: !!props.value });
+  }
 
   handleOnFocus = (e: Event) => {
     this.setState({ isFocused: true });
@@ -36,6 +42,13 @@ class TextInput extends Component {
   handleOnBlur = (e: Event) => {
     this.setState({ isFocused: false });
     if (this.props.onBlur) { this.props.onBlur(e); }
+  }
+
+  handleOnChange = (e: Event) => {
+    this.setState({ isFilled: !!e.currentTarget.value });
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
 
   render() {
@@ -58,6 +71,7 @@ class TextInput extends Component {
       value,
       onFocus: this.handleOnFocus,
       onBlur: this.handleOnBlur,
+      onChange: this.handleOnChange,
       ref: (el) => { this.input = el; },
     };
 
@@ -70,7 +84,7 @@ class TextInput extends Component {
 
     const labelClassName = classNames(
       this.state.isFocused && theme.labelWithFocus,
-      value && theme.labelWithValue,
+      this.state.isFilled  && theme.labelWithValue,
     );
 
     return (
@@ -103,11 +117,13 @@ TextInput.propTypes = {
 
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  onChange: PropTypes.func,
 
   theme: PropTypes.shape({
     // Base
     textInput: PropTypes.string.isRequired,
     isInvalid: PropTypes.string,
+    isFilled: PropTypes.string,
 
     // Variants
     singleLine: PropTypes.string,

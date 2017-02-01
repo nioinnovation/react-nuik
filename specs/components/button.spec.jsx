@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import uniqueid from 'lodash.uniqueid';
 
-import { Button } from '../../src/components/button';
+import Button from '../../src/components/button/button';
 
 describe('A Button', () => {
 

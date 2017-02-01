@@ -1,7 +1,5 @@
 // @flow
-
 import React, { PropTypes, createElement, Component } from 'react';
-import { themr } from 'react-css-themr';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
@@ -14,7 +12,7 @@ import SingleLine from './single-line';
 
 class TextInput extends Component {
 
-  constructor(props) {
+  constructor(props: *) {
     super(props);
     this.state = {
       inputId: id(),
@@ -28,9 +26,10 @@ class TextInput extends Component {
     isFocused: boolean,
     isFilled: boolean,
   };
-  input: HTMLElement;
 
-  willReceiveProps(props) {
+  input: HTMLInputElement;
+
+  willReceiveProps(props: *) {
     this.setState({ isFilled: !!props.value });
   }
 
@@ -45,10 +44,8 @@ class TextInput extends Component {
   }
 
   handleOnChange = (e: Event) => {
-    this.setState({ isFilled: !!e.currentTarget.value });
-    if (this.props.onChange) {
-      this.props.onChange(e);
-    }
+    this.setState({ isFilled: !!this.input.value });
+    if (this.props.onChange) { this.props.onChange(e); }
   }
 
   render() {
@@ -84,7 +81,7 @@ class TextInput extends Component {
 
     const labelClassName = classNames(
       this.state.isFocused && theme.labelWithFocus,
-      this.state.isFilled  && theme.labelWithValue,
+      this.state.isFilled && theme.labelWithValue,
     );
 
     return (
@@ -139,5 +136,4 @@ TextInput.propTypes = {
   }).isRequired,
 };
 
-export { TextInput };
-export default themr('textInput')(TextInput);
+export default TextInput;

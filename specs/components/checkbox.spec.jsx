@@ -3,7 +3,7 @@ import uniqueid from 'lodash.uniqueid';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { Checkbox } from '../../src/components/checkbox';
+import Checkbox from '../../src/components/checkbox/checkbox';
 
 describe('A Checkbox', () => {
   const theme = {

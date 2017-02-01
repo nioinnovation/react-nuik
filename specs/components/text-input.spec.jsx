@@ -3,7 +3,7 @@ import uniqueid from 'lodash.uniqueid';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { TextInput } from '../../src/components/text-input';
+import TextInput from '../../src/components/text-input/text-input';
 
 describe('A TextInput', () => {
   const theme = {

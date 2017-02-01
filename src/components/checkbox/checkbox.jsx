@@ -2,7 +2,6 @@
 // TODO: add indeterminate state
 
 import React, { PropTypes, Component } from 'react';
-import { themr } from 'react-css-themr';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
@@ -20,6 +19,8 @@ class Checkbox extends Component {
   state: {
     inputId: string
   };
+
+  input: HTMLInputElement;
 
   render() {
     const {
@@ -97,5 +98,5 @@ Checkbox.propTypes = {
   }).isRequired,
 };
 
-export { Checkbox };
-export default themr('checkbox')(Checkbox);
+export default Checkbox;
+

@@ -5,7 +5,7 @@ Single-line or multi-line text input of type: `email`, `number`, `password`, `te
 ## Example
 
 ```javascript
-<TextInput variant='inline' type='tel' label='phone number' helper='phone number is required' required />
+<TextInput variant='inline' type='tel' label='tel' helper='required' required />
 ```
 ## Properties
 

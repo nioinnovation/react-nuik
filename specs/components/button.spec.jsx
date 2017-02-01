@@ -10,7 +10,7 @@ describe('A Button', () => {
 
   it('should have an onMouseUp property that is a function.', () => {
     const handleMouseUp = sinon.spy();
-    const wrapper = shallow(<Button theme={{button: 'button'}} onMouseUp={handleMouseUp}/>);
+    const wrapper = shallow(<Button theme={{button: uniqueid(), link: uniqueid()}} onMouseUp={handleMouseUp}/>);
     wrapper.find('button').simulate('mouseUp');
     expect(handleMouseUp.calledOnce).to.equal(true);
   });
@@ -18,13 +18,14 @@ describe('A Button', () => {
   it('should render its children.', () => {
     const child = uniqueid();
     const anotherChild = uniqueid();
-    const wrapper = shallow(<Button theme={{button: 'button'}}>{child}{anotherChild}</Button>);
+    const wrapper = shallow(<Button theme={{button: uniqueid(), link: uniqueid()}}>{child}{anotherChild}</Button>);
     expect(wrapper.contains(child, anotherChild)).to.be.true;
   });
 
   it('should render a button element.', () => {
     const theme = {
-      button: uniqueid()
+      button: uniqueid(),
+      link: uniqueid()
     };
     const wrapper = shallow(<Button theme={theme}/>);
     expect(wrapper.type()).to.equal('button');
@@ -32,7 +33,8 @@ describe('A Button', () => {
 
   it('should have a button class.', () => {
     const theme = {
-      button: uniqueid()
+      button: uniqueid(),
+      link: uniqueid()
     };
     const wrapper = shallow(<Button theme={theme}/>);
     expect(wrapper.hasClass(theme.button)).to.be.true;
@@ -40,16 +42,26 @@ describe('A Button', () => {
 
   describe('with an href property', () => {
     const href = uniqueid();
-
     it('should return a link.', () => {
-      const wrapper = shallow(<Button href={href} theme={{button: 'button'}}/>);
+      const wrapper = shallow(<Button href={href} theme={{ button: uniqueid(), link: uniqueid() }}/>);
       expect(wrapper.type()).to.equal('a');
+    });
+
+    it('should have a link class.', () => {
+      const theme = {
+        button: uniqueid(),
+        link: uniqueid()
+      };
+      const wrapper = shallow(<Button href={href} theme={theme}/>);
+      console.log(wrapper.props());
+      console.log(theme.link);
+      expect(wrapper.hasClass(theme.button)).to.be.true;
     });
 
     it('should render its children.', () => {
       const child = uniqueid();
       const anotherChild = uniqueid();
-      const wrapper = shallow(<Button href={href} theme={{button: 'button'}}>{child}{anotherChild}</Button>);
+      const wrapper = shallow(<Button href={href} theme={{ button: uniqueid(), link: uniqueid() }}>{child}{anotherChild}</Button>);
       expect(wrapper.contains(child, anotherChild)).to.be.true;
     });
 
@@ -60,6 +72,7 @@ describe('A Button', () => {
     const theme = {
       button: uniqueid(),
       primary: uniqueid(),
+      link: uniqueid(),
       alternate: uniqueid(),
       affirmative: uniqueid(),
       warning: uniqueid(),
@@ -104,6 +117,7 @@ describe('A Button', () => {
 
     const theme = {
       button: uniqueid(),
+      link: uniqueid(),
       mod1: uniqueid(),
       mod2: uniqueid(),
     };
@@ -124,7 +138,8 @@ describe('A Button', () => {
   describe('with a minimal theme,', () => {
 
     const theme = {
-      button: uniqueid()
+      button: uniqueid(),
+      link: uniqueid()
     };
 
     it('should ignore variants it can\'t resolve.', () => {

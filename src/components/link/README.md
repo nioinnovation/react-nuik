@@ -1,32 +1,24 @@
-# Button ![status: Beta](https://img.shields.io/badge/status-beta-yellow.svg)
+# Link ![status: Beta](https://img.shields.io/badge/status-beta-yellow.svg)
 
-A general purpose button component.
+A general purpose link component.
 
 ## Example
 
 ```javascript
-<Button onClick={this.handleClick} variant="primary">Button<Button>
+<Link>Normal Link</Link>
+<Link variant="count" data-count="4">Link With Count</Link>
+<Link variant="icon" data-icon="⚠️">Link With Icon</Link>
 ```
 ## Properties
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `href` | `string` | If set, make the Button a `<a>` element rather than a `<button>`
-| `variant` | `'primary'|'alternate'|'affirmative'|'warning'|'danger'` | Alter the desired semantic variant of the Button.
-| `size` | `'huge'|'large'|'small'|'tiny'` | Alter the size of the Button
-| `mod` | `string|Array<string>` | Apply custom mods from the theme on the Button
+| `count` | `string` | If set, make the Link have a count using the `data-count` attribute.
+| `icon` | `'string` | Append an icon to the link by using the `data-icon` attribute.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `button` | Used for the root element. This button should be of the default style and default size. |
-| `primary` | Primary button styling |
-| `alternate` | Alternate button styling |
-| `affirmative` | Affirmative action button |
-| `warning` | Warning action button |
-| `danger` | Danger action button |
-| `huge` | Used for "huge" sized buttons |
-| `large` | Used for "large" sized buttons |
-| `small` | Used for "small" sized buttons |
-| `tiny` | Used for "tiny" sized buttons |
+| `count` | Used to render a link with a count on it |
+| `icon` | Used to render an icon before the link |

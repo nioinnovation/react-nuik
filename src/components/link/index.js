@@ -9,7 +9,7 @@ import resolveMods from '../../helpers/resolve-mods';
 class Link extends Component {
 
   static defaultProps = {
-    type: 'link',
+    className: '',
   };
 
   static propTypes = {
@@ -33,7 +33,7 @@ class Link extends Component {
 
       // Variants
       icon: PropTypes.string,
-      link: PropTypes.string,
+      count: PropTypes.string,
 
     }).isRequired,
   };
@@ -47,15 +47,16 @@ class Link extends Component {
       href,
       theme,
       variant,
+      count,
+      icon,
       mod,
       ...rest
     } = this.props;
 
-    const component = href ? 'a' : 'button';
+    const component = 'a';
 
     const className = classNames(
       theme.link,
-      !!href && theme.link,
       !!variant && theme[variant],
       resolveMods(theme, mod),
       propsClassName,

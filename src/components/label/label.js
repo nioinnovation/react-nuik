@@ -5,18 +5,15 @@ import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
-class Button extends Component {
+class Label extends Component {
 
   static defaultProps = {
-    type: 'button',
+    type: 'label',
   };
 
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
-
-    href: PropTypes.string,
-    onMouseUp: PropTypes.func,
 
     variant: PropTypes.oneOf([
       'primary',
@@ -24,7 +21,6 @@ class Button extends Component {
       'affirmative',
       'warning',
       'danger',
-      'disabled',
     ]),
 
     size: PropTypes.oneOf([
@@ -48,8 +44,7 @@ class Button extends Component {
 
     theme: PropTypes.shape({
       // Base
-      button: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
+      // TODO Define Base Styles
 
       // Variants
       primary: PropTypes.string,
@@ -68,16 +63,10 @@ class Button extends Component {
 
   button: HTMLElement;
 
-  handleMouseUp = (e: MouseEvent) => {
-    if (this.button) this.button.blur();
-    if (this.props.onMouseUp) this.props.onMouseUp(e);
-  }
-
   render() {
     const {
       children,
       className: propsClassName,
-      href,
       theme,
       variant,
       size,
@@ -88,8 +77,7 @@ class Button extends Component {
     const component = href ? 'a' : 'button';
 
     const className = classNames(
-      theme.button,
-      !!href && theme.link,
+      theme.label,
       !!variant && theme[variant],
       !!size && theme[size],
       resolveMods(theme, mod),
@@ -100,11 +88,10 @@ class Button extends Component {
       ...rest,
       className,
       ref: (el: HTMLElement) => { this.button = el; },
-      onMouseUp: this.handleMouseUp,
     };
 
     return createElement(component, elProps, children);
   }
 }
 
-export default Button;
+export default Label;

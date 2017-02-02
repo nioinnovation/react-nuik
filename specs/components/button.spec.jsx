@@ -53,9 +53,7 @@ describe('A Button', () => {
         link: uniqueid()
       };
       const wrapper = shallow(<Button href={href} theme={theme}/>);
-      console.log(wrapper.props());
-      console.log(theme.link);
-      expect(wrapper.hasClass(theme.button)).to.be.true;
+      expect(wrapper.hasClass(theme.link)).to.be.true;
     });
 
     it('should render its children.', () => {

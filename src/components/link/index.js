@@ -42,13 +42,9 @@ class Link extends Component {
 
   render() {
     const {
-      children,
       className: propsClassName,
-      href,
       theme,
       variant,
-      count,
-      icon,
       mod,
       ...rest
     } = this.props;
@@ -68,7 +64,7 @@ class Link extends Component {
       ref: (el: HTMLElement) => { this.link = el; },
     };
 
-    return createElement(component, elProps, children);
+    return createElement(component, elProps);
   }
 }
 

@@ -13,7 +13,6 @@ A general purpose link component.
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `link` | `string` | Base link style for default links.
 | `count` | `string` | If set, make the link have a count using the `data-count` attribute.
 | `icon` | `'string` | Append an icon to the link by using the `data-icon` attribute.
 
@@ -21,5 +20,6 @@ A general purpose link component.
 
 | Name | Description |
 | ---  | ----------- |
+| `link` | Used to render a default link |
 | `count` | Used to render a link with a count on it |
 | `icon` | Used to render an icon before the link |

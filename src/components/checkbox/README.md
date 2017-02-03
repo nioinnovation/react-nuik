@@ -1,4 +1,4 @@
-# Checkbox ![status: Proposal](https://img.shields.io/badge/status-prototype-orange.svg)
+# Checkbox ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
 Gives the ability to select an item.
 

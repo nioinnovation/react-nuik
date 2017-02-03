@@ -1,5 +1,5 @@
 // @flow
-import React, { PropTypes, createElement, Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
@@ -7,8 +7,23 @@ import id from '../../helpers/uniqueid';
 
 import Label from './label';
 import Helper from './helper';
-import MultiLine from './multi-line';
-import SingleLine from './single-line';
+
+const SingleLine = (props: *) => {
+  const {
+    theme,
+    ...rest
+  } = props;
+  return (<input className={theme.singleline} {...rest} />);
+};
+
+const MultiLine = (props: *) => {
+  const {
+    value,
+    theme,
+    ...rest
+  } = props;
+  return (<textarea className={theme.multiline} {...rest}>{value}</textarea>);
+};
 
 class TextInput extends Component {
 
@@ -60,7 +75,7 @@ class TextInput extends Component {
       ...rest
     } = this.props;
 
-    const component = variant === 'multiLine' ? MultiLine : SingleLine;
+    const componentConstructor = variant === 'multiLine' ? MultiLine : SingleLine;
     const componentProps = {
       ...rest,
       theme,
@@ -87,7 +102,7 @@ class TextInput extends Component {
     return (
       <div className={className}>
         <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>{label}</Label>
-        { createElement(component, componentProps) }
+        { componentConstructor(componentProps) }
         <Helper theme={theme}>{helper}</Helper>
       </div>
     );

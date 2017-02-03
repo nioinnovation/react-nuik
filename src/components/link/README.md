@@ -13,7 +13,8 @@ A general purpose link component.
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `count` | `string` | If set, make the Link have a count using the `data-count` attribute.
+| `link` | `string` | Base link style for default links.
+| `count` | `string` | If set, make the link have a count using the `data-count` attribute.
 | `icon` | `'string` | Append an icon to the link by using the `data-icon` attribute.
 
 ## Theme

@@ -24,7 +24,6 @@ class Button extends Component {
       'affirmative',
       'warning',
       'danger',
-      'disabled',
     ]),
 
     size: PropTypes.oneOf([

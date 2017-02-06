@@ -27,25 +27,20 @@ class Checkbox extends Component {
       className: propsClassName,
       theme,
       label,
-      variant,
-      value,
       mod,
+      disabled,
       checked,
       ...rest
     } = this.props;
 
     const componentProps = {
       ...rest,
-      value,
-      checked,
       type: 'checkbox',
       id: this.state.inputId,
-      ref: (el) => { this.input = el; },
     };
 
     const className = classNames(
       theme.checkbox,
-      !!variant && theme[variant],
       resolveMods(theme, mod),
       propsClassName,
     );
@@ -56,13 +51,14 @@ class Checkbox extends Component {
 
     const labelClassName = classNames(
       theme.label,
-      checked && theme.checked,
+      !!checked && theme.checked,
+      !!disabled && theme.disabled,
     );
 
     return (
       <div className={className} >
-        <input type="checkbox" className={inputClassName} {...componentProps} />
-        <label className={labelClassName} htmlFor={this.state.inputId}>{label}</label>
+        <label className={labelClassName} htmlFor={this.state.inputId} >{label}</label>
+        <input className={inputClassName} {...componentProps} />
       </div>
     );
   }
@@ -73,7 +69,7 @@ Checkbox.propTypes = {
 
   label: PropTypes.node,
   checked: PropTypes.bool,
-  value: PropTypes.string,
+  disabled: PropTypes.bool,
 
   variant: PropTypes.oneOf([
     'block',
@@ -95,8 +91,8 @@ Checkbox.propTypes = {
 
     // Mod
     checked: PropTypes.string,
+    disabled: PropTypes.string,
   }).isRequired,
 };
 
 export default Checkbox;
-

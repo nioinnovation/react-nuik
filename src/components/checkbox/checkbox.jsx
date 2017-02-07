@@ -33,6 +33,10 @@ class Checkbox extends Component {
       ...rest
     } = this.props;
 
+    const checkedClass = checked ? 'checked' :
+    checked === false ? '' :
+    'unknown';
+
     const componentProps = {
       ...rest,
       type: 'checkbox',
@@ -51,7 +55,7 @@ class Checkbox extends Component {
 
     const labelClassName = classNames(
       theme.label,
-      !!checked && theme.checked,
+      theme[checkedClass],
       !!disabled && theme.disabled,
     );
 
@@ -68,13 +72,12 @@ Checkbox.propTypes = {
   className: PropTypes.string,
 
   label: PropTypes.node,
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-
-  variant: PropTypes.oneOf([
-    'block',
-    'inline',
+  checked: PropTypes.oneOf([
+    true,
+    false,
+    'undefined',
   ]),
+  disabled: PropTypes.bool,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
@@ -91,6 +94,7 @@ Checkbox.propTypes = {
 
     // Mod
     checked: PropTypes.string,
+    unknown: PropTypes.string,
     disabled: PropTypes.string,
   }).isRequired,
 };

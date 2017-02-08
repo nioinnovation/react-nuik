@@ -2,7 +2,7 @@
 
 The Checkbox gives the ability to select an item with three possible states: true, false, and 'mixed' (indeterminate, unknown).
 
-The checked attribute is required. A checked attribute with a value of `true` will be checked, a value of `false` will be unchecked, and a value of `mixed` will be indeterminate. Any value other than `true` or `false` will default to `mixed`.
+The checked attribute is required. A checked attribute with a value of `true` will be checked, a value of `false` will be unchecked, and a value of `'mixed'` will be indeterminate. Any value other than `true` or `false` will default to `'mixed'`.
 
 The click handler is defined outside the component, in the component's container, as shown in the example below. This allows you to define the criteria for the three possible styles/states. In the example, the click handler converts the state to a boolean and toggles between `true` and `false`.
 
@@ -57,7 +57,7 @@ class SampleCheckboxes extends React.Component {
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `label` | `React.Node` | Specifies the label for each Checkbox.
-| `checked` | <code>true &#124; false &#124; 'mixed'</code> | Required. One of three possible states for the Checkbox.
+| `checked` | <code>true &#124; false &#124; 'mixed'</code> | Required. Default is `'mixed'`. One of three possible states for the Checkbox. 
 | `disabled` | `boolean` | Checkbox is disabled.
 | `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Checkbox.
 

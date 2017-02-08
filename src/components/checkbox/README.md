@@ -32,4 +32,4 @@ The checkbox gives the ability to select an item with three possible states: tru
 | `label` | Styles for the label of the checkbox. Styles for the checkbox itself are found in the label's `::before` and `::after` pseudo elements|
 | `checked` | Styles to apply to the checkbox when it is checked.  |
 | `unknown` | Styles to apply to the checkbox when it is indeterminate, unknown, or partially checked.  |
-| `disabled` | Styles for a disabled Checkbox |
+| `disabled` | Styles for a disabled Checkbox. |

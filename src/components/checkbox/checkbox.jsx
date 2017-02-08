@@ -33,7 +33,7 @@ class Checkbox extends Component {
       ...rest
     } = this.props;
 
-    const checkedClass = checked ? 'checked' :
+    const checkedClass = checked === true ? 'checked' :
     checked === false ? '' :
     'unknown';
 
@@ -68,15 +68,18 @@ class Checkbox extends Component {
   }
 }
 
+Checkbox.defaultProps = {
+  checked: 'mixed',
+};
+
 Checkbox.propTypes = {
   className: PropTypes.string,
 
   label: PropTypes.node,
-  checked: PropTypes.oneOf([
-    true,
-    false,
-    'undefined',
-  ]),
+  checked: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['mixed']),
+  ]).isRequired,
   disabled: PropTypes.bool,
 
   mod: PropTypes.oneOfType([

@@ -2,11 +2,13 @@
 
 Welcome to the world of n.io.
 
-Here you will find instructions to build your n.io web application with react-nuik.
+Here you will find instructions to build your n.io web application using nuik.
 
-react-nuik is a library of React components designed to be used with the n.io platform. Each component has a pure JavaScript implementation that can be combined with the n.io CSS theme.
+nuik combines the nio CSS theme with a JavaScript implementation, in this case, react-nuik. Built in React, react-nuik implements the nuik style.
 
 To get started, install…
+
+Theming…
 
 How to use…
 

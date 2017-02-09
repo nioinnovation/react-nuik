@@ -1,15 +1,16 @@
 # Text Input ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
-Single-line or multi-line text input of type: `email`, `number`, `password`, `tel`, `text`, or `url`
-
-## Try it
-_an embedded Codepen here_
+Single-line or multi-line text input of type: `email`, `number`, `password`, `tel`, `text`, or `url`.
 
 ## Example
 
 ```javascript
 <TextInput variant='inline' type='tel' label='tel' helper='required' required />
 ```
+
+## Try it
+_an embedded Codepen here_
+
 ## Properties
 
 | Name | Type | Description |

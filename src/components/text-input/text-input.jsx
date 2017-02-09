@@ -75,7 +75,8 @@ class TextInput extends Component {
       ...rest
     } = this.props;
 
-    const componentConstructor = variant === 'multiLine' ? MultiLine : SingleLine;
+    const componentConstructor = variant === 'multiline' ? MultiLine : SingleLine;
+
     const componentProps = {
       ...rest,
       theme,
@@ -89,7 +90,6 @@ class TextInput extends Component {
 
     const className = classNames(
       theme.textInput,
-      !!variant && theme[variant],
       resolveMods(theme, mod),
       propsClassName,
     );
@@ -117,8 +117,8 @@ TextInput.propTypes = {
   value: PropTypes.string,
 
   variant: PropTypes.oneOf([
-    'single-line',
-    'multi-line',
+    'singleline',
+    'multiline',
     'inline',
   ]),
 

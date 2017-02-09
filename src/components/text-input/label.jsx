@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const Label = (props: *) => {
   const className = classNames(props.theme.label, props.className);
   return props.theme.label && React.Children.count(props.children) > 0
-    ? <div className={className} htmlFor={props.htmlFor}>{props.children}</div>
+    ? <label className={className} htmlFor={props.htmlFor}>{props.children}</label>
     : null;
 };
 

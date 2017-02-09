@@ -13,7 +13,7 @@ See Radio Buttons for a container component that allows only one Checkbox in a g
 See Toggle for a binary (off/on) selector. _(? or Toggle could also be an alternate-style trinary selector?)_
 
 ## Try it
-an embedded Codepen here
+_an embedded Codepen here_
 
 ## Example
 
@@ -58,9 +58,9 @@ class SampleCheckboxes extends React.Component {
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `label` | `React.Node` | Specifies the label text for each Checkbox.
-| `checked` | <code>true &#124; false &#124; 'mixed'</code> | Required. One of three possible states for the Checkbox.
+| `checked` | <code>true&#124;false&#124;'mixed'</code> | Required. One of three possible states for the Checkbox.
 | `disabled` | `boolean` | Checkbox is disabled.
-| `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Checkbox.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Checkbox.
 
 ## Theme
 

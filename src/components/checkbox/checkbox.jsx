@@ -44,23 +44,16 @@ class Checkbox extends Component {
 
     const className = classNames(
       theme.checkbox,
+      checkedClass,
+      !!disabled && theme.disabled,
       resolveMods(theme, mod),
       propsClassName,
     );
 
-    const inputClassName = classNames(
-      theme.input,
-    );
-
-    const labelClassName = classNames(
-      checkedClass,
-      !!disabled && theme.disabled,
-    );
-
     return (
       <div className={className} >
-        <input className={inputClassName} {...componentProps} />
-        <label className={labelClassName} htmlFor={this.state.inputId} >{label}</label>
+        <input className={theme.input} {...componentProps} />
+        <label className={theme.label} htmlFor={this.state.inputId} >{label}</label>
       </div>
     );
   }

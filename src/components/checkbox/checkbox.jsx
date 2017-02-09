@@ -1,5 +1,4 @@
 // @flow
-// TODO: add indeterminate state
 
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
@@ -20,8 +19,6 @@ class Checkbox extends Component {
     inputId: string
   };
 
-  input: HTMLInputElement;
-
   render() {
     const {
       className: propsClassName,
@@ -33,9 +30,11 @@ class Checkbox extends Component {
       ...rest
     } = this.props;
 
-    const checkedClass = checked === true ? 'checked' :
-    checked === false ? '' :
-    'unknown';
+    const checkedClass =
+      checked === true ? theme.checked :
+      checked === false ? theme.unchecked :
+      checked === 'mixed' ? theme.mixed :
+      undefined;
 
     const componentProps = {
       ...rest,
@@ -54,23 +53,18 @@ class Checkbox extends Component {
     );
 
     const labelClassName = classNames(
-      theme.label,
-      theme[checkedClass],
+      checkedClass,
       !!disabled && theme.disabled,
     );
 
     return (
       <div className={className} >
-        <label className={labelClassName} htmlFor={this.state.inputId} >{label}</label>
         <input className={inputClassName} {...componentProps} />
+        <label className={labelClassName} htmlFor={this.state.inputId} >{label}</label>
       </div>
     );
   }
 }
-
-Checkbox.defaultProps = {
-  checked: 'mixed',
-};
 
 Checkbox.propTypes = {
   className: PropTypes.string,

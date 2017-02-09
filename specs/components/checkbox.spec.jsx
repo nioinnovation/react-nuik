@@ -31,7 +31,7 @@ describe('A Checkbox', () => {
     expect(wrapper.contains(label)).to.be.true;
   });
 
-  describe('that is checked', () => {
+  describe('with checked === true property', () => {
     const label = uniqueid();
     const checkedTheme = {
       checkbox: uniqueid(),
@@ -50,7 +50,7 @@ describe('A Checkbox', () => {
     });
   });
 
-  describe('that has a checked = false property', () => {
+  describe('with checked === false property', () => {
     const label = uniqueid();
     const uncheckedTheme = {
       checkbox: uniqueid(),
@@ -68,21 +68,21 @@ describe('A Checkbox', () => {
     });
   });
 
-  describe('that does not have a checked property', () => {
+  describe('with checked === "mixed" property', () => {
     const label = uniqueid();
-    const checkedTheme = {
+    const mixedTheme = {
       checkbox: uniqueid(),
-      unknown: uniqueid(),
+      mixed: uniqueid(),
       disabled: uniqueid(),
     };
-    const wrapper = shallow(<Checkbox label={label} theme={checkedTheme} disabled/>);
+    const wrapper = shallow(<Checkbox label={label} theme={mixedTheme} checked='mixed' disabled />);
 
-    it('should have a class of unknown on the label element.', () => {
-      expect(wrapper.find('label').hasClass(checkedTheme.unknown)).to.be.true;
+    it('should have a class of mixed on the label element.', () => {
+      expect(wrapper.find('label').hasClass(mixedTheme.mixed)).to.be.true;
     });
 
-    it('should also have a class of disabled when disabled.', () => {
-      expect(wrapper.find('label').hasClass(checkedTheme.disabled)).to.be.true;
+    it('should have a disabled class when disabled.', () => {
+      expect(wrapper.find('label').hasClass(mixedTheme.disabled)).to.be.true;
     });
   });
 

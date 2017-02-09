@@ -28,7 +28,9 @@ The checkbox gives the ability to select an item with three possible states: tru
 | Name | Description |
 | ---  | ----------- |
 | `checkbox` | Required. Used to style the root element. |
-| `checked` | Styles to apply to the label when element is checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements. |
-| `unchecked` | Styles to apply to the label when element is not checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements.  |
-| `mixed` | Styles to apply to the label when element is indeterminate, unknown, or partially checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements.   |
-| `disabled` | Styles for a disabled Checkbox. |
+| `input` | Used to style the input element. |
+| `label` | Used to style the label element. |
+| `checked` | Styles to apply to the label when element is checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `unchecked` | Styles to apply to the label when element is not checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `mixed` | Styles to apply to the label when element is indeterminate, unknown, or partially checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `disabled` | Styles for a disabled Checkbox. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |

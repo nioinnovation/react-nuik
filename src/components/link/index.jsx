@@ -1,6 +1,6 @@
 // @flow
 
-import React, { PropTypes, createElement, Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { themr } from 'react-css-themr';
 import classNames from 'classnames';
 
@@ -23,14 +23,11 @@ class Link extends Component {
       'count',
     ]),
 
+    children: PropTypes.node,
+
     mod: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.string,
-    ]),
-
-    variant: PropTypes.oneOf([
-      'icon',
-      'count',
     ]),
 
     theme: PropTypes.shape({
@@ -44,8 +41,6 @@ class Link extends Component {
     }).isRequired,
   };
 
-  link: HTMLElement;
-
   render() {
     const {
       className: propsClassName,
@@ -57,8 +52,6 @@ class Link extends Component {
       ...rest
     } = this.props;
 
-    const component = 'a';
-
     const className = classNames(
       theme.link,
       !!variant && theme[variant],
@@ -66,12 +59,7 @@ class Link extends Component {
       propsClassName,
     );
 
-    const elProps = {
-      ...rest,
-      className,
-    };
-
-    return <a className={className} href={href} variant={variant} {...rest}>{children}</a>;
+    return <a className={className} href={href} {...rest}>{children}</a>;
   }
 }
 

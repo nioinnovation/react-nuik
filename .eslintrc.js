@@ -11,6 +11,7 @@ module.exports = {
     "flowtype"
   ],
   "rules": {
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "react/require-default-props": 0
   }
 };

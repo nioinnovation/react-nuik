@@ -78,6 +78,7 @@ class TextInput extends Component {
     } = this.props;
 
     const helperText = variant === 'inline' ? null : helper;
+    const makeInline = variant === 'inline' ? theme.small : null;
 
     const componentConstructor = variant === 'multiline' ? MultiLine : SingleLine;
 
@@ -95,6 +96,7 @@ class TextInput extends Component {
 
     const className = classNames(
       theme.textInput,
+      makeInline,
       resolveMods(theme, mod),
       propsClassName,
     );

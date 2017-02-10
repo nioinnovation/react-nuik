@@ -1,5 +1,4 @@
 // @flow
-// TODO: add indeterminate state
 
 import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
@@ -20,49 +19,41 @@ class Checkbox extends Component {
     inputId: string
   };
 
-  input: HTMLInputElement;
-
   render() {
     const {
       className: propsClassName,
       theme,
       label,
-      variant,
-      value,
       mod,
+      disabled,
       checked,
       ...rest
     } = this.props;
 
+    const checkedClass =
+      checked === true ? theme.checked :
+      checked === false ? theme.unchecked :
+      checked === 'mixed' ? theme.mixed :
+      undefined;
+
     const componentProps = {
       ...rest,
-      value,
-      checked,
       type: 'checkbox',
       id: this.state.inputId,
-      ref: (el) => { this.input = el; },
     };
 
     const className = classNames(
       theme.checkbox,
-      !!variant && theme[variant],
+      checkedClass,
+      !!disabled && theme.disabled,
       resolveMods(theme, mod),
       propsClassName,
     );
 
-    const inputClassName = classNames(
-      theme.input,
-    );
-
-    const labelClassName = classNames(
-      theme.label,
-      checked && theme.checked,
-    );
-
     return (
       <div className={className} >
-        <input type="checkbox" className={inputClassName} {...componentProps} />
-        <label className={labelClassName} htmlFor={this.state.inputId}>{label}</label>
+        <input className={theme.input} {...componentProps} />
+        <label className={theme.label} htmlFor={this.state.inputId} >{label}</label>
       </div>
     );
   }
@@ -72,13 +63,11 @@ Checkbox.propTypes = {
   className: PropTypes.string,
 
   label: PropTypes.node,
-  checked: PropTypes.bool,
-  value: PropTypes.string,
-
-  variant: PropTypes.oneOf([
-    'block',
-    'inline',
-  ]),
+  checked: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['mixed']),
+  ]).isRequired,
+  disabled: PropTypes.bool,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
@@ -95,8 +84,10 @@ Checkbox.propTypes = {
 
     // Mod
     checked: PropTypes.string,
+    unchecked: PropTypes.string,
+    mixed: PropTypes.string,
+    disabled: PropTypes.string,
   }).isRequired,
 };
 
 export default Checkbox;
-

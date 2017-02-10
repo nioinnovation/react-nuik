@@ -1,6 +1,6 @@
 // @flow
 
-import { PropTypes, createElement, Component } from 'react';
+import React, { PropTypes, createElement, Component } from 'react';
 import { themr } from 'react-css-themr';
 import classNames from 'classnames';
 
@@ -10,6 +10,7 @@ class Link extends Component {
 
   static defaultProps = {
     className: '',
+    href: '',
   };
 
   static propTypes = {
@@ -25,6 +26,11 @@ class Link extends Component {
     mod: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.string,
+    ]),
+
+    variant: PropTypes.oneOf([
+      'icon',
+      'count',
     ]),
 
     theme: PropTypes.shape({
@@ -44,6 +50,8 @@ class Link extends Component {
     const {
       className: propsClassName,
       theme,
+      href,
+      children,
       variant,
       mod,
       ...rest
@@ -61,10 +69,9 @@ class Link extends Component {
     const elProps = {
       ...rest,
       className,
-      ref: (el: HTMLElement) => { this.link = el; },
     };
 
-    return createElement(component, elProps);
+    return <a className={className} href={href} variant={variant} {...rest}>{children}</a>;
   }
 }
 

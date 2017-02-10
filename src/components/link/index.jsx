@@ -1,67 +1,58 @@
 // @flow
 
-import React, { PropTypes, Component } from 'react';
-import { themr } from 'react-css-themr';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
-class Link extends Component {
+const Link = (props: *) => {
+  const {
+    className: propsClassName,
+    theme,
+    href,
+    children,
+    variant,
+    mod,
+    ...rest
+  } = props;
 
-  static defaultProps = {
-    className: '',
-    href: '',
-  };
+  const className = classNames(
+    theme.link,
+    !!variant && theme[variant],
+    resolveMods(theme, mod),
+    propsClassName,
+  );
 
-  static propTypes = {
-    className: PropTypes.string,
+  return <a className={className} href={href} {...rest} >{children}</a>;
+};
 
-    href: PropTypes.string,
+Link.propTypes = {
+  className: PropTypes.string,
 
-    variant: PropTypes.oneOf([
-      'icon',
-      'count',
-    ]),
+  href: PropTypes.string.isRequired,
 
-    children: PropTypes.node,
+  variant: PropTypes.oneOf([
+    'icon',
+    'count',
+  ]),
 
-    mod: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.string),
-      PropTypes.string,
-    ]),
+  children: PropTypes.node,
 
-    theme: PropTypes.shape({
-      // Base
-      link: PropTypes.string.isRequired,
+  mod: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string,
+  ]),
 
-      // Variants
-      icon: PropTypes.string,
-      count: PropTypes.string,
+  theme: PropTypes.shape({
+    // Base
+    link: PropTypes.string.isRequired,
 
-    }).isRequired,
-  };
+    // Variants
+    icon: PropTypes.string,
+    count: PropTypes.string,
 
-  render() {
-    const {
-      className: propsClassName,
-      theme,
-      href,
-      children,
-      variant,
-      mod,
-      ...rest
-    } = this.props;
+  }).isRequired,
+};
 
-    const className = classNames(
-      theme.link,
-      !!variant && theme[variant],
-      resolveMods(theme, mod),
-      propsClassName,
-    );
 
-    return <a className={className} href={href} {...rest}>{children}</a>;
-  }
-}
-
-export { Link };
-export default themr('link')(Link);
+export default Link;

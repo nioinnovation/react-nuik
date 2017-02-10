@@ -11,18 +11,20 @@ import Helper from './helper';
 const SingleLine = (props: *) => {
   const {
     theme,
+    variant,
     ...rest
   } = props;
-  return (<input className={theme.singleline} {...rest} />);
+  return (<input className={theme[variant]} {...rest} />);
 };
 
 const MultiLine = (props: *) => {
   const {
     value,
     theme,
+    variant,
     ...rest
   } = props;
-  return (<textarea className={theme.multiline} {...rest}>{value}</textarea>);
+  return (<textarea className={theme[variant]} {...rest}>{value}</textarea>);
 };
 
 class TextInput extends Component {
@@ -75,11 +77,14 @@ class TextInput extends Component {
       ...rest
     } = this.props;
 
+    const helperText = variant === 'inline' ? null : helper;
+
     const componentConstructor = variant === 'multiline' ? MultiLine : SingleLine;
 
     const componentProps = {
       ...rest,
       theme,
+      variant,
       id: this.state.inputId,
       value,
       onFocus: this.handleOnFocus,
@@ -101,9 +106,9 @@ class TextInput extends Component {
 
     return (
       <div className={className}>
-        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>{label}</Label>
+        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId} >{label}</Label>
         { componentConstructor(componentProps) }
-        <Helper theme={theme}>{helper}</Helper>
+        <Helper theme={theme}>{helperText}</Helper>
       </div>
     );
   }

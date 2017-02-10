@@ -84,7 +84,8 @@ Checkbox.propTypes = {
 
     // Mod
     checked: PropTypes.string,
-    unknown: PropTypes.string,
+    unchecked: PropTypes.string,
+    mixed: PropTypes.string,
     disabled: PropTypes.string,
   }).isRequired,
 };

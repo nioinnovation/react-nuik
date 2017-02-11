@@ -13,6 +13,7 @@ const SingleLine = (props: *) => {
     theme,
     ...rest
   } = props;
+
   return (<input className={theme.singleline} {...rest} />);
 };
 
@@ -70,6 +71,7 @@ class TextInput extends Component {
       label,
       helper,
       variant,
+      disabled,
       mod,
       value,
       ...rest
@@ -82,6 +84,7 @@ class TextInput extends Component {
       theme,
       id: this.state.inputId,
       value,
+      disabled,
       onFocus: this.handleOnFocus,
       onBlur: this.handleOnBlur,
       onChange: this.handleOnChange,
@@ -91,7 +94,7 @@ class TextInput extends Component {
     const className = classNames(
       theme.textInput,
       resolveMods(theme, mod),
-      propsClassName,
+      theme[propsClassName],
     );
 
     const labelClassName = classNames(
@@ -115,6 +118,7 @@ TextInput.propTypes = {
   label: PropTypes.node,
   helper: PropTypes.node,
   value: PropTypes.string,
+  disabled: PropTypes.bool,
 
   variant: PropTypes.oneOf([
     'singleline',

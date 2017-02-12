@@ -13,54 +13,45 @@ See Radio Buttons for a container component that allows only one Checkbox in a g
 See Toggle for a binary (off/on) selector. _(? or Toggle could also be an alternate-style trinary selector?)_
 
 ## Try it
-an embedded Codepen here
+_an embedded Codepen here_
 
 ## Example
 
 ```javascript
-class SampleCheckboxes extends React.Component {
-  constructor(props) {
+class SampleTextInputs extends React.Component {
+  constructor() {
     super();
     this.state = {
-      cars: false,
-      trucks: false,
-      boats: true,
-      planes: false,
-      other: 'mixed',
+      value1: '',
+      value2: 'yo'
     };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(key) {
-    const stateValue = typeof this.state[key] === 'boolean' ? this.state[key] : false;
-    this.setState({ [key]: !stateValue });
   }
 
   render() {
     return (
       <div>
-        <h2>Checkboxes</h2>
-        <Checkbox label='Cars' onChange={() => this.handleClick('cars')} checked={this.state.cars} />
-        <Checkbox label='Trucks' onChange={() => this.handleClick('trucks')} checked={this.state.trucks} />
-        <Checkbox label='Boats' onChange={() => this.handleClick('boats')} checked={this.state.boats} />
-        <Checkbox label='Planes' onChange={() => this.handleClick('planes')} checked={this.state.planes} />
-        <Checkbox label='initially undefined' onChange={() => this.handleClick('other')} checked={this.state.other} />
-        <Checkbox label='disabled unchecked' disabled checked={false} />
-        <Checkbox label='disabled checked' onChange={() => this.handleClick('disabled')} disabled checked={true} />
-        <Checkbox label='disabled undefined' disabled checked='mixed'/>
+        <h2>Text Inputs</h2>
+        <TextInput variant="singleline" label="uncontrolled" helper="helper text here" type='text'/>
+        <TextInput value="foo" variant="singleline" label="controlled (static)" helper="helper text here" type="text"/>
+        <TextInput value={this.state.value1} onChange={(e) => this.setState({ value1: e.currentTarget.value }) } variant="singleline"label="controlled (dynamic)" helper="helper text here" type='text'/>
+        <TextInput value={this.state.value2} onChange={(e) => this.setState({ value2: e.currentTarget.value }) } variant="singleline"label="filled (dynamic)" helper="helper text here" type='text'/>
+        <TextInput variant="multiline" label="multiline" helper="more text here" type='text'/>
+        <TextInput variant="multiline" label="multiline required" helper="required" type='text' required />
       </div>
     );
   }
 }
+
+export default SampleTextInputs;
 ```
 ## Properties
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `label` | `React.Node` | Specifies the label text for each Checkbox.
-| `checked` | <code>true &#124; false &#124; 'mixed'</code> | Required. One of three possible states for the Checkbox.
+| `checked` | <code>true&#124;false&#124;'mixed'</code> | Required. One of three possible states for the Checkbox.
 | `disabled` | `boolean` | Checkbox is disabled.
-| `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Checkbox.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Checkbox.
 
 ## Theme
 

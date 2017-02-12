@@ -7,6 +7,9 @@ A Loader/Message
 ```javascript
 <Loader loading={isLoading} icon={<i className="fa fa-fw fa-check" />}>success!</Loader>
 ```
+## Try it
+_an embedded Codepen here_
+
 ## Properties
 
 | Name | Type | Description |

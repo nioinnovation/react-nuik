@@ -13,6 +13,7 @@ const SingleLine = (props: *) => {
     theme,
     ...rest
   } = props;
+
   return (<input className={theme.singleline} {...rest} />);
 };
 
@@ -70,17 +71,20 @@ class TextInput extends Component {
       label,
       helper,
       variant,
+      disabled,
       mod,
       value,
       ...rest
     } = this.props;
 
-    const componentConstructor = variant === 'multiLine' ? MultiLine : SingleLine;
+    const componentConstructor = variant === 'multiline' ? MultiLine : SingleLine;
+
     const componentProps = {
       ...rest,
       theme,
       id: this.state.inputId,
       value,
+      disabled,
       onFocus: this.handleOnFocus,
       onBlur: this.handleOnBlur,
       onChange: this.handleOnChange,
@@ -89,9 +93,8 @@ class TextInput extends Component {
 
     const className = classNames(
       theme.textInput,
-      !!variant && theme[variant],
+      theme[propsClassName],
       resolveMods(theme, mod),
-      propsClassName,
     );
 
     const labelClassName = classNames(
@@ -101,7 +104,9 @@ class TextInput extends Component {
 
     return (
       <div className={className}>
-        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>{label}</Label>
+        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>
+          {label}
+        </Label>
         { componentConstructor(componentProps) }
         <Helper theme={theme}>{helper}</Helper>
       </div>
@@ -115,11 +120,11 @@ TextInput.propTypes = {
   label: PropTypes.node,
   helper: PropTypes.node,
   value: PropTypes.string,
+  disabled: PropTypes.bool,
 
   variant: PropTypes.oneOf([
-    'single-line',
-    'multi-line',
-    'inline',
+    'singleline',
+    'multiline',
   ]),
 
   mod: PropTypes.oneOfType([
@@ -140,7 +145,6 @@ TextInput.propTypes = {
     // Variants
     singleLine: PropTypes.string,
     multiLine: PropTypes.string,
-    inline: PropTypes.string,
 
     // Elements
     helper: PropTypes.string,

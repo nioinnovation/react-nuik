@@ -20,7 +20,9 @@ A general purpose button component.
 
 | Name | Description |
 | ---  | ----------- |
-| `button` | Used for the root element. This button should be of the default style and default size. |
+| `button` | Required. Used for the root element. This button should be of the default style and default size. |
+| `link` | Required. Styles for buttons with an href, to bring the anchor tag (<a>) into alignment with button (<button>) styles. |
+| `disabled` | Required. Styles for a disabled button. |
 | `primary` | Primary button styling |
 | `alternate` | Alternate button styling |
 | `affirmative` | Affirmative action button |

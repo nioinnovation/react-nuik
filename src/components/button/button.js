@@ -17,6 +17,7 @@ class Button extends Component {
 
     href: PropTypes.string,
     onMouseUp: PropTypes.func,
+    disabled: PropTypes.bool,
 
     variant: PropTypes.oneOf([
       'primary',
@@ -24,7 +25,6 @@ class Button extends Component {
       'affirmative',
       'warning',
       'danger',
-      'disabled',
     ]),
 
     size: PropTypes.oneOf([
@@ -50,6 +50,7 @@ class Button extends Component {
       // Base
       button: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
+      disabled: PropTypes.string.isRequired,
 
       // Variants
       primary: PropTypes.string,
@@ -81,24 +82,28 @@ class Button extends Component {
       theme,
       variant,
       size,
+      disabled,
       mod,
       ...rest
     } = this.props;
 
     const component = href ? 'a' : 'button';
+    const mods = resolveMods(theme, mod);
 
     const className = classNames(
       theme.button,
       !!href && theme.link,
-      !!variant && theme[variant],
+      !disabled && !!variant && theme[variant],
       !!size && theme[size],
-      resolveMods(theme, mod),
-      propsClassName,
+      !!disabled && theme.disabled,
+      !disabled && mods,
+      !disabled && propsClassName,
     );
 
     const elProps = {
       ...rest,
       className,
+      href,
       ref: (el: HTMLElement) => { this.button = el; },
       onMouseUp: this.handleMouseUp,
     };

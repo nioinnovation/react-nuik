@@ -47,7 +47,7 @@ class Checkbox extends Component {
       checkedClass,
       !!disabled && theme.disabled,
       resolveMods(theme, mod),
-      propsClassName,
+      theme[propsClassName],
     );
 
     return (

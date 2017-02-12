@@ -17,13 +17,13 @@ const Link = (props: *) => {
     ...rest
   } = props;
 
-  const iconVariant = !!variant ? theme[variant] : theme.before;
+  const iconVariant = variant ? theme[variant] : theme.before;
 
   const className = classNames(
     theme.link,
     !!icon && iconVariant,
     resolveMods(theme, mod),
-    propsClassName,
+    theme[propsClassName],
   );
 
   return <a className={className} href={href} data-icon={icon} {...rest} >{children}</a>;

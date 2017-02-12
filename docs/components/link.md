@@ -15,6 +15,10 @@ A Link with an icon can use variants `before` and `after` to display the icon be
 <Link href='#' variant="before" icon="&#x21e4;">Link with icon before</Link>
 <Link href='#' variant="after" icon="▶">Link with icon after</Link>
 ```
+
+## Try it
+_an embedded Codepen here_
+
 ## Properties
 
 | Name | Type | Description |

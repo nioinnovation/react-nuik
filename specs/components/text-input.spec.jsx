@@ -44,11 +44,12 @@ describe('A TextInput', () => {
   });
 
   describe('with a className attribute', () => {
-    theme.customClass = uniqueid();
-    const wrapper = shallow(<TextInput theme={theme} className="customClass" />);
+    const customClass = uniqueid();
+    theme[customClass] = uniqueid();
+    const wrapper = shallow(<TextInput theme={theme} className={customClass} />);
 
     it('should contain that class.', () => {
-      expect(wrapper.hasClass(theme.customClass)).to.be.true;
+      expect(wrapper.hasClass(theme[customClass])).to.be.true;
     });
   });
 

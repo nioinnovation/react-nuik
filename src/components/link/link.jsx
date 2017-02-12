@@ -10,20 +10,23 @@ const Link = (props: *) => {
     className: propsClassName,
     theme,
     href,
-    children,
+    icon,
     variant,
+    children,
     mod,
     ...rest
   } = props;
 
+  const iconVariant = variant ? theme[variant] : theme.before;
+
   const className = classNames(
     theme.link,
-    !!variant && theme[variant],
+    !!icon && iconVariant,
     resolveMods(theme, mod),
-    propsClassName,
+    theme[propsClassName],
   );
 
-  return <a className={className} href={href} {...rest} >{children}</a>;
+  return <a className={className} href={href} data-icon={icon} {...rest} >{children}</a>;
 };
 
 Link.propTypes = {
@@ -32,9 +35,11 @@ Link.propTypes = {
   href: PropTypes.string.isRequired,
 
   variant: PropTypes.oneOf([
-    'icon',
-    'count',
+    'before',
+    'after',
   ]),
+
+  icon: PropTypes.string,
 
   children: PropTypes.node,
 
@@ -48,8 +53,8 @@ Link.propTypes = {
     link: PropTypes.string.isRequired,
 
     // Variants
-    icon: PropTypes.string,
-    count: PropTypes.string,
+    before: PropTypes.string,
+    after: PropTypes.string,
 
   }).isRequired,
 };

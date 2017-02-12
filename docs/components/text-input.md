@@ -48,18 +48,15 @@ _an embedded Codepen here_
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Text Input.
 | `label` | `React.Node` | Specifies the label text for the Text Input.
 | `helper` | `React.Node` | The content of the helper text that may appear below the input.
-| `required` | `string` | Present if the input is required.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `textInput` | Used for the root element—default is full-width, single-line. |
+| `textInput` | Required. Used for the root element—default is full-width, single-line. |
 | `singleline` | Styles for single-line Text Input. |
 | `multiline` | Styles for single-line Text Input. |
-| `helper` | Styles for the helper element. |
 | `label` | Styles for the label element. |
 | `labelWithFocus` | Styles for the label element when the input has focus. |
 | `labelWithValue` | Styles for the label element when the input has a value. |
-| `isInvalid` | Styles for a input that is not valid. |
-| `disabled` | Styles for a input that is disabled. |
+| `helper` | Styles for the helper element. |

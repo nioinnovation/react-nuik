@@ -93,8 +93,8 @@ class TextInput extends Component {
 
     const className = classNames(
       theme.textInput,
-      resolveMods(theme, mod),
       theme[propsClassName],
+      resolveMods(theme, mod),
     );
 
     const labelClassName = classNames(
@@ -104,7 +104,9 @@ class TextInput extends Component {
 
     return (
       <div className={className}>
-        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId} >{label}</Label>
+        <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>
+          {label}
+        </Label>
         { componentConstructor(componentProps) }
         <Helper theme={theme}>{helper}</Helper>
       </div>

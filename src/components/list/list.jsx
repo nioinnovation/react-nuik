@@ -1,5 +1,5 @@
 // @flow
-// http://www.endlessicons.com/wp-content/uploads/2012/09/light-bulb-icon-614x460.png
+
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
@@ -13,7 +13,6 @@ const List = (props: *) => {
     className: propsClassName,
     theme,
     variant,
-    bullet,
     children,
     mod,
     ...rest
@@ -25,9 +24,7 @@ const List = (props: *) => {
 
   const className = classNames(
     theme.list,
-    propsClassName,
-    bullet,
-    !!bullet && theme[bullet],
+    !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
   );
@@ -44,10 +41,10 @@ const List = (props: *) => {
 List.propTypes = {
   className: PropTypes.string,
 
-  // variant: PropTypes.oneOf([
-  //   'before',
-  //   'after',
-  // ]),
+  variant: PropTypes.oneOf([
+    'numbered',
+    'none',
+  ]),
 
   bullet: PropTypes.string,
 
@@ -63,8 +60,8 @@ List.propTypes = {
     list: PropTypes.string.isRequired,
 
     // Variants
-    // before: PropTypes.string,
-    // after: PropTypes.string,
+    numbered: PropTypes.string,
+    none: PropTypes.string,
 
   }).isRequired,
 };

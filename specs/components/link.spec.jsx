@@ -45,7 +45,6 @@ describe('A Link', () => {
 
   });
 
-
   describe('with a className attribute,', () => {
     const customClass = uniqueid();
     theme[customClass] = uniqueid();

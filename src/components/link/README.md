@@ -5,21 +5,24 @@ A general purpose link component.
 ## Example
 
 ```javascript
-<Link>Normal Link</Link>
-<Link variant="count" data-count="4">Link With Count</Link>
-<Link variant="icon" data-icon="⚠️">Link With Icon</Link>
+<Link href='#'>Link</Link>
+<Link href='http://google.com' >Google</Link>
+<Link href='#' icon="&#x21e4;">Link with icon, no variant</Link>
+<Link href='#' variant="before" icon="&#x21e4;">Link with icon before</Link>
+<Link href='#' variant="after" icon="▶">Link with icon after</Link>
 ```
 ## Properties
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `count` | `string` | If set, make the link have a count using the `data-count` attribute.
-| `icon` | `'string` | Append an icon to the link by using the `data-icon` attribute.
+| `href` | `string` | Required. The the destination of the link.
+| `icon` | 'string' | the content of the icon.
+| `variant` | <code>'before'&#124;'after'</code> | If set, determines where to display the link icon (`before` is default).
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `link` | Used to render a default link |
-| `count` | Used to render a link with a count on it |
-| `icon` | Used to render an icon before the link |
+| `link` | Required. Used to render a default link. |
+| `before` | Needed to render an icon. Used to style an icon that appears before the link. |
+| `after` | Used to style an icon that appears after the link. Needed to render an icon with variant `after`.|

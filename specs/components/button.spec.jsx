@@ -38,9 +38,10 @@ describe('A Button', () => {
   });
 
   it('should include additional class names that are defined.', () => {
-    themeBase.additionalClass = uniqueid();
-    const wrapper = shallow(<Button className={themeBase.additionalClass} theme={themeBase} />);
-    expect(wrapper.hasClass(themeBase.additionalClass)).to.be.true;
+    const additionalClass = uniqueid();
+    themeBase[additionalClass] = uniqueid();
+    const wrapper = shallow(<Button className={additionalClass} theme={themeBase} />);
+    expect(wrapper.hasClass(themeBase[additionalClass])).to.be.true;
   });
 
   describe('that is disabled', () => {

@@ -7,3 +7,4 @@
   * [text-input](components/text-input.md)
   * [checkbox](components/checkbox.md)
   * [loader](components/loader.md)
+  * [list](components/list.md)

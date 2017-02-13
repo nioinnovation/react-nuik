@@ -18,22 +18,23 @@ const List = (props: *) => {
     ...rest
   } = props;
 
-  const listItems = children.map( i => {
-    return <li key={id()}>{i}</li>;
-  })
+  const listItems = children ?
+    children.length > 1 ?
+    children.map(i => <li key={id()}>{i}</li>) :
+    <li>{children}</li> :
+    null;
 
   const className = classNames(
     theme.list,
     !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
+    ...rest,
   );
-
-  console.log(className);
 
   return (
     <ul className={className} key={id}>
-      {listItems.map(i => i)}
+      {listItems}
     </ul>
   );
 };

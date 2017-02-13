@@ -7,13 +7,20 @@ Expansion Cards are components that initially show summary information and can b
 ## Example
 
 ```javascript
+<Accordion variant="multi"
 ```
 ## Properties
 
+### accordion
+
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `active` | `boolean` | Determines if card is open.
-| `variant` | <code>'single'&#124;'multi'</code> | Determines weather only one card can be expanded at a time, or weather multiple cards can be open simultaneously.
+| `variant` | <code>'single'&#124;'multi'</code> | Determines whether only one card can be expanded at a time, or whether multiple cards can be open simultaneously. Default is `multi`.
+
+### card
+| Name | Type | Description |
+| --- | --- | --- | --- |
+| `active` | `boolean` | Required. Determines if card is open.
 | `columns` | `number` | If set, indicates the number of columns of sub-headings in the summary.
 
 ## Theme

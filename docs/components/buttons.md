@@ -5,6 +5,8 @@ A general purpose button component.
 ## Example
 
 ```javascript
+<Button onClick={this.handleClick} variant="primary">Button<Button>
+
 const SampleButtons = () => {
   return (
     <div>

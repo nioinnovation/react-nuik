@@ -13,7 +13,6 @@ _an embedded Codepen here_
 
 ```javascript
 const SampleLists = () => {
-
   return (
     <div>
       <h2>Lists</h2>

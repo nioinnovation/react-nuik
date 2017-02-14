@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.6] - 2016-02-14
+### Added
+- - New Component `<List>`
+
+### Changed
+- `react` and `react-css-themr` are now peer dependencies.
+
+## [0.0.5] - 2016-02-04
+### Added
+- New Component `<Link>`
+
 ## [0.0.4] - 2017-01-24
 
 ### Added

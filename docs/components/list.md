@@ -61,5 +61,6 @@ const SampleLists = () => {
 | Name | Description |
 | ---  | ----------- |
 | `list` | Required. Used to render a default List. |
-| `numbered` | Used to render a numbered List. |
-| `none` | Used to render a List with no bullets. |
+| `item` | Required. Styles for a default list item. |
+| `numbered` | Styles for a numbered list. |
+| `none` | Styles for a list with no bullets. |

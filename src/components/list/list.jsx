@@ -18,15 +18,19 @@ const List = (props: *) => {
     ...rest
   } = props;
 
+  const listItemClassName = classNames(
+    theme.item,
+    !!variant && theme[variant],
+  );
+
   const listItems = children ?
     children.length > 1 ?
-    children.map(i => <li key={id()}>{i}</li>) :
-    <li>{children}</li> :
+    children.map(i => <li className={listItemClassName} key={id()}>{i}</li>) :
+    <li className={listItemClassName}>{children}</li> :
     null;
 
   const className = classNames(
     theme.list,
-    !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
     ...rest,
@@ -59,6 +63,7 @@ List.propTypes = {
   theme: PropTypes.shape({
     // Base
     list: PropTypes.string.isRequired,
+    item: PropTypes.string.isRequired,
 
     // Variants
     numbered: PropTypes.string,

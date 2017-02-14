@@ -27,7 +27,9 @@ A Twofold is the inner element in an Accordion.
 
 | Name | Description |
 | ---  | ----------- |
+| `twofold` | Required. Used to style the root element. |
+| `detail` | Required. Used to hide the details.|
+| `active` | Required. Used to style the details upon expansion.|
 | `heading` | Used to style the summary/header area. |
 | `subheading` | Used to style subheadings within the summary/header area.|
-| `details` | Used to style the detailed information visible upon expansion.|
 | `icon` | Used to style the open/close icon.|

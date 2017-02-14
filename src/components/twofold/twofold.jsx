@@ -63,6 +63,7 @@ Twofold.propTypes = {
     // Base
     twofold: PropTypes.string.isRequired,
     detail: PropTypes.string.isRequired,
+    active: PropTypes.string.isRequired,
     heading: PropTypes.string,
     subheading: PropTypes.string,
     icon: PropTypes.string,

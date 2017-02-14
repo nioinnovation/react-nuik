@@ -34,6 +34,8 @@ _an embedded Codepen here_
 | `twofold` | Required. Used to style the root element. |
 | `detail` | Required. Used to hide the details.|
 | `active` | Required. Used to style the details upon expansion.|
-| `heading` | Used to style the summary/header area. |
+| `header` | Used to style the header area. |
+| `heading` | Used to style the main summary/header. |
 | `subheading` | Used to style subheadings within the summary/header area.|
-| `icon` | Used to style the open/close icon.|
+| `closedIcon` | Used to style the closed icon.|
+| `openIcon` | Used to style the open icon.|

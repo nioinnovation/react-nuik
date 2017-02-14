@@ -23,9 +23,9 @@ const Accordion = (props: *) => {
   );
 
   return (
-    <ul>
+    <div>
       {children}
-    </ul>
+    </div>
   );
 };
 

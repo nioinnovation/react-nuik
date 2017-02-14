@@ -29,17 +29,25 @@ const Twofold = (props: *) => {
     !!active && theme.active,
   );
 
+  const iconClassName = classNames(
+    !!active && theme.openIcon,
+    !active && theme.closedIcon,
+  );
+
   return (
-    <div className="className">
-      <h3 className={theme.heading}>
-        {heading}
-        <span className={theme.subheading}>
+    <div className={className}>
+      <div className={theme.header}>
+        <div className={theme.heading}>
+          {heading}
+        </div>
+        <div className={theme.subheading}>
           {subheading}
-        </span>
-        <i className={theme.icon}>
-          *
-        </i>
-      </h3>
+        </div>
+        <svg className={iconClassName} xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" width="30">
+            <circle cx="0" cy="0" r="14" />
+            <path d="M-6 -3 0 3 6 -3" />
+        </svg>
+      </div>
       <div className={detailClassName}>
         {children}
       </div>
@@ -64,6 +72,7 @@ Twofold.propTypes = {
     twofold: PropTypes.string.isRequired,
     detail: PropTypes.string.isRequired,
     active: PropTypes.string.isRequired,
+    header: PropTypes.string,
     heading: PropTypes.string,
     subheading: PropTypes.string,
     icon: PropTypes.string,

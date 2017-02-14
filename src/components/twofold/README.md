@@ -1,6 +1,4 @@
-# Accordion ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
-
-An Accordion is a List made up of collapsible Twofolds.
+# Twofold ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
 Twofold is a component made up of two parts: a heading and details. Twofolds are expandable and collapsible. Initially, a Twofold shows summary information and can be subsequently expanded to show more detailed information.
 
@@ -15,18 +13,23 @@ A Twofold is the inner element in an Accordion.
   <Twofold heading="pick me" subheading="the skinny" active>details here</Twofold>
 </Accordion>
 ```
+
 ## Properties
 
-### accordion
-
+### twofold
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `variant` | <code>'single'&#124;'multi'</code> | Determines whether only one Twofold can be expanded at a time, or whether multiple Twofolds can be open simultaneously. Default is `multi`.
+| `active` | `boolean` | If present, Twofold is open.
+| `heading` | `string` | The contents of the heading. Text only(?).
+| `subheading` | `string` | The contents of the subheading. Text only(?).
 
-## Theme
+##Theme
 
-### accordion
+### twofold
 
 | Name | Description |
 | ---  | ----------- |
-| `accordion` | Required. Used to render a default accordion. |
+| `heading` | Used to style the summary/header area. |
+| `subheading` | Used to style subheadings within the summary/header area.|
+| `details` | Used to style the detailed information visible upon expansion.|
+| `icon` | Used to style the open/close icon.|

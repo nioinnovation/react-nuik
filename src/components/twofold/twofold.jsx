@@ -5,11 +5,11 @@ import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
-const Accordion = (props: *) => {
+const Twofolds = (props: *) => {
   const {
     className: propsClassName,
     theme,
-    variant,
+    active,
     children,
     mod,
     ...rest
@@ -17,29 +17,21 @@ const Accordion = (props: *) => {
 
 
   const className = classNames(
-    theme.accordion,
+    theme.twofold,
     resolveMods(theme, mod),
     theme[propsClassName],
   );
 
   return (
-    <ul>
-      {children}
-    </ul>
+    <div className="className">
+    </div>
   );
 };
 
-Accordion.propTypes = {
+Twofolds.propTypes = {
   className: PropTypes.string,
 
-  // href: PropTypes.string.isRequired,
-
-  variant: PropTypes.oneOf([
-    // 'before',
-    // 'after',
-  ]),
-
-  // icon: PropTypes.string,
+  active: PropTypes.bool,
 
   children: PropTypes.node,
 
@@ -50,7 +42,7 @@ Accordion.propTypes = {
 
   theme: PropTypes.shape({
     // Base
-    accordion: PropTypes.string.isRequired,
+    twofold: PropTypes.string.isRequired,
 
     // Variants
     before: PropTypes.string,
@@ -60,4 +52,4 @@ Accordion.propTypes = {
 };
 
 
-export default Accordion;
+export default Twofolds;

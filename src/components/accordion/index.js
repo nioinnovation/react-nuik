@@ -1,4 +1,4 @@
 import { themr } from 'react-css-themr';
-import Accordion from './Accordion';
+import Accordion from './accordion';
 
-export default themr('Accordion')(Accordion);
+export default themr('accordion')(Accordion);

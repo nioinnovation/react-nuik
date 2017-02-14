@@ -15,17 +15,15 @@ A Twofold is the inner element in an Accordion.
   <Twofold heading="pick me" subheading="the skinny" active>details here</Twofold>
 </Accordion>
 ```
-## Properties
 
-### accordion
+## Properties
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `variant` | <code>'single'&#124;'multi'</code> | Determines whether only one Twofold can be expanded at a time, or whether multiple Twofolds can be open simultaneously. Default is `multi`.
+| `mod` | `string|Array<string>` | Apply custom mods from the theme on the Accordion.
 
 ## Theme
-
-### accordion
 
 | Name | Description |
 | ---  | ----------- |

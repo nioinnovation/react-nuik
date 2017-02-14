@@ -16,16 +16,14 @@ A Twofold is the inner element in an Accordion.
 
 ## Properties
 
-### twofold
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `active` | `boolean` | If present, Twofold is open.
 | `heading` | `string` | The contents of the heading. Text only(?).
 | `subheading` | `string` | The contents of the subheading. Text only(?).
+| `mod` | `string|Array<string>` | Apply custom mods from the theme on the Twofold.
 
 ##Theme
-
-### twofold
 
 | Name | Description |
 | ---  | ----------- |

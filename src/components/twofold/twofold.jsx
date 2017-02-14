@@ -10,6 +10,8 @@ const Twofolds = (props: *) => {
     className: propsClassName,
     theme,
     active,
+    heading,
+    subheading,
     children,
     mod,
     ...rest
@@ -22,8 +24,25 @@ const Twofolds = (props: *) => {
     theme[propsClassName],
   );
 
+  const detailClassName = classNames(
+    theme.detail,
+    !!active && theme.active,
+  );
+
   return (
     <div className="className">
+      <h3 className={theme.heading}>
+        {heading}
+        <span className={theme.subheading}>
+          {subheading}
+        </span>
+        <i className={theme.icon}>
+          *
+        </i>
+      </h3>
+      <div className={detailClassName}>
+        {children}
+      </div>
     </div>
   );
 };
@@ -43,11 +62,10 @@ Twofolds.propTypes = {
   theme: PropTypes.shape({
     // Base
     twofold: PropTypes.string.isRequired,
-
-    // Variants
-    before: PropTypes.string,
-    after: PropTypes.string,
-
+    detail: PropTypes.string.isRequired,
+    heading: PropTypes.string,
+    subheading: PropTypes.string,
+    icon: PropTypes.string,
   }).isRequired,
 };
 

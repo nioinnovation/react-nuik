@@ -32,11 +32,9 @@ const Accordion = (props: *) => {
 Accordion.propTypes = {
   className: PropTypes.string,
 
-  // href: PropTypes.string.isRequired,
-
   variant: PropTypes.oneOf([
-    // 'before',
-    // 'after',
+    'single',
+    'multi',
   ]),
 
   // icon: PropTypes.string,

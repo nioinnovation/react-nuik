@@ -2,7 +2,7 @@
 
 An Accordion is a List made up of collapsible Twofolds.
 
-Twofold is a component made up of two parts: a heading and details. Twofolds are expandable and collapsible. Initially, a Twofold shows summary information and can be subsequently expanded to show more detailed information.
+Twofold is a component made up of two parts: a heading and details. A Twofold is expandable and collapsible. Initially, a Twofold shows summary information and can be subsequently expanded to show more detailed information.
 
 A Twofold is the inner element in an Accordion.
 

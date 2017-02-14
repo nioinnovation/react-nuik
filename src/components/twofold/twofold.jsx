@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
-const Twofolds = (props: *) => {
+const Twofold = (props: *) => {
   const {
     className: propsClassName,
     theme,
@@ -47,7 +47,7 @@ const Twofolds = (props: *) => {
   );
 };
 
-Twofolds.propTypes = {
+Twofold.propTypes = {
   className: PropTypes.string,
 
   active: PropTypes.bool,
@@ -70,4 +70,4 @@ Twofolds.propTypes = {
 };
 
 
-export default Twofolds;
+export default Twofold;

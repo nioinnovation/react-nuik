@@ -60,7 +60,7 @@ const Twofold = (props: *) => {
 
 Twofold.defaultProps = {
   icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" width="30">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" height="30" width="30">
       <circle cx="0" cy="0" r="14" stroke="none" />
       <path d="M-6 -3 0 3 6 -3" />
     </svg>

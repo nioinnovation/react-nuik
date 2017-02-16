@@ -24,6 +24,7 @@ const Twofold = (props: *) => {
     theme.twofold,
     resolveMods(theme, mod),
     theme[propsClassName],
+    ...rest,
   );
 
   const detailClassName = classNames(
@@ -31,7 +32,7 @@ const Twofold = (props: *) => {
     !!active && theme.active,
   );
 
-  // adjust the properties on the icon element as appropriate
+  // adjust the classes on the icon element as appropriate
   const clonedIcon = React.cloneElement(icon, {
     className: classNames(
       icon.props.className,
@@ -69,6 +70,9 @@ Twofold.defaultProps = {
 
 Twofold.propTypes = {
   className: PropTypes.string,
+  header: PropTypes.string,
+  heading: PropTypes.string,
+  subheading: PropTypes.string,
 
   active: PropTypes.bool.isRequired,
 

@@ -51,8 +51,8 @@ Accordion.propTypes = {
     accordion: PropTypes.string.isRequired,
 
     // Variants
-    before: PropTypes.string,
-    after: PropTypes.string,
+    single: PropTypes.string,
+    multi: PropTypes.string,
 
   }).isRequired,
 };

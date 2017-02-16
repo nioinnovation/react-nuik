@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import resolveMods from '../../helpers/resolve-mods';
 
 const Twofold = (props: *) => {
+
   const {
     className: propsClassName,
     theme,
@@ -14,9 +15,10 @@ const Twofold = (props: *) => {
     subheading,
     children,
     mod,
+    onChange,
+    icon,
     ...rest
   } = props;
-
 
   const className = classNames(
     theme.twofold,
@@ -29,25 +31,26 @@ const Twofold = (props: *) => {
     !!active && theme.active,
   );
 
-  const iconClassName = classNames(
-    !!active && theme.openIcon,
-    !active && theme.closedIcon,
-  );
+  // adjust the properties on the icon element as appropriate
+  const clonedIcon = React.cloneElement(icon, {
+    className: classNames(
+      icon.props.className,
+      theme.icon,
+      active ? theme.iconOpen : theme.iconClosed,
+    ),
+  });
 
   return (
     <div className={className}>
-      <div className={theme.header}>
+      <a tabIndex="0" className={theme.header} onClick={onChange}>
         <div className={theme.heading}>
           {heading}
         </div>
         <div className={theme.subheading}>
           {subheading}
         </div>
-        <svg className={iconClassName} xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" width="30">
-            <circle cx="0" cy="0" r="14" />
-            <path d="M-6 -3 0 3 6 -3" />
-        </svg>
-      </div>
+        { clonedIcon }
+      </a>
       <div className={detailClassName}>
         {children}
       </div>
@@ -55,12 +58,25 @@ const Twofold = (props: *) => {
   );
 };
 
+Twofold.defaultProps = {
+  icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" width="30">
+      <circle cx="0" cy="0" r="14" stroke="none" />
+      <path d="M-6 -3 0 3 6 -3" />
+    </svg>
+  ),
+};
+
 Twofold.propTypes = {
   className: PropTypes.string,
 
-  active: PropTypes.bool,
+  active: PropTypes.bool.isRequired,
 
   children: PropTypes.node,
+
+  onChange: PropTypes.func,
+
+  icon: PropTypes.element,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
@@ -76,6 +92,8 @@ Twofold.propTypes = {
     heading: PropTypes.string,
     subheading: PropTypes.string,
     icon: PropTypes.string,
+    iconOpen: PropTypes.string,
+    iconClosed: PropTypes.string,
   }).isRequired,
 };
 

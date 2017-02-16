@@ -9,11 +9,44 @@ A Twofold is the inner element in an Accordion.
 ## Example
 
 ```javascript
-<Accordion variant="multi">
-  <Twofold heading="some short summary" subheading="more short summary">details here</Twofold>
-  <Twofold heading="pithy title" subheading="I have more info" active>details here</Twofold>
-  <Twofold heading="pick me" subheading="the skinny" active>details here</Twofold>
-</Accordion>
+class SampleAccordion extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      active1: false,
+      active2: false,
+      active3: false
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Accordion</h2>
+        <Accordion>
+          <Twofold
+            heading={data.title1}
+            subheading={data.summary1}
+            onChange={() => this.setState({ active1: !this.state.active1 })}
+            active={this.state.active1}
+          >{data.details1}</Twofold>
+          <Twofold
+            heading={data.title2}
+            subheading={data.summary2}
+            onChange={() => this.setState({ active2: !this.state.active2 })}
+            active={this.state.active2}
+            >{data.details2}</Twofold>
+          <Twofold
+            heading={data.title3}
+            subheading={data.summary3}
+            onChange={() => this.setState({ active3: !this.state.active3 })}
+            active={this.state.active3}
+            >{data.details3}</Twofold>
+        </Accordion>
+      </div>
+    );
+  }
+}
 
 ```
 

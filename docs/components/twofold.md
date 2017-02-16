@@ -8,11 +8,45 @@ A Twofold is the inner element in an Accordion.
 ## Example
 
 ```javascript
-<Accordion variant="multi">
-  <Twofold heading="some short summary" subheading="more short summary">details here</Twofold>
-  <Twofold heading="pithy title" subheading="I have more info" active>details here</Twofold>
-  <Twofold heading="pick me" subheading="the skinny" active>details here</Twofold>
-</Accordion>
+class SampleAccordion extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      active1: false,
+      active2: false,
+      active3: false
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Accordion</h2>
+        <Accordion>
+          <Twofold
+            heading={data.title1}
+            subheading={data.summary1}
+            onChange={() => this.setState({ active1: !this.state.active1 })}
+            active={this.state.active1}
+          >{data.details1}</Twofold>
+          <Twofold
+            heading={data.title2}
+            subheading={data.summary2}
+            onChange={() => this.setState({ active2: !this.state.active2 })}
+            active={this.state.active2}
+            >{data.details2}</Twofold>
+          <Twofold
+            heading={data.title3}
+            subheading={data.summary3}
+            onChange={() => this.setState({ active3: !this.state.active3 })}
+            active={this.state.active3}
+            >{data.details3}</Twofold>
+        </Accordion>
+      </div>
+    );
+  }
+}
+
 ```
 
 ## Try it
@@ -22,9 +56,11 @@ _an embedded Codepen here_
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `active` | `boolean` | If present, Twofold is open.
+| `active` | `boolean` | Required. If true, Twofold is open.
 | `heading` | `string` | The contents of the heading. Text only(?).
 | `subheading` | `string` | The contents of the subheading. Text only(?).
+| `icon` | `element` | Defines the icon element. If undefined, defaults to a chevron. 
+| `onChange` | `function` | Function to handle open and close logic. _make this internal for this component?_
 | `mod` | `string|Array<string>` | Apply custom mods from the theme on the Twofold.
 
 ##Theme
@@ -37,5 +73,6 @@ _an embedded Codepen here_
 | `header` | Used to style the header area. |
 | `heading` | Used to style the main summary/header. |
 | `subheading` | Used to style subheadings within the summary/header area.|
-| `closedIcon` | Used to style the closed icon.|
-| `openIcon` | Used to style the open icon.|
+| `icon` | Used to style the base icon.|
+| `iconClosed` | Used to style the closed icon.|
+| `iconOpen` | Used to style the open icon.|

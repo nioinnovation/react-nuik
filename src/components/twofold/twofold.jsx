@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import resolveMods from '../../helpers/resolve-mods';
 
 const Twofold = (props: *) => {
-
   const {
     className: propsClassName,
     theme,

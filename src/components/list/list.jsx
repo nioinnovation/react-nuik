@@ -63,7 +63,7 @@ List.propTypes = {
   theme: PropTypes.shape({
     // Base
     list: PropTypes.string.isRequired,
-    item: PropTypes.string.isRequired,
+    item: PropTypes.string,
 
     // Variants
     numbered: PropTypes.string,

@@ -45,9 +45,9 @@ describe('A List', () => {
     const variant = 'numbered';
     theme.numbered = uniqueid();
 
-    it('should have a class with that variant', () => {
-      const wrapper = shallow(<List theme={theme} variant={variant}/>);
-      expect(wrapper.hasClass(theme[variant])).to.be.true;
+    it('should have a class with that variant on the list item.', () => {
+      const wrapper = shallow(<List theme={theme} variant={variant}>{child1}</List>);
+      expect(wrapper.find('li').hasClass(theme[variant])).to.be.true;
     });
 
   });

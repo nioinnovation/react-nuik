@@ -18,12 +18,14 @@ const Accordion = (props: *) => {
 
   const className = classNames(
     theme.accordion,
+    !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
+    ...rest,
   );
 
   return (
-    <div>
+    <div className={className}>
       {children}
     </div>
   );

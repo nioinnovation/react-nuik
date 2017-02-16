@@ -5,12 +5,17 @@ import { shallow } from 'enzyme';
 
 import Twofold from '../../src/components/twofold/twofold';
 
-describe('An Twofold', () => {
-  const theme = { twofold: uniqueid() };
+describe('A Twofold', () => {
+  const theme = {
+    twofold: uniqueid(),
+    detail: uniqueid(),
+    active: uniqueid(),
+  };
+  const active = false;
   // const child = uniqueid();
 
   it('should have a twofold class.', () => {
-    const wrapper = shallow(<Twofold />);
+    const wrapper = shallow(<Twofold theme={theme} active={active}/>);
     expect(wrapper.hasClass(theme.twofold)).to.be.true;
   });
 

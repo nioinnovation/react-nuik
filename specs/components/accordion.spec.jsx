@@ -10,7 +10,7 @@ describe('An Accordion', () => {
   // const child = uniqueid();
 
   it('should have a accordion class.', () => {
-    const wrapper = shallow(<Accordion />);
+    const wrapper = shallow(<Accordion theme={theme}/>);
     expect(wrapper.hasClass(theme.accordion)).to.be.true;
   });
 

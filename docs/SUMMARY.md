@@ -8,3 +8,4 @@
   * [checkbox](components/checkbox.md)
   * [loader](components/loader.md)
   * [list](components/list.md)
+  * [progress bar](components/progress.md)

@@ -4,58 +4,50 @@ Twofold is a component made up of two parts: a heading and details. A Twofold is
 
 A Twofold is the inner element in an Accordion.
 
+If wrapped in an Accordion, a Twofold's `active` and `onChange` props are automatically handled by the parent Accordion component.
+
 ## Example
 
 ```javascript
-class SampleAccordion extends React.Component {
+const data = {
+  title1: 'Main Summary Here',
+  summary1: 'More information about the main topic. ',
+  details1: 'An entire paragraph that goes more in depth and is revealed when the Twofold is opened. The header is always visible but the details expand only when the header bar is clicked. You can choose your own icon to indicate that there are more details, but the default icon is a chevron. You can use the default n.io theme or customize the theme to your liking with the class modules listed in the theme object.',
+};
+
+class SampleTwofold extends React.Component {
   constructor(props) {
     super();
     this.state = {
       active1: false,
-      active2: false,
-      active3: false
     };
   }
 
   render() {
     return (
       <div>
-        <h2>Accordion</h2>
-        <Accordion>
-          <Twofold
-            heading={data.title1}
-            subheading={data.summary1}
-            onChange={() => this.setState({ active1: !this.state.active1 })}
-            active={this.state.active1}
-          >{data.details1}</Twofold>
-          <Twofold
-            heading={data.title2}
-            subheading={data.summary2}
-            onChange={() => this.setState({ active2: !this.state.active2 })}
-            active={this.state.active2}
-            >{data.details2}</Twofold>
-          <Twofold
-            heading={data.title3}
-            subheading={data.summary3}
-            onChange={() => this.setState({ active3: !this.state.active3 })}
-            active={this.state.active3}
-            >{data.details3}</Twofold>
-        </Accordion>
+        <h2>Twofold</h2>
+        <Twofold
+          heading={data.title1}
+          subheading={data.summary1}
+          onChange={() => this.setState({ active1: !this.state.active1 })}
+          active={this.state.active1}
+        >{data.details1}</Twofold>
       </div>
     );
   }
-}
+};
 ```
 
 ## Properties
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `active` | `boolean` | Required. If true ,Twofold is open.
+| `active` | `boolean` | Required. If true, Twofold is open. Handled by Accordion component if wrapped inside an Accordion.
 | `heading` | `string` | The contents of the heading. Text only(?).
 | `subheading` | `string` | The contents of the subheading. Text only(?).
 | `icon` | `element` | Defines the icon element. If not defined, defaults to a chevron.
-| `onChange` | `function` | Function to handle open and close logic. _make this internal for this component?_
+| `onChange` | `function` | Function to handle open and close logic. Handled by Accordion component if wrapped inside an Accordion.
 | `mod` | `string|Array<string>` | Apply custom mods from the theme on the Twofold.
 
 ##Theme
@@ -69,5 +61,5 @@ class SampleAccordion extends React.Component {
 | `heading` | Used to style the main summary/header. |
 | `subheading` | Used to style subheadings within the summary/header area.|
 | `icon` | Used to style the base icon.|
-| `iconClosed` | Used to style the closed icon.|
 | `iconOpen` | Used to style the open icon.|
+| `iconClosed` | Used to style the closed icon.|

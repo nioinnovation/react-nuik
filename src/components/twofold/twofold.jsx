@@ -69,9 +69,9 @@ Twofold.defaultProps = {
 
 Twofold.propTypes = {
   className: PropTypes.string,
-  header: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  icon: PropTypes.element,
 
   active: PropTypes.bool.isRequired,
 
@@ -79,7 +79,6 @@ Twofold.propTypes = {
 
   onChange: PropTypes.func,
 
-  icon: PropTypes.element,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),

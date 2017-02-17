@@ -1,6 +1,6 @@
 # Twofold ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
-A Twofold is a component made up of two parts: a heading and details. A Twofold is expandable and collapsible. Initially, a Twofold shows summary information and can be subsequently expanded to show more detailed information.
+A Twofold is an expandable component with two parts: a summary and details. Initially, Twofolds show the summary information and they can subsequently be expanded to reveal their details.
 
 A Twofold is the inner element in an Accordion.
 

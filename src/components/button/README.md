@@ -11,7 +11,7 @@ A general purpose button component.
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `href` | `string` | If set, make the Button a `<a>` element rather than a `<button>`.
+| `href` | `string` | If set, make the Button an `<a>` element rather than a `<button>`.
 | `variant` | `'primary'|'alternate'|'affirmative'|'warning'|'danger'` | Alter the desired semantic variant of the Button.
 | `size` | `'huge'|'large'|'small'|'tiny'` | Alter the size of the Button.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Button.

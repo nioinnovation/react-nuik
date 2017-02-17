@@ -54,7 +54,7 @@ an embedded Codepen here
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `href` | `string` | If set, make the Button a `<a>` element rather than a `<button>`.
+| `href` | `string` | If set, make the Button an `<a>` element rather than a `<button>`.
 | `variant` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'</code> | Alter the desired semantic variant of the Button.
 | `size` | <code>'huge'&#124;'large'&#124;'small'&#124;'tiny'</code> | Alter the size of the Button.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Button.

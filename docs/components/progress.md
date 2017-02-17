@@ -17,6 +17,7 @@ _an embedded Codepen here_
 | --- | --- | --- | --- |
 | `variant` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'</code> | Alter the fill color of the Progress Bar.
 | `percent` | `number` between 0 and 1 | The percent of fill.
+| `disabled` | `boolean` | Adds a disabled style to the className.
 | `mod` | `string|Array<string>` | Apply custom mods from the theme on the Progress Bar.
 
 ## Theme
@@ -29,3 +30,4 @@ _an embedded Codepen here_
 | `affirmative` | Affirmative colored fill. |
 | `warning` | Warning colored fill. |
 | `danger` | Danger colored fill. |
+| `disabled` | Disabled colored fill. |

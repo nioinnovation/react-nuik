@@ -54,7 +54,7 @@ const SampleLists = () => {
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `variant` | <code>'none'&#124;'numbered'</code> | Circle bullets are the default. If set, determines no bullets or numbered bullets.
-| `mod` | `string|Array<string>` | Apply custom mods from the theme on the List.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the List.
 
 ## Theme
 

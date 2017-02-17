@@ -12,26 +12,26 @@ const Progress = (props: *) => {
     percent,
     variant,
     mod,
+    disabled,
     ...rest
   } = props;
 
   const className = classNames(
     theme.progress,
-    !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
     ...rest,
   );
 
   const fillClassName = classNames(
-    !!variant && theme[variant],
-    resolveMods(theme, mod),
-    theme[propsClassName],
+    theme.fill,
+    !!disabled && theme.disabled,
+    !disabled && !!variant && theme[variant],
   );
 
   return (
     <div className={className}>
-      <div className={fillClassName} style={`${percent}`} />
+      <div className={fillClassName} style={{width: `${percent * 100}%`}} />
     </div>
   );
 };

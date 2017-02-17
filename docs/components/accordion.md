@@ -58,10 +58,10 @@ _an embedded Codepen here_
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `variant` | <code>'single'&#124;'multi'</code> | Determines whether only one Twofold can be expanded at a time, or whether multiple Twofolds can be open simultaneously. Default is `multi`.
-| `mod` | `string|Array<string>` | Apply custom mods from the theme on the Accordion.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Accordion.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `accordion` | Required. Used to render a default accordion. |
+| `accordion` | Required. Used to render a default Accordion. |

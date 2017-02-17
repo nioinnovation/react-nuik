@@ -10,16 +10,16 @@ If wrapped in an Accordion, a Twofold's `active` and `onChange` props are automa
 
 ```javascript
 const data = {
-  title1: 'Main Summary Here',
-  summary1: 'More information about the main topic. ',
-  details1: 'An entire paragraph that goes more in depth and is revealed when the Twofold is opened. The header is always visible but the details expand only when the header bar is clicked. You can choose your own icon to indicate that there are more details, but the default icon is a chevron. You can use the default n.io theme or customize the theme to your liking with the class modules listed in the theme object.',
+  title: 'Main Summary Here',
+  summary: 'More information about the main topic. ',
+  details: 'An entire paragraph that goes more in depth and is revealed when the Twofold is opened. The header is always visible but the details expand only when the header bar is clicked. You can choose your own icon to indicate that there are more details, but the default icon is a chevron. You can use the default n.io theme or customize the theme to your liking with the class modules listed in the theme object.',
 };
 
 class SampleTwofold extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      active1: false,
+      active: false,
     };
   }
 
@@ -28,11 +28,11 @@ class SampleTwofold extends React.Component {
       <div>
         <h2>Twofold</h2>
         <Twofold
-          heading={data.title1}
-          subheading={data.summary1}
-          onChange={() => this.setState({ active1: !this.state.active1 })}
-          active={this.state.active1}
-        >{data.details1}</Twofold>
+          heading={data.title}
+          subheading={data.summary}
+          onChange={() => this.setState({ active: !this.state.active })}
+          active={this.state.active}
+        >{data.details}</Twofold>
       </div>
     );
   }
@@ -48,7 +48,7 @@ class SampleTwofold extends React.Component {
 | `subheading` | `string` | The contents of the subheading. Text only(?).
 | `icon` | `element` | Defines the icon element. If not defined, defaults to a chevron.
 | `onChange` | `function` | Function to handle open and close logic. Handled by Accordion component if wrapped inside an Accordion.
-| `mod` | `string|Array<string>` | Apply custom mods from the theme on the Twofold.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Twofold.
 
 ##Theme
 

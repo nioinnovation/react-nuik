@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import uniqueid from 'lodash.uniqueid';
 
 import Progress from '../../src/components/progress-bar/progress-bar';
@@ -36,7 +35,13 @@ describe('A Progress Bar', () => {
   it('should include additional class names that are defined.', () => {
     const additionalClass = uniqueid();
     theme[additionalClass] = uniqueid();
-    const wrapper = shallow(<Progress className={additionalClass} theme={theme} percent={percent} />);
+    const wrapper = shallow(
+      <Progress
+        className={additionalClass}
+        theme={theme}
+        percent={percent}
+      />
+    );
     expect(wrapper.hasClass(theme[additionalClass])).to.be.true;
   });
 
@@ -61,13 +66,14 @@ describe('A Progress Bar', () => {
         'warning',
         'danger',
       ];
-      variantOptions.map(v => {
+      variantOptions.map((v) => {
           const wrapper = shallow(<Progress theme={themeDisabled} percent={percent} variant={v} disabled />);
           expect(wrapper.find(`.${themeDisabled.fill}`).hasClass(themeDisabled[v])).to.be.false;
       });
     });
 
   });
+
   describe('with a complete theme', () => {
 
     const themeAll = {
@@ -131,15 +137,5 @@ describe('A Progress Bar', () => {
       expect(wrapper.find(`.${theme.fill}`).hasClass('undefined')).to.be.false;
     });
 
-  //   it('should not have a class of "undefined" if the size is not in the theme.', () => {
-  //     const wrapper = shallow(<Progress theme={theme} size='large' />);
-  //     expect(wrapper.hasClass('undefined')).to.be.false;
-  //   });
-  //
-  //   it('should not have a class of "undefined" if the mod is not in the theme.', () => {
-  //     const wrapper = shallow(<Progress theme={theme} mod='custom' />);
-  //     expect(wrapper.hasClass('undefined')).to.be.false;
-  //   });
-  //
   });
 });

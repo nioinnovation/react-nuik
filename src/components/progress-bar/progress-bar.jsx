@@ -31,14 +31,14 @@ const Progress = (props: *) => {
 
   return (
     <div className={className}>
-      <div className={fillClassName} style={{width: `${percent * 100}%`}} />
+      <div className={fillClassName} style={{ width: `${percent * 100}%` }} />
     </div>
   );
 };
 
 Progress.propTypes = {
   className: PropTypes.string,
-  percent: PropTypes.number,
+  percent: PropTypes.number.isRequired,
 
   variant: PropTypes.oneOf([
     'primary',
@@ -48,6 +48,7 @@ Progress.propTypes = {
     'danger',
   ]),
 
+  disabled: PropTypes.bool,
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.string,
@@ -56,6 +57,7 @@ Progress.propTypes = {
   theme: PropTypes.shape({
     // Base
     progress: PropTypes.string.isRequired,
+    fill: PropTypes.string.isRequired,
 
     // Variants
     primary: PropTypes.string,

@@ -39,8 +39,6 @@ Accordion.propTypes = {
     'multi',
   ]),
 
-  // icon: PropTypes.string,
-
   children: PropTypes.node,
 
   mod: PropTypes.oneOfType([

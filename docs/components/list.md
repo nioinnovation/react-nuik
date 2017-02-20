@@ -54,11 +54,13 @@ const SampleLists = () => {
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `variant` | <code>'none'&#124;'numbered'</code> | Circle bullets are the default. If set, determines no bullets or numbered bullets.
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the List.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `list` | Required. Used to render a default list. |
-| `numbered` | Used to render a numbered list. |
-| `none` | Used to render a list with no bullets. |
+| `list` | Required. Used to render a default List. |
+| `item` | Required. Styles for a default list item. |
+| `numbered` | Styles for a numbered list. |
+| `none` | Styles for a list with no bullets. |

@@ -8,3 +8,5 @@
   * [checkbox](components/checkbox.md)
   * [loader](components/loader.md)
   * [list](components/list.md)
+  * [twofold](components/twofold.md)
+  * [accordion](components/accordion.md)

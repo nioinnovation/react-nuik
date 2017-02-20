@@ -15,7 +15,6 @@ const Accordion = (props: *) => {
     ...rest
   } = props;
 
-
   const className = classNames(
     theme.accordion,
     !!variant && theme[variant],
@@ -56,6 +55,5 @@ Accordion.propTypes = {
 
   }).isRequired,
 };
-
 
 export default Accordion;

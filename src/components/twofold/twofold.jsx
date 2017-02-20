@@ -79,7 +79,6 @@ Twofold.propTypes = {
 
   onChange: PropTypes.func,
 
-
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.string,
@@ -98,6 +97,5 @@ Twofold.propTypes = {
     iconClosed: PropTypes.string,
   }).isRequired,
 };
-
 
 export default Twofold;

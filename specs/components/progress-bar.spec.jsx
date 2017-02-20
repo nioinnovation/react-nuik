@@ -46,7 +46,6 @@ describe('A Progress Bar', () => {
   });
 
   describe('that is disabled', () => {
-
     const themeDisabled = {
       progress: uniqueid(),
       fill: uniqueid(),
@@ -71,11 +70,9 @@ describe('A Progress Bar', () => {
           expect(wrapper.find(`.${themeDisabled.fill}`).hasClass(themeDisabled[v])).to.be.false;
       });
     });
-
   });
 
   describe('with a complete theme', () => {
-
     const themeAll = {
       progress: uniqueid(),
       fill: uniqueid(),
@@ -99,11 +96,9 @@ describe('A Progress Bar', () => {
         expect(wrapper.find(`.${themeAll.fill}`).hasClass(themeAll[v])).to.be.true;
       });
     });
-
   });
 
   describe('with a theme with mods,', () => {
-
     const themeMod = {
       progress: uniqueid(),
       fill: uniqueid(),
@@ -122,11 +117,9 @@ describe('A Progress Bar', () => {
       expect(wrapper.hasClass(themeMod.mod1)).to.be.true;
       expect(wrapper.hasClass(themeMod.mod2)).to.be.true;
     });
-
   });
 
   describe('with a minimal theme,', () => {
-
     it('should ignore variants it can\'t resolve.', () => {
       const wrapper = shallow(<Progress theme={theme} variant='primary' percent={percent} />);
       expect(wrapper.find(`.${theme.fill}`).hasClass(theme.primary)).to.be.false;
@@ -136,6 +129,5 @@ describe('A Progress Bar', () => {
       const wrapper = shallow(<Progress theme={theme} variant='primary' percent={percent} />);
       expect(wrapper.find(`.${theme.fill}`).hasClass('undefined')).to.be.false;
     });
-
   });
 });

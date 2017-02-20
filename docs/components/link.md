@@ -33,6 +33,7 @@ _an embedded Codepen here_
 | `href` | `string` | Required. The the destination of the link.
 | `icon` | 'string' | The content of the icon.
 | `variant` | <code>'before'&#124;'after'</code> | If set, determines where to display the link icon (`before` is default).
+| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Link.
 
 ## Theme
 

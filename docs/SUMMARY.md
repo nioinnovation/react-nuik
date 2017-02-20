@@ -9,3 +9,5 @@
   * [loader](components/loader.md)
   * [list](components/list.md)
   * [progress bar](components/progress.md)
+  * [twofold](components/twofold.md)
+  * [accordion](components/accordion.md)

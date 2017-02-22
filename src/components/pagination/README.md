@@ -1,5 +1,6 @@
 # Pagination ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
+A Pagination component provides context, showing both the user's current location and a range of possible navigation destinations.
 
 ## Example
 
@@ -11,11 +12,12 @@
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `numberOfPages` | <code>'single'&#124;'multi'</code> | Determines whether only one Twofold can be expanded at a time, or whether multiple Twofolds can be open simultaneously. Default is `multi`.
-| `active` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Pagination.
+| `numberOfPages` | `number` | Sets the maximum number of pages visible in the Pagination component before the `prev` or `next` indicator is added.
+| `active` | `boolean` | Indicates the current active page.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
 | `pagination` | Required. Used to render a default Pagination. |
+| `active` | Required. Used to render a default Pagination. |

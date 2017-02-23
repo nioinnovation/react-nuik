@@ -24,7 +24,7 @@ class Pagination extends Component {
     const {
       className: propsClassName,
       theme,
-      numberOfPages,
+      pageRange,
       children,
       icon,
       mod,
@@ -57,7 +57,7 @@ class Pagination extends Component {
 
     const getActiveArray = (start, end) => pageArray.slice(start, end);
 
-    const max = this.state.activeArrayStart + (1 * numberOfPages);
+    const max = this.state.activeArrayStart + (1 * pageRange);
     // adjust end of array to be highest index
     const adjustedEnd = max > pageArray.length ? pageArray.length : max;
 
@@ -66,12 +66,12 @@ class Pagination extends Component {
     const first = (1 * activeArray[0].key);
     const last = (1 * activeArray[activeArray.length - 1].key);
 
-    const min = first - numberOfPages - 1;
+    const min = first - pageRange - 1;
     // adjust beginning of array to be no less than 0
     const prevStart = min > 0 ? min : 0;
 
     const handlePrev = () => {
-      getActiveArray(prevStart, prevStart + numberOfPages);
+      getActiveArray(prevStart, prevStart + pageRange);
       this.setState({ activeArrayStart: prevStart, activePage: prevStart + 1 });
     };
 
@@ -104,7 +104,7 @@ class Pagination extends Component {
     );
 
     const Next = () => (
-      <a href={children[last]} className={nextClasses} onClick={() => handleNext(prevStart + numberOfPages)}>
+      <a href={children[last]} className={nextClasses} onClick={() => handleNext(prevStart + pageRange)}>
         {icon}
       </a>
     );
@@ -120,7 +120,7 @@ class Pagination extends Component {
 }
 
 Pagination.defaultProps = {
-  numberOfPages: 6,
+  pageRange: 6,
   icon: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" height="20" width="20">
       <circle cx="0" cy="0" r="14" stroke="none" />
@@ -133,7 +133,7 @@ Pagination.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.node,
 
-  numberOfPages: PropTypes.number,
+  pageRange: PropTypes.number,
 
   children: PropTypes.node,
 

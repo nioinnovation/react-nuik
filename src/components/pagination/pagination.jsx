@@ -58,6 +58,7 @@ class Pagination extends Component {
     const getActiveArray = (start, end) => pageArray.slice(start, end);
 
     const max = this.state.activeArrayStart + (1 * numberOfPages);
+    // adjust end of array to be a value that exists
     const adjustedEnd = max > pageArray.length ? pageArray.length : max;
 
     const activeArray = getActiveArray(this.state.activeArrayStart, adjustedEnd);
@@ -66,6 +67,7 @@ class Pagination extends Component {
     const last = (1 * activeArray[activeArray.length - 1].key);
 
     const min = first - numberOfPages - 1;
+    // adjust beginning of array to always start at 0
     const prevStart = min > 0 ? min : 0;
 
     const handlePrev = () => {
@@ -74,8 +76,8 @@ class Pagination extends Component {
     };
 
     const handleNext = () => {
-      this.setState({ activeArrayStart: last, activePage: last + 1 });
       getActiveArray(last, adjustedEnd);
+      this.setState({ activeArrayStart: last, activePage: last + 1 });
     };
 
     const className = classNames(
@@ -92,19 +94,19 @@ class Pagination extends Component {
 
     const nextClasses = classNames(
       theme.next,
-      adjustedEnd >= pageArray.length && theme.hidden,
+      adjustedEnd >= pageArray.length && theme.hidden : '',
     );
 
     const Prev = () => (
-      <button className={prevClasses} onClick={() => handlePrev(prevStart)}>
+      <a href={children[prevStart]} className={prevClasses} onClick={() => handlePrev(prevStart)}>
         {icon}
-      </button>
+      </a>
     );
 
     const Next = () => (
-      <button className={nextClasses} onClick={() => handleNext(prevStart + numberOfPages)}>
+      <a href={children[last]} className={nextClasses} onClick={() => handleNext(prevStart + numberOfPages)}>
         {icon}
-      </button>
+      </a>
     );
 
     return (

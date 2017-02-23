@@ -1,5 +1,8 @@
 # Pagination ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
+A Pagination component provides context, showing both the user's current location and a range of possible navigation destinations.
+
+The Pagination component's children are a list (array) of page urls.
 
 ## Example
 
@@ -37,8 +40,8 @@ _an embedded Codepen here_
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `icon` | `node` | Defines the `prev` and `next` icons. Default is chevron.
-| `pageRange` | `number` | Sets the maximum number of pages visible in the Pagination component before the `prev` or `next` indicator is added.
+| `icon` | `node` | Defines the `prev` and `next` icons. Default is a chevron stroke in a circle fill.
+| `pageRange` | `number` | Sets the maximum number of pages visible in the Pagination component before the `prev` or `next` indicator is added. Default is 6.
 | `mod` | `string|Array<string>` | Apply custom mods from the theme on Pagination.
 | `children` | `Array<string>` | Required. List of page urls to be linked to in Pagination.
 

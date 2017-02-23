@@ -94,7 +94,7 @@ class Pagination extends Component {
     const getActiveArray = (start, end) => pageArray.slice(start, end);
 
     const max = this.state.activeArrayStart + (1 * pageRange);
-    // adjust end of array to be highest index
+    // adjust end of array to be at most highest index
     const adjustedEnd = max > pageArray.length ? pageArray.length : max;
 
     const activeArray = getActiveArray(this.state.activeArrayStart, adjustedEnd);

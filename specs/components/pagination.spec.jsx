@@ -7,7 +7,6 @@ import Pagination from '../../src/components/pagination/pagination';
 
 describe('Pagination', () => {
   const theme = { pagination: uniqueid() };
-  // const pageRange = 2;
   const data = [uniqueid(), uniqueid(), uniqueid(), uniqueid(), uniqueid()];
   const child = data[0];
 

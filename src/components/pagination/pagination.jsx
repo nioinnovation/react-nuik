@@ -35,8 +35,9 @@ DirectionIcon.propTypes = {
   end: PropTypes.bool,
   direction: PropTypes.oneOf(['prev', 'next']),
   theme: PropTypes.shape({
-    prev: PropTypes.string.isRequired,
-    hidden: PropTypes.string.isRequired,
+    prev: PropTypes.string,
+    next: PropTypes.string,
+    hidden: PropTypes.string,
   }).isRequired,
 };
 
@@ -148,7 +149,7 @@ Pagination.propTypes = {
 
   pageRange: PropTypes.number,
 
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
@@ -157,10 +158,6 @@ Pagination.propTypes = {
 
   theme: PropTypes.shape({
     pagination: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    prev: PropTypes.string.isRequired,
-    next: PropTypes.string.isRequired,
-    hidden: PropTypes.string.isRequired,
     link: PropTypes.string,
     active: PropTypes.string,
   }).isRequired,

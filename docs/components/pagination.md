@@ -40,7 +40,7 @@ _an embedded Codepen here_
 | `icon` | `node` | Defines the `prev` and `next` icons. Default is chevron.
 | `pageRange` | `number` | Sets the maximum number of pages visible in the Pagination component before the `prev` or `next` indicator is added.
 | `mod` | `string|Array<string>` | Apply custom mods from the theme on Pagination.
-| `children` | `Array<string>` | List of page urls to be included in Pagination.
+| `children` | `Array<string>` | Required. List of page urls to be linked to in Pagination.
 
 ## Theme
 

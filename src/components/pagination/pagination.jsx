@@ -58,7 +58,7 @@ class Pagination extends Component {
     const getActiveArray = (start, end) => pageArray.slice(start, end);
 
     const max = this.state.activeArrayStart + (1 * numberOfPages);
-    // adjust end of array to be a value that exists
+    // adjust end of array to be highest index
     const adjustedEnd = max > pageArray.length ? pageArray.length : max;
 
     const activeArray = getActiveArray(this.state.activeArrayStart, adjustedEnd);
@@ -67,7 +67,7 @@ class Pagination extends Component {
     const last = (1 * activeArray[activeArray.length - 1].key);
 
     const min = first - numberOfPages - 1;
-    // adjust beginning of array to always start at 0
+    // adjust beginning of array to be no less than 0
     const prevStart = min > 0 ? min : 0;
 
     const handlePrev = () => {
@@ -94,7 +94,7 @@ class Pagination extends Component {
 
     const nextClasses = classNames(
       theme.next,
-      adjustedEnd >= pageArray.length && theme.hidden : '',
+      adjustedEnd >= pageArray.length && theme.hidden,
     );
 
     const Prev = () => (
@@ -149,6 +149,8 @@ Pagination.propTypes = {
     prev: PropTypes.string.isRequired,
     next: PropTypes.string.isRequired,
     hidden: PropTypes.string.isRequired,
+    link: PropTypes.string,
+    active: PropTypes.string,
   }).isRequired,
 };
 

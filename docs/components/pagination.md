@@ -7,7 +7,7 @@ The Pagination component's children are a list (array) of page urls.
 ## Example
 
 ```javascript
-const data = [
+const pages = [
   '#link1',
   '#link2',
   '#link3',
@@ -26,7 +26,7 @@ const data = [
 const SamplePagination = () => {
   return (
     <div>
-      <Pagination pageRange={3} >{data}</Pagination>
+      <Pagination pageRange={3} >{pages}</Pagination>
     </div>
   );
 };

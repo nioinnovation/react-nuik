@@ -1,11 +1,12 @@
 // @flow
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
-class Pagination extends React.Component {
+class Pagination extends Component {
+  static defaultProps: {};
   constructor() {
     super();
     this.state = {
@@ -14,12 +15,18 @@ class Pagination extends React.Component {
     };
   }
 
+  state: {
+    activeArrayStart: number,
+    activePage: number,
+  };
+
   render() {
     const {
       className: propsClassName,
       theme,
       numberOfPages,
       children,
+      icon,
       mod,
       ...rest
     } = this.props;
@@ -78,13 +85,27 @@ class Pagination extends React.Component {
       ...rest,
     );
 
-    const Prev = () => (first > 1 ?
-      <button className={theme.prev} onClick={() => handlePrev(prevStart)} /> :
-      null);
+    const prevClasses = classNames(
+      theme.prev,
+      first <= 1 && theme.hidden,
+    );
 
-    const Next = () => (adjustedEnd < pageArray.length ?
-      <button className={theme.next} onClick={() => handleNext(prevStart + numberOfPages)} /> :
-      null);
+    const nextClasses = classNames(
+      theme.next,
+      adjustedEnd >= pageArray.length && theme.hidden,
+    );
+
+    const Prev = () => (
+      <button className={prevClasses} onClick={() => handlePrev(prevStart)}>
+        {icon}
+      </button>
+    );
+
+    const Next = () => (
+      <button className={nextClasses} onClick={() => handleNext(prevStart + numberOfPages)}>
+        {icon}
+      </button>
+    );
 
     return (
       <div className={className}>
@@ -98,10 +119,17 @@ class Pagination extends React.Component {
 
 Pagination.defaultProps = {
   numberOfPages: 6,
+  icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 30 30" height="20" width="20">
+      <circle cx="0" cy="0" r="14" stroke="none" />
+      <path d="M-6 -3 0 3 6 -3" />
+    </svg>
+  ),
 };
 
 Pagination.propTypes = {
   className: PropTypes.string,
+  icon: PropTypes.node,
 
   numberOfPages: PropTypes.number,
 
@@ -118,6 +146,7 @@ Pagination.propTypes = {
     icon: PropTypes.string.isRequired,
     prev: PropTypes.string.isRequired,
     next: PropTypes.string.isRequired,
+    hidden: PropTypes.string.isRequired,
   }).isRequired,
 };
 

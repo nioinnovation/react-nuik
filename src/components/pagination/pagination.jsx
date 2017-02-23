@@ -6,11 +6,11 @@ import classNames from 'classnames';
 import resolveMods from '../../helpers/resolve-mods';
 
 class Pagination extends React.Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       activeArrayStart: 0,
-      activePage: 1
+      activePage: 1,
     };
   }
 
@@ -19,8 +19,6 @@ class Pagination extends React.Component {
       className: propsClassName,
       theme,
       numberOfPages,
-      // onChange,
-      // active,
       children,
       mod,
       ...rest
@@ -50,36 +48,27 @@ class Pagination extends React.Component {
       );
     });
 
-    const getActiveArray = start => pageArray.slice(start, start + numberOfPages);
+    const getActiveArray = (start, end) => pageArray.slice(start, end);
 
-    const activeArray = getActiveArray(this.state.activeArrayStart);
-    console.log('active array length', activeArray.length);
+    const max = this.state.activeArrayStart + (1 * numberOfPages);
+    const adjustedEnd = max > pageArray.length ? pageArray.length : max;
+
+    const activeArray = getActiveArray(this.state.activeArrayStart, adjustedEnd);
 
     const first = (1 * activeArray[0].key);
-    const last = (1 * activeArray[numberOfPages - 1].key);
+    const last = (1 * activeArray[activeArray.length - 1].key);
+
     const min = first - numberOfPages - 1;
-    const max = pageArray.length;
-    console.log('max', max);
     const prevStart = min > 0 ? min : 0;
-    const nextStart = last + numberOfPages < max ? last : pageArray.length - numberOfPages;
-    const nextArray = getActiveArray(last);
-    const prevArray = getActiveArray(prevStart);
-    console.log('first', first);
-    console.log('last', last);
-    console.log('active', active);
-    console.log('next', nextArray);
-    console.log('prev', prevArray);
 
     const handlePrev = () => {
-      console.log('handleprev start value', prevStart);
-      getActiveArray(prevStart);
+      getActiveArray(prevStart, prevStart + numberOfPages);
       this.setState({ activeArrayStart: prevStart, activePage: prevStart + 1 });
     };
 
     const handleNext = () => {
-      console.log('handleNext start value', nextStart);
-      this.setState({ activeArrayStart: nextStart, activePage: nextStart + 1 });
-      getActiveArray(last);
+      this.setState({ activeArrayStart: last, activePage: last + 1 });
+      getActiveArray(last, adjustedEnd);
     };
 
     const className = classNames(
@@ -89,11 +78,19 @@ class Pagination extends React.Component {
       ...rest,
     );
 
+    const Prev = () => (first > 1 ?
+      <button className={theme.prev} onClick={() => handlePrev(prevStart)} /> :
+      null);
+
+    const Next = () => (adjustedEnd < pageArray.length ?
+      <button className={theme.next} onClick={() => handleNext(prevStart + numberOfPages)} /> :
+      null);
+
     return (
       <div className={className}>
-        <button className={theme.prev} onClick={() => handlePrev(prevStart)}>prev</button>
+        <Prev />
         {activeArray}
-        <button className={theme.next} onClick={() => handleNext(nextStart)}>next</button>
+        <Next />
       </div>
     );
   }
@@ -105,8 +102,6 @@ Pagination.defaultProps = {
 
 Pagination.propTypes = {
   className: PropTypes.string,
-  // active: PropTypes.number.isRequired,
-  // onChange: PropTypes.func,
 
   numberOfPages: PropTypes.number,
 

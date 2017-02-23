@@ -5,6 +5,41 @@ import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
 
+const DirectionIcon = (props: *) => {
+  const {
+    href,
+    onChange,
+    theme,
+    icon,
+    end,
+    direction,
+  } = props;
+
+  const iconClasses = classNames(
+    theme[direction],
+    end && theme.hidden,
+  );
+
+  return (
+    <a href={href} className={iconClasses} onClick={onChange}>
+      {icon}
+    </a>
+  );
+};
+
+DirectionIcon.propTypes = {
+  className: PropTypes.string,
+  href: PropTypes.string,
+  onChange: PropTypes.func,
+  icon: PropTypes.node,
+  end: PropTypes.bool,
+  direction: PropTypes.oneOf(['prev', 'next']),
+  theme: PropTypes.shape({
+    prev: PropTypes.string.isRequired,
+    hidden: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 class Pagination extends Component {
   static defaultProps: {};
   constructor() {
@@ -87,33 +122,11 @@ class Pagination extends Component {
       ...rest,
     );
 
-    const prevClasses = classNames(
-      theme.prev,
-      first <= 1 && theme.hidden,
-    );
-
-    const nextClasses = classNames(
-      theme.next,
-      adjustedEnd >= pageArray.length && theme.hidden,
-    );
-
-    const Prev = () => (
-      <a href={children[prevStart]} className={prevClasses} onClick={() => handlePrev(prevStart)}>
-        {icon}
-      </a>
-    );
-
-    const Next = () => (
-      <a href={children[last]} className={nextClasses} onClick={() => handleNext(prevStart + pageRange)}>
-        {icon}
-      </a>
-    );
-
     return (
       <div className={className}>
-        <Prev />
+        <DirectionIcon href={children[prevStart]} onChange={() => handlePrev(prevStart)} theme={theme} icon={icon} end={first <= 1} direction="prev" />
         {activeArray}
-        <Next />
+        <DirectionIcon href={children[last]} onChange={() => handleNext(prevStart + pageRange)} theme={theme} icon={icon} end={adjustedEnd >= pageArray.length} direction="next" />
       </div>
     );
   }
@@ -143,7 +156,6 @@ Pagination.propTypes = {
   ]),
 
   theme: PropTypes.shape({
-    // Base
     pagination: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
     prev: PropTypes.string.isRequired,

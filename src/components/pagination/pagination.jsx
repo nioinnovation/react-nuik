@@ -86,25 +86,25 @@ class Pagination extends Component {
 
       return (
         <a {...linkProps} >
-          {i + 1}
+          {pageNumber}
         </a>
       );
     });
 
-    const getActiveArray = (start, end) => pageArray.slice(start, end);
+    const first = this.state.activeArrayStart;
+    const last = (1 * this.state.activeArrayStart) + pageRange;
 
-    const max = this.state.activeArrayStart + (1 * pageRange);
+    // adjust beginning of array to be no less than 0
+    const min = first - pageRange - 1;
+    const prevStart = min > 0 ? min : 0;
+
     // adjust end of array to be at most highest index
+    const max = this.state.activeArrayStart + (1 * pageRange);
     const adjustedEnd = max > pageArray.length ? pageArray.length : max;
 
+    const getActiveArray = (start, end) => pageArray.slice(start, end);
+
     const activeArray = getActiveArray(this.state.activeArrayStart, adjustedEnd);
-
-    const first = (1 * activeArray[0].key);
-    const last = (1 * activeArray[activeArray.length - 1].key);
-
-    const min = first - pageRange - 1;
-    // adjust beginning of array to be no less than 0
-    const prevStart = min > 0 ? min : 0;
 
     const handlePrev = () => {
       getActiveArray(prevStart, prevStart + pageRange);
@@ -112,8 +112,8 @@ class Pagination extends Component {
     };
 
     const handleNext = () => {
-      getActiveArray(last, adjustedEnd);
       this.setState({ activeArrayStart: last, activePage: last + 1 });
+      getActiveArray(this.state.activeArrayStart, adjustedEnd);
     };
 
     const className = classNames(
@@ -125,9 +125,9 @@ class Pagination extends Component {
 
     return (
       <div className={className}>
-        <DirectionIcon href={children[prevStart]} onChange={() => handlePrev(prevStart)} theme={theme} icon={icon} end={first <= 1} direction="prev" />
+        <DirectionIcon href={children[this.state.activeArrayStart]} onChange={() => handlePrev(prevStart)} theme={theme} icon={icon} end={first <= 1} direction="prev" />
         {activeArray}
-        <DirectionIcon href={children[last]} onChange={() => handleNext(prevStart + pageRange)} theme={theme} icon={icon} end={adjustedEnd >= pageArray.length} direction="next" />
+        <DirectionIcon href={children[this.state.activeArrayStart]} onChange={() => handleNext(prevStart + pageRange)} theme={theme} icon={icon} end={adjustedEnd >= pageArray.length} direction="next" />
       </div>
     );
   }

@@ -38,6 +38,6 @@ const pages = [
 | `icon` | Required. Used to style the icon. |
 | `prev` | Required. Used to style the `prev` icon. |
 | `next` | Required. Used to style the `next` icon. |
-| `hidden` | Required. Used to style the icon when it is not active. |
+| `hidden` | Required. Used to style the icon when there are no previous or next pages. |
 | `link` | Used to style the link when it is not active. |
 | `active` | Required. Used to style the link when it is active. |

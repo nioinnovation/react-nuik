@@ -9,10 +9,10 @@ const DirectionIcon = (props: *) => {
   const {
     href,
     onChange,
-    theme,
     icon,
     end,
     direction,
+    theme,
   } = props;
 
   const iconClasses = classNames(
@@ -28,7 +28,6 @@ const DirectionIcon = (props: *) => {
 };
 
 DirectionIcon.propTypes = {
-  className: PropTypes.string,
   href: PropTypes.string,
   onChange: PropTypes.func,
   icon: PropTypes.node,
@@ -71,7 +70,7 @@ class Pagination extends Component {
 
     const pageArray = children.map((url, i) => {
       const pageNumber = i + 1;
-      const activeClass = (i + 1) === active ? 'active' : null;
+      const activeClass = pageNumber === active ? 'active' : null;
       const linkClasses = classNames(
         theme.link,
         theme[activeClass],
@@ -95,7 +94,7 @@ class Pagination extends Component {
     const last = (1 * this.state.activeArrayStart) + pageRange;
 
     // adjust beginning of array to be no less than 0
-    const min = first - pageRange - 1;
+    const min = first - pageRange;
     const prevStart = min > 0 ? min : 0;
 
     // adjust end of array to be at most highest index

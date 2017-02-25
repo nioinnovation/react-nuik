@@ -11,3 +11,4 @@
   * [progress bar](components/progress.md)
   * [twofold](components/twofold.md)
   * [accordion](components/accordion.md)
+  * [pagination](components/pagination.md)

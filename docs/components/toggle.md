@@ -108,8 +108,8 @@ class SampleToggles extends React.Component {
 | `noLabel` | `React.Node` | Renders the toggle only, without any label.
 | `checked` | `boolean` | Required. True is `on` false is `off`.
 | `disabled` | `boolean` | Toggle is disabled.
-| `offColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `off`. Default is medium neutral color.
-| `onColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `on`. Default is theme affirmative color.
+| `offColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `off`. Default is unchecked color.
+| `onColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `on`. Default is checked color.
 | `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Toggle.
 
 ## Theme
@@ -117,6 +117,8 @@ class SampleToggles extends React.Component {
 | Name | Description |
 | ---  | ----------- |
 | `toggle` | Required. Used to style the root element. |
+| `checked` | Required. Styles to apply to when element is checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `unchecked` | Required. Styles to apply when element is not checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
 | `input` | Used to style the input element. |
 | `label` | Used to style the label element. |
 | `primary` | Used to style the primary background color. |
@@ -125,6 +127,4 @@ class SampleToggles extends React.Component {
 | `warning` | Used to style the warning background color. |
 | `danger` | Used to style the danger background color. |
 | `default` | Used to style the default background color. |
-| `checked` | Styles to apply to when element is checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
-| `unchecked` | Styles to apply when element is not checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
-| `disabled` | Styles for a disabled Toggle. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `disabled` | Required. Styles for a disabled Toggle. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |

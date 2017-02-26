@@ -10,7 +10,7 @@ describe('A Toggle', () => {
     toggle: uniqueid(),
     checked: uniqueid(),
     unchecked: uniqueid(),
-    unchecked: uniqueid(),
+    required: uniqueid(),
   };
 
   it('should have a toggle class.', () => {
@@ -87,7 +87,7 @@ describe('A Toggle', () => {
     });
 
     it('should have the default onColor class.', () => {
-      expect(wrapper.hasClass(checkedTheme.affirmative)).to.be.true;
+      expect(wrapper.hasClass(checkedTheme.checked)).to.be.true;
     });
 
     it('should have the default onLabel text.', () => {
@@ -104,7 +104,6 @@ describe('A Toggle', () => {
       toggle: uniqueid(),
       checked: uniqueid(),
       unchecked: uniqueid(),
-      default: uniqueid(),
       disabled: uniqueid(),
     };
     const wrapper = shallow(<Toggle theme={uncheckedTheme} checked={false} disabled />);
@@ -114,7 +113,7 @@ describe('A Toggle', () => {
     });
 
     it('should have the default offColor class.', () => {
-      expect(wrapper.hasClass(uncheckedTheme.default)).to.be.true;
+      expect(wrapper.hasClass(uncheckedTheme.unchecked)).to.be.true;
     });
 
     it('should have the default offLabel text.', () => {

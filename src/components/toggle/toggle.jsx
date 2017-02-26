@@ -70,8 +70,8 @@ class Toggle extends Component {
 }
 
 Toggle.defaultProps = {
-  offColor: 'default',
-  onColor: 'affirmative',
+  offColor: 'unchecked',
+  onColor: 'checked',
   offLabel: 'off',
   onLabel: 'on',
 };
@@ -80,8 +80,8 @@ Toggle.propTypes = {
   className: PropTypes.string,
 
   checked: PropTypes.bool.isRequired,
-  offColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),
-  onColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),
+  offColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'unchecked']),
+  onColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'checked']),
   offLabel: PropTypes.string,
   onLabel: PropTypes.string,
   noLabel: PropTypes.bool,

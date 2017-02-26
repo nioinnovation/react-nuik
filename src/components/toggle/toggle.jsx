@@ -7,7 +7,7 @@ import resolveMods from '../../helpers/resolve-mods';
 import id from '../../helpers/uniqueid';
 
 class Toggle extends Component {
-
+  static defaultProps: {};
   constructor() {
     super();
     this.state = {
@@ -41,7 +41,7 @@ class Toggle extends Component {
       checked ? theme[onColor] : theme[offColor];
 
     const activeLabel =
-      noLabel ? '' :
+      noLabel ? null :
         checked ? onLabel : offLabel;
 
     const componentProps = {
@@ -79,7 +79,6 @@ Toggle.defaultProps = {
 Toggle.propTypes = {
   className: PropTypes.string,
 
-  label: PropTypes.node,
   checked: PropTypes.bool.isRequired,
   offColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),
   onColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),

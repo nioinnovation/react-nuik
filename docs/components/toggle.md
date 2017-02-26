@@ -8,7 +8,7 @@ The click handler is defined outside the component, in the component's container
 
 The label for the Toggle, if defined, will be placed above the toggle element.
 
-You can specify the text you would like to appear when the element in `on` in the `onLabel` property.
+You can specify the text you would like to appear when the element is `on` in the `onLabel` property.
 
 You can specify the text you would like to appear when the element is `off` in the `offLabel` property.
 
@@ -16,7 +16,7 @@ You can specify `on` and `off` indicator colors for the slide in the `onColor` a
 
 Default labels and colors are provided if you do not specify them.
 
-Use the `noLabel` property to indicate you do not wish to display the default label.
+Use the `noLabel` property to indicate you do not wish to display any label.
 
 You can use a Toggle as part of a List or as an element in a form. You can apply any logic you choose.
 

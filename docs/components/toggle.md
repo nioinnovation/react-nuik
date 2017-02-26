@@ -20,14 +20,18 @@ _an embedded Codepen here_
 ## Example
 
 ```javascript
-class SampleToggle extends React.Component {
+class SampleToggles extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      stage: false,
-      hallway: false,
-      closet: true,
-      safetyValve: true,
+      defaultLabel: false,
+      noLabel: false,
+      stove: true,
+      fan: true,
+      location: false,
+      smokeDetector: true,
+      horizontal: false,
+      sync: true,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -38,17 +42,47 @@ class SampleToggle extends React.Component {
   }
 
   render() {
+    const fan = {
+      onLabel: 'fan on',
+      offLabel: 'fan off',
+    };
+
+    const label = 'location services';
+    const disabled = 'disabled';
+
     return (
       <div>
         <h2>Toggles</h2>
-        <Toggle label='Cars' onChange={() => this.handleClick('cars')} checked={this.state.cars} />
-        <Toggle label='Trucks' onChange={() => this.handleClick('trucks')} checked={this.state.trucks} />
-        <Toggle label='Boats' onChange={() => this.handleClick('boats')} checked={this.state.boats} />
-        <Toggle label='Planes' onChange={() => this.handleClick('planes')} checked={this.state.planes} />
-        <Toggle label='initially undefined' onChange={() => this.handleClick('other')} checked={this.state.other} />
-        <Toggle label='disabled unchecked' disabled checked={false} />
-        <Toggle label='disabled checked' onChange={() => this.handleClick('disabled')} disabled checked={true} />
-        <Toggle label='disabled undefined' disabled checked='mixed'/>
+        <h3>default</h3>
+        <Toggle onChange={() => this.handleClick('defaultLabel')} checked={this.state.defaultLabel}  />
+        <h3>toggles with various 'off' and 'on' colors</h3>
+        <div>
+          <Toggle offLabel='stove off' onLabel='stove on' onChange={() => this.handleClick('stove')} checked={this.state.stove} offColor='primary' onColor='danger' />
+          <Toggle {...fan} onChange={() => this.handleClick('fan')} checked={this.state.fan} offColor='danger' onColor='affirmative' />
+          <Toggle offLabel={label} onLabel={label} onChange={() => this.handleClick('location')} checked={this.state.location} offColor='alternate' onColor='warning' />
+          <Toggle offLabel={disabled} onLabel='disabled on' disabled onChange={() => this.handleClick('disabled')} checked={true} offColor='alternate' onColor='warning' />
+          <Toggle offLabel='disabled off' onLabel={disabled} disabled onChange={() => this.handleClick('disabled')} checked={false} offColor='primary' onColor='danger' />
+        </div>
+        <h3>custom labels</h3>
+        <h4>with default off/on text</h4>
+        <div>
+          <span>baby monitor</span>
+          <Toggle className='inline' onChange={() => this.handleClick('noLabel')} checked={this.state.noLabel}  />
+        </div>
+        <div>
+          <span>smoke detector</span>
+          <Toggle className='inline' onChange={() => this.handleClick('smokeDetector')} checked={this.state.smokeDetector}  />
+        </div>
+        <h4>with 'noLabel' flag</h4>
+        <div>
+          <span>night mode</span>
+          <Toggle noLabel className='horizontal' onChange={() => this.handleClick('horizontal')} checked={this.state.horizontal}  />
+        </div>
+        <div>
+          <span>auto sync</span>
+          <Toggle noLabel className='horizontal' onChange={() => this.handleClick('sync')} checked={this.state.sync}  />
+        </div>
+
       </div>
     );
   }
@@ -58,19 +92,28 @@ class SampleToggle extends React.Component {
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `label` | `React.Node` | Specifies the label text for each Toggle.
-| `checked` | <code>true&#124;false&#124;'mixed'</code> | Required. One of three possible states for the Toggle.
+| `offLabel` | `React.Node` | Specifies the label text for unchecked Toggle. Default is text 'off'.
+| `onLabel` | `React.Node` | Specifies the label text for checked Toggle. Default is text 'on'.
+| `noLabel` | `React.Node` | Renders the toggle only, without any label.
+| `checked` | `boolean` | Required. True is `on` false is `off`.
 | `disabled` | `boolean` | Toggle is disabled.
-| `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Toggle.
+| `offColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `off`. Default is medium neutral color.
+| `onColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `on`. Default is theme affirmative color.
+| `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Toggle.
 
 ## Theme
 
 | Name | Description |
 | ---  | ----------- |
-| `checkbox` | Required. Used to style the root element. |
+| `toggle` | Required. Used to style the root element. |
 | `input` | Used to style the input element. |
 | `label` | Used to style the label element. |
-| `checked` | Styles to apply to the label when element is checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
-| `unchecked` | Styles to apply to the label when element is not checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
-| `mixed` | Styles to apply to the label when element is indeterminate, unknown, or partially checked. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
-| `disabled` | Styles for a disabled Toggle. Styles for the checkbox itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `primary` | Used to style the primary background color. |
+| `alternate` | Used to style the alternate background color. |
+| `affirmative` | Used to style the affirmative background color. |
+| `warning` | Used to style the warning background color. |
+| `danger` | Used to style the danger background color. |
+| `default` | Used to style the default background color. |
+| `checked` | Styles to apply to when element is checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `unchecked` | Styles to apply when element is not checked. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |
+| `disabled` | Styles for a disabled Toggle. Styles for the toggle itself are found in `::before` and `::after` pseudo elements of the label class. |

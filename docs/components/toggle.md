@@ -2,11 +2,21 @@
 
 The Toggle gives the ability to select an item with two possible states: `on` and `off`.
 
-The `checked` attribute is required.
+The `checked` attribute is required. When `checked` is `true` the element is `on`. When `checked` is `false` the element is `off`.
 
-The click handler is defined outside the component, in the component's container, as shown in the example below. This allows you to define the criteria for the Toggle. In the example, the click handler converts the state to a boolean and toggles between `true` and `false`.
+The click handler is defined outside the component, in the component's container, as shown in the example below. This allows you to define actions that happen with the Toggle. In the example, the click handler converts the state to a boolean and toggles between `true` and `false`.
 
 The label for the Toggle, if defined, will be placed above the toggle element.
+
+You can specify the text you would like to appear when the element in `on` in the `onLabel` property.
+
+You can specify the text you would like to appear when the element is `off` in the `offLabel` property.
+
+You can specify `on` and `off` indicator colors for the slide in the `onColor` and `offColor` properties.
+
+Default labels and colors are provided if you do not specify them.
+
+Use the `noLabel` property to indicate you do not wish to display the default label.
 
 You can use a Toggle as part of a List or as an element in a form. You can apply any logic you choose.
 
@@ -42,6 +52,7 @@ class SampleToggles extends React.Component {
   }
 
   render() {
+    // different ways to specify your labels
     const fan = {
       onLabel: 'fan on',
       offLabel: 'fan off',

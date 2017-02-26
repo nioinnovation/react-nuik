@@ -1,6 +1,6 @@
 # Toggle ![status: Prototype](https://img.shields.io/badge/status-prototype-orange.svg)
 
-The Toggle is a basic binary selector. It can be toggled on or off and can include a corresponding indicator color.
+The Toggle is a basic binary selector. It can be toggled on or off and can include corresponding indicator colors and label text.
 
 ## Example
 

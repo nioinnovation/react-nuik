@@ -10,7 +10,7 @@ You can use a Checkbox as part of a List or as an element in a form. You can app
 
 See Radio Buttons for a container component that allows only one Checkbox in a group to be checked.
 
-See Toggle for a binary (off/on) selector. _(? or Toggle could also be an alternate-style trinary selector?)_
+See Toggle for a binary (off/on) selector.
 
 ## Try it
 _an embedded Codepen here_

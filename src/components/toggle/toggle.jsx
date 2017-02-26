@@ -23,11 +23,13 @@ class Toggle extends Component {
     const {
       className: propsClassName,
       theme,
-      label,
+      noLabel,
       disabled,
       checked,
       onColor,
       offColor,
+      onLabel,
+      offLabel,
       mod,
       ...rest
     } = this.props;
@@ -35,24 +37,32 @@ class Toggle extends Component {
     const checkedClass =
       checked ? theme.checked : theme.unchecked;
 
+    const colorClass =
+      checked ? theme[onColor] : theme[offColor];
+
+    const activeLabel =
+      noLabel ? '' :
+        checked ? onLabel : offLabel;
+
     const componentProps = {
       ...rest,
+      disabled,
       type: 'checkbox',
       id: this.state.inputId,
-      // name: this.state.inputId,
     };
 
     const className = classNames(
       theme.toggle,
       checkedClass,
+      colorClass,
       !!disabled && theme.disabled,
       resolveMods(theme, mod),
       theme[propsClassName],
     );
 
     return (
-      <div className={className} >
-        <label className={theme.label} htmlFor={this.state.inputId} >{label}</label>
+      <div className={className}>
+        <label className={theme.label} htmlFor={this.state.inputId} >{activeLabel}</label>
         <input className={theme.input} {...componentProps} />
       </div>
     );
@@ -62,6 +72,8 @@ class Toggle extends Component {
 Toggle.defaultProps = {
   offColor: 'default',
   onColor: 'affirmative',
+  offLabel: 'off',
+  onLabel: 'on',
 };
 
 Toggle.propTypes = {
@@ -71,6 +83,9 @@ Toggle.propTypes = {
   checked: PropTypes.bool.isRequired,
   offColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),
   onColor: PropTypes.oneOf(['primary', 'alternate', 'affirmative', 'warning', 'danger', 'default']),
+  offLabel: PropTypes.string,
+  onLabel: PropTypes.string,
+  noLabel: PropTypes.bool,
   disabled: PropTypes.bool,
 
   mod: PropTypes.oneOfType([
@@ -85,6 +100,14 @@ Toggle.propTypes = {
     // Elements
     input: PropTypes.string,
     label: PropTypes.string,
+
+    // Colors
+    primary: PropTypes.string,
+    alternate: PropTypes.string,
+    affirmative: PropTypes.string,
+    warning: PropTypes.string,
+    danger: PropTypes.string,
+    default: PropTypes.string,
 
     // Mod
     checked: PropTypes.string.isRequired,

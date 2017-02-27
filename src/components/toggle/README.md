@@ -17,8 +17,8 @@ The Toggle is a basic binary selector. It can be toggled on or off and can inclu
 | `noLabel` | `React.Node` | Renders the toggle only, without any label.
 | `checked` | `boolean` | Required. True is `on` false is `off`.
 | `disabled` | `boolean` | Toggle is disabled.
-| `offColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `off`. Default is unchecked color.
-| `onColor` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'&#124;'default'</code> | Background color used to signal `on`. Default is checked color.
+| `offColor` | <code>'primary'&#124;'alternate'&#124;'affirmative' 'warning'&#124;'danger'&#124;'unchecked'</code> | Background color used to signal `off`. Default is unchecked color.
+| `onColor` | <code>'primary'&#124;'alternate'&#124;'affirmative' 'warning'&#124;'danger'&#124;'checked'</code> | Background color used to signal `on`. Default is checked color.
 | `mod` | <code>string &#124; Array<string></code> | Apply custom mods from the theme on the Toggle.
 
 ## Theme

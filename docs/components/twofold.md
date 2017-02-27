@@ -47,7 +47,7 @@ _an embedded Codepen here_
 | Name | Type | Description |
 | --- | --- | --- | --- |
 | `active` | `boolean` | Required. If true, Twofold is open.
-| `key` | `string` | The unique id of the Twofold. Can be same as the Twofold's key in its container's state. Required for Twofolds used in an Accordion with the `single` variant.
+| `key` | `string` | The unique id of the Twofold. Can be the same as the Twofold's key in its container's state. Required for Twofolds used in an Accordion with the `single` variant.
 | `heading` | `string` | The contents of the heading. Text only(?).
 | `subheading` | `string` | The contents of the subheading. Text only(?).
 | `icon` | `element` | Defines the icon element. If not defined, defaults to a chevron.

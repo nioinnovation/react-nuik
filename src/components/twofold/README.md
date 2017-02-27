@@ -43,11 +43,12 @@ class SampleTwofold extends React.Component {
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `active` | `boolean` | Required. If true, Twofold is open. Handled by Accordion component if wrapped inside an Accordion.
+| `active` | `boolean` | Required. If true, Twofold is open.
+| `key` | `string` | The unique id of the Twofold. Can be same as the Twofold's key in its container's state. Required for Twofolds used in an Accordion with the `single` variant.
 | `heading` | `string` | The contents of the heading. Text only(?).
 | `subheading` | `string` | The contents of the subheading. Text only(?).
 | `icon` | `element` | Defines the icon element. If not defined, defaults to a chevron.
-| `onChange` | `function` | Function to handle open and close logic. Handled by Accordion component if wrapped inside an Accordion.
+| `onChange` | `function` | Function to handle open and close logic.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Twofold.
 
 ##Theme

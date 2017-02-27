@@ -10,22 +10,36 @@ const Accordion = (props: *) => {
     className: propsClassName,
     theme,
     variant,
+    singleActive,
     children,
     mod,
     ...rest
   } = props;
 
+
+  // function to adjust the active classes on the children as appropriate
+  const clonedChildren = children.map((child) => {
+    console.log('singleActive, key, is active?', singleActive, child.key, child.props.active);
+    const makeActive = child.key === singleActive ? child.props.active : false;
+    return React.cloneElement(child, {
+      active: makeActive,
+    });
+  },
+  );
+
+  const variantChildren = variant === 'single' ? clonedChildren : children;
+
   const className = classNames(
     theme.accordion,
-    !!variant && theme[variant],
     resolveMods(theme, mod),
     theme[propsClassName],
     ...rest,
   );
 
+
   return (
     <div className={className}>
-      {children}
+      {variantChildren}
     </div>
   );
 };
@@ -35,8 +49,9 @@ Accordion.propTypes = {
 
   variant: PropTypes.oneOf([
     'single',
-    'multi',
+    'multiple',
   ]),
+  singleActive: PropTypes.string,
 
   children: PropTypes.node,
 
@@ -51,7 +66,7 @@ Accordion.propTypes = {
 
     // Variants
     single: PropTypes.string,
-    multi: PropTypes.string,
+    multiple: PropTypes.string,
 
   }).isRequired,
 };

@@ -19,7 +19,6 @@ const Accordion = (props: *) => {
 
   // function to adjust the active classes on the children as appropriate
   const clonedChildren = children.map((child) => {
-    console.log('singleActive, key, is active?', singleActive, child.key, child.props.active);
     const makeActive = child.key === singleActive ? child.props.active : false;
     return React.cloneElement(child, {
       active: makeActive,

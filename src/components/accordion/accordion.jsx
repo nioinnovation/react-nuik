@@ -16,7 +16,6 @@ const Accordion = (props: *) => {
     ...rest
   } = props;
 
-
   // function to adjust the active classes on the children as appropriate
   const clonedChildren = children.map((child) => {
     const makeActive = child.key === singleActive ? child.props.active : false;
@@ -34,7 +33,6 @@ const Accordion = (props: *) => {
     theme[propsClassName],
     ...rest,
   );
-
 
   return (
     <div className={className}>

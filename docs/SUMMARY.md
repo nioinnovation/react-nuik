@@ -6,6 +6,7 @@
   * [link](components/link.md)
   * [text-input](components/text-input.md)
   * [checkbox](components/checkbox.md)
+  * [toggle](components/toggle.md)
   * [loader](components/loader.md)
   * [list](components/list.md)
   * [progress bar](components/progress.md)

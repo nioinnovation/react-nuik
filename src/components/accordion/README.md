@@ -11,10 +11,28 @@ Use the Accordion's `single` variant to have only one Twofold open at a time. Us
 ## Example
 
 ```javascript
-<Accordion variant="multiple">
-  <Twofold heading="some short summary" subheading="more short summary">details here</Twofold>
-  <Twofold heading="pithy title" subheading="I have more info" active>details here</Twofold>
-  <Twofold heading="pick me" subheading="the skinny" active>details here</Twofold>
+<Accordion variant='single' singleActive={this.state.singleActive}>
+    <Twofold
+      key='active1'
+      heading={data.title1}
+      subheading={data.summary1}
+      onChange={() => this.handleSingleClick('active1')}
+      active={this.state.active1}
+    >{data.details1}</Twofold>
+    <Twofold
+      key='active2'
+      heading={data.title2}
+      subheading={data.summary2}
+      onChange={() => this.handleSingleClick('active2')}
+      active={this.state.active2}
+      >{data.details2}</Twofold>
+    <Twofold
+      key='active3'
+      heading={data.title3}
+      subheading={data.summary3}
+      onChange={() => this.handleSingleClick('active3')}
+      active={this.state.active3}
+      >{data.details3}</Twofold>
 </Accordion>
 ```
 

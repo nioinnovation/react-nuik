@@ -62,7 +62,9 @@ class Toggle extends Component {
 
     return (
       <div className={className}>
-        <label className={theme.label} htmlFor={this.state.inputId} >{activeLabel}</label>
+        <span className={theme.text}>{activeLabel}</span>
+        <label className={theme.label} htmlFor={this.state.inputId} >
+        </label>
         <input className={theme.input} {...componentProps} />
       </div>
     );
@@ -99,6 +101,7 @@ Toggle.propTypes = {
     // Elements
     input: PropTypes.string,
     label: PropTypes.string,
+    text: PropTypes.string,
 
     // Colors
     primary: PropTypes.string,

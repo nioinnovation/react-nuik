@@ -25,7 +25,7 @@ const pages = [
 
 | Name | Type | Description |
 | --- | --- | --- | --- |
-| `icon` | `node` | Defines the `prev` and `next` icons. Default is a chevron stroke in a circle fill.
+| `icon` | `React.Node` | Defines the `prev` and `next` icons. Default is a chevron stroke in a circle fill.
 | `pageRange` | `number` | Sets the maximum number of pages visible in the Pagination component before the `prev` or `next` indicator is added. Default is 6.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Pagination.
 | `children` | `Array<string>` | Required. List of page urls to be linked to in Pagination.

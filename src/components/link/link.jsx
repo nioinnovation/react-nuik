@@ -23,7 +23,7 @@ const Link = (props: *) => {
     theme.link,
     !!icon && iconVariant,
     resolveMods(theme, mod),
-    theme[propsClassName],
+    propsClassName,
   );
 
   return <a className={className} href={href} data-icon={icon} {...rest} >{children}</a>;

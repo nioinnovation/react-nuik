@@ -19,7 +19,7 @@ const Progress = (props: *) => {
   const className = classNames(
     theme.progress,
     resolveMods(theme, mod),
-    theme[propsClassName],
+    propsClassName,
     ...rest,
   );
 

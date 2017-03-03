@@ -22,7 +22,7 @@ const Twofold = (props: *) => {
   const className = classNames(
     theme.twofold,
     resolveMods(theme, mod),
-    theme[propsClassName],
+    propsClassName,
     ...rest,
   );
 

@@ -96,8 +96,8 @@ class Button extends Component {
       !disabled && !!variant && theme[variant],
       !!size && theme[size],
       !!disabled && theme.disabled,
-      !disabled && mods,
-      !disabled && theme[propsClassName],
+      mods,
+      propsClassName,
     );
 
     const elProps = {

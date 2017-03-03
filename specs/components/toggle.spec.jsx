@@ -29,10 +29,16 @@ describe('A Toggle', () => {
     expect(wrapper.find('input')).to.have.length(1);
   });
 
-  it('should contain a label element with a child.', () => {
+  it('should contain a label element.', () => {
     const wrapper = shallow(<Toggle theme={theme} checked />);
     expect(wrapper.find('label')).to.have.length(1);
-    expect(wrapper.find('label').children()).to.have.length(1);
+    // expect(wrapper.find('label').children()).to.have.length(1);
+  });
+
+  it('should contain a span with a child.', () => {
+    const wrapper = shallow(<Toggle theme={theme} checked />);
+    expect(wrapper.find('span')).to.have.length(1);
+    expect(wrapper.find('span').children()).to.have.length(1);
   });
 
   it('should contain the onLabel text when checked.', () => {
@@ -59,7 +65,6 @@ describe('A Toggle', () => {
 
   it('should include additional class names that are defined.', () => {
     const additionalClass = uniqueid();
-    theme[additionalClass] = uniqueid();
     const wrapper = shallow(
       <Toggle
         className={additionalClass}
@@ -67,7 +72,7 @@ describe('A Toggle', () => {
         checked
       />
     );
-    expect(wrapper.hasClass(theme[additionalClass])).to.be.true;
+    expect(wrapper.hasClass(additionalClass)).to.be.true;
   });
 
   describe('with a checked property', () => {
@@ -135,7 +140,7 @@ describe('A Toggle', () => {
     const wrapper = shallow(<Toggle noLabel theme={noLabelTheme} checked={false} />);
 
     it('should not have any label content.', () => {
-      expect(wrapper.find('label').children()).to.have.length(0);
+      expect(wrapper.find('span').children()).to.have.length(0);
     });
   });
 

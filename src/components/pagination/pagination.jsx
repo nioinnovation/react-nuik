@@ -117,7 +117,7 @@ class Pagination extends Component {
     const className = classNames(
       theme.pagination,
       resolveMods(theme, mod),
-      theme[propsClassName],
+      propsClassName,
       ...rest,
     );
 

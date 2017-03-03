@@ -90,6 +90,15 @@ describe('A Checkbox', () => {
     });
   });
 
+  describe('with a className attribute,', () => {
+    const customClass = uniqueid();
+
+    it('should contain that class.', () => {
+      const wrapper = shallow(<Checkbox className={customClass} label={label} theme={theme} checked />);
+      expect(wrapper.hasClass(customClass)).to.be.true;
+    });
+  });
+
   describe('with a theme with mods,', () => {
     const theme = {
       checkbox: uniqueid(),

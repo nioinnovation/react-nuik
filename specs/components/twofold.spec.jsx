@@ -95,11 +95,10 @@ describe('A Twofold', () => {
 
   describe('with a className attribute,', () => {
     const customClass = uniqueid();
-    theme[customClass] = uniqueid();
 
     it('should contain that class.', () => {
       const wrapper = shallow(<Twofold theme={theme} active className={customClass} >{child}</Twofold>);
-      expect(wrapper.hasClass(theme[customClass])).to.be.true;
+      expect(wrapper.hasClass(customClass)).to.be.true;
     });
   });
 

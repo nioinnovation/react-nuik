@@ -30,7 +30,7 @@ const Accordion = (props: *) => {
   const className = classNames(
     theme.accordion,
     resolveMods(theme, mod),
-    theme[propsClassName],
+    propsClassName,
     ...rest,
   );
 

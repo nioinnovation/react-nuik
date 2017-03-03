@@ -57,14 +57,13 @@ class Toggle extends Component {
       colorClass,
       !!disabled && theme.disabled,
       resolveMods(theme, mod),
-      theme[propsClassName],
+      propsClassName,
     );
 
     return (
       <div className={className}>
         <span className={theme.text}>{activeLabel}</span>
-        <label className={theme.label} htmlFor={this.state.inputId} >
-        </label>
+        <label className={theme.label} htmlFor={this.state.inputId} />
         <input className={theme.input} {...componentProps} />
       </div>
     );

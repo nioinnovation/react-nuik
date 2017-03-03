@@ -34,7 +34,6 @@ describe('A Progress Bar', () => {
 
   it('should include additional class names that are defined.', () => {
     const additionalClass = uniqueid();
-    theme[additionalClass] = uniqueid();
     const wrapper = shallow(
       <Progress
         className={additionalClass}
@@ -42,7 +41,7 @@ describe('A Progress Bar', () => {
         percent={percent}
       />
     );
-    expect(wrapper.hasClass(theme[additionalClass])).to.be.true;
+    expect(wrapper.hasClass(additionalClass)).to.be.true;
   });
 
   describe('that is disabled', () => {

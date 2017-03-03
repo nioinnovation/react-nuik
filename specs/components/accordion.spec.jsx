@@ -59,7 +59,6 @@ describe('An Accordion', () => {
 
   describe('with a className attribute,', () => {
     const additionalClass = uniqueid();
-    theme[additionalClass] = uniqueid();
     const wrapper = shallow(
       <Accordion className={additionalClass} theme={theme}>
         <Twofold theme={themeTwofold} active />
@@ -67,7 +66,7 @@ describe('An Accordion', () => {
       </Accordion>
     );
     it('should contain that class.', () => {
-      expect(wrapper.hasClass(theme[additionalClass])).to.be.true;
+      expect(wrapper.hasClass(additionalClass)).to.be.true;
     });
   });
 

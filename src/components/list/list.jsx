@@ -32,7 +32,7 @@ const List = (props: *) => {
   const className = classNames(
     theme.list,
     resolveMods(theme, mod),
-    theme[propsClassName],
+    propsClassName,
     ...rest,
   );
 

@@ -93,8 +93,8 @@ class TextInput extends Component {
 
     const className = classNames(
       theme.textInput,
-      theme[propsClassName],
       resolveMods(theme, mod),
+      propsClassName,
     );
 
     const labelClassName = classNames(

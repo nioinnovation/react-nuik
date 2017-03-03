@@ -87,7 +87,7 @@ class Button extends Component {
       ...rest
     } = this.props;
 
-    const component = href ? 'a' : 'button';
+    const component = !disabled && href ? 'a' : 'button';
     const mods = resolveMods(theme, mod);
 
     const className = classNames(
@@ -96,8 +96,8 @@ class Button extends Component {
       !disabled && !!variant && theme[variant],
       !!size && theme[size],
       !!disabled && theme.disabled,
-      !disabled && mods,
-      !disabled && theme[propsClassName],
+      mods,
+      propsClassName,
     );
 
     const elProps = {

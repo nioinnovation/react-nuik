@@ -13,8 +13,6 @@ const DirectionIcon = (props: *) => {
     end,
     direction,
     theme,
-    className: propsClassName,
-    ...rest
   } = props;
 
   const iconClasses = classNames(
@@ -22,21 +20,14 @@ const DirectionIcon = (props: *) => {
     end && theme.hidden,
   );
 
-  const className = classNames(
-    iconClasses,
-    propsClassName,
-    ...rest,
-  );
-
   return (
-    <a href={href} className={className} onClick={onChange}>
+    <a href={href} className={iconClasses} onClick={onChange}>
       {icon}
     </a>
   );
 };
 
 DirectionIcon.propTypes = {
-  className: PropTypes.string,
   href: PropTypes.string,
   onChange: PropTypes.func,
   icon: PropTypes.node,
@@ -126,7 +117,7 @@ class Pagination extends Component {
     const className = classNames(
       theme.pagination,
       resolveMods(theme, mod),
-      theme[propsClassName],
+      propsClassName,
       ...rest,
     );
 

@@ -39,9 +39,8 @@ describe('A Button', () => {
 
   it('should include additional class names that are defined.', () => {
     const additionalClass = uniqueid();
-    themeBase[additionalClass] = uniqueid();
     const wrapper = shallow(<Button className={additionalClass} theme={themeBase} />);
-    expect(wrapper.hasClass(themeBase[additionalClass])).to.be.true;
+    expect(wrapper.hasClass(additionalClass)).to.be.true;
   });
 
   describe('that is disabled', () => {
@@ -70,8 +69,9 @@ describe('A Button', () => {
       expect(wrapper.contains(child, anotherChild)).to.be.true;
     });
 
-    it('should at most have classes button, link, size, and disabled; even with a mod, variant, or additional class names.', () => {
+    it('should at most have classes button, link, size, mod, additional class names, and disabled; even with a variant.', () => {
       const href = uniqueid();
+      const additionalClass = uniqueid();
       const variantOptions = [
         'primary',
         'alternate',
@@ -87,8 +87,8 @@ describe('A Button', () => {
       ];
       variantOptions.map(v => {
         sizeOptions.map(s => {
-          const wrapper = shallow(<Button theme={theme} mod={theme.mod} variant={v} size={s} className={theme.additionalClass} href={href} disabled />);
-          expect(wrapper.props().className).to.equal(`${theme.button} ${theme.link} ${theme[s]} ${theme.disabled}`);
+          const wrapper = shallow(<Button theme={theme} mod={theme.mod} variant={v} size={s} className={additionalClass} href={href} disabled />);
+          expect(wrapper.props().className).to.equal(`${theme.button} ${theme.link} ${theme[s]} ${theme.disabled} ${additionalClass}`);
         });
       });
     });

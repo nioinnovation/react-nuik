@@ -54,11 +54,10 @@ describe('A List', () => {
 
   describe('with a className attribute,', () => {
     const customClass = uniqueid();
-    theme[customClass] = uniqueid();
 
     it('should contain that class.', () => {
       const wrapper = shallow(<List theme={theme} className={customClass}></List>);
-      expect(wrapper.hasClass(theme[customClass])).to.be.true;
+      expect(wrapper.hasClass(customClass)).to.be.true;
     });
   });
 

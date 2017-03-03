@@ -47,11 +47,10 @@ describe('A Link', () => {
 
   describe('with a className attribute,', () => {
     const customClass = uniqueid();
-    theme[customClass] = uniqueid();
 
     it('should contain that class.', () => {
       const wrapper = shallow(<Link theme={theme} href={href} className={customClass} >{child}</Link>);
-      expect(wrapper.hasClass(theme[customClass])).to.be.true;
+      expect(wrapper.hasClass(customClass)).to.be.true;
     });
   });
 

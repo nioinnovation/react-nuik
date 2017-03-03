@@ -69,6 +69,11 @@ describe('A Button', () => {
       expect(wrapper.contains(child, anotherChild)).to.be.true;
     });
 
+    it('should be a button element, even with an href.', () => {
+      const wrapper = shallow(<Button theme={{ button: uniqueid(), link: uniqueid(), disabled: uniqueid() }} href="#" disabled />);
+      expect(wrapper.type()).to.equal('button');
+    })
+
     it('should at most have classes button, link, size, mod, additional class names, and disabled; even with a variant.', () => {
       const href = uniqueid();
       const additionalClass = uniqueid();

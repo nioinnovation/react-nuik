@@ -87,7 +87,7 @@ class Button extends Component {
       ...rest
     } = this.props;
 
-    const component = href ? 'a' : 'button';
+    const component = !disabled && href ? 'a' : 'button';
     const mods = resolveMods(theme, mod);
 
     const className = classNames(

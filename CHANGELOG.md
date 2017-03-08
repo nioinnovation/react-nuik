@@ -1,13 +1,22 @@
 # Change Log
 
-## [0.0.6] - 2016-02-14
+## [0.0.7] - 2017-03-08
+### Added
+- - New Component `<Accordion>`
+- - New Component `<Twofold>`
+- - New Component `<Pagination>`
+- - New Component `<Toggle>`
+### Bug fix
+- Pass classNames through unchanged
+
+## [0.0.6] - 2017-02-14
 ### Added
 - - New Component `<List>`
 
 ### Changed
 - `react` and `react-css-themr` are now peer dependencies.
 
-## [0.0.5] - 2016-02-04
+## [0.0.5] - 2017-02-04
 ### Added
 - New Component `<Link>`
 

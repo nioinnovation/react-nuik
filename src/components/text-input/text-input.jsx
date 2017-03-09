@@ -45,7 +45,7 @@ class TextInput extends Component {
 
   input: HTMLInputElement;
 
-  willReceiveProps(props: *) {
+  componentWillReceiveProps(props: *) {
     this.setState({ isFilled: !!props.value });
   }
 

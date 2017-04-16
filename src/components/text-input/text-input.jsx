@@ -45,6 +45,10 @@ class TextInput extends Component {
 
   input: HTMLInputElement;
 
+  componentDidMount() {
+    if (this.props.autoFocus) { this.input.focus(); }
+  }
+
   componentWillReceiveProps(props: *) {
     this.setState({ isFilled: !!props.value });
   }
@@ -121,6 +125,7 @@ TextInput.propTypes = {
   helper: PropTypes.node,
   value: PropTypes.string,
   disabled: PropTypes.bool,
+  autoFocus: PropTypes.bool,
 
   variant: PropTypes.oneOf([
     'singleline',

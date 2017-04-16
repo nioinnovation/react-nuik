@@ -18,6 +18,7 @@ Single-line or multi-line text input of type: `email`, `number`, `password`, `te
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Text Input.
 | `label` | `React.Node` | Specifies the label text for the Text Input.
 | `helper` | `React.Node` | The content of the helper text that may appear below the input.
+| `autoFocus` | `bool` | Will focus this element on mount |
 
 ## Theme
 

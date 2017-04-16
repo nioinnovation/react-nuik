@@ -8,24 +8,6 @@ import id from '../../helpers/uniqueid';
 import Label from './label';
 import Helper from './helper';
 
-const SingleLine = (props: *) => {
-  const {
-    theme,
-    ...rest
-  } = props;
-
-  return (<input className={theme.singleline} {...rest} />);
-};
-
-const MultiLine = (props: *) => {
-  const {
-    value,
-    theme,
-    ...rest
-  } = props;
-  return (<textarea className={theme.multiline} {...rest}>{value}</textarea>);
-};
-
 class TextInput extends Component {
 
   constructor(props: *) {
@@ -81,12 +63,12 @@ class TextInput extends Component {
       ...rest
     } = this.props;
 
-    const componentConstructor = variant === 'multiline' ? MultiLine : SingleLine;
-
-    const componentProps = {
+    const isMultilineVariant = variant === 'multiline';
+    const Inner = isMultilineVariant ? 'textarea' : 'input';
+    const innerProps = {
       ...rest,
-      theme,
       id: this.state.inputId,
+      className: isMultilineVariant ? theme.multiline : theme.singleline,
       value,
       disabled,
       onFocus: this.handleOnFocus,
@@ -111,7 +93,7 @@ class TextInput extends Component {
         <Label theme={theme} className={labelClassName} htmlFor={this.state.inputId}>
           {label}
         </Label>
-        { componentConstructor(componentProps) }
+        <Inner {...innerProps} />
         <Helper theme={theme}>{helper}</Helper>
       </div>
     );

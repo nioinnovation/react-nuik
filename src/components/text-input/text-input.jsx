@@ -28,7 +28,7 @@ class TextInput extends Component {
   input: HTMLInputElement;
 
   componentDidMount() {
-    if (this.props.autoFocus) { this.input.focus(); }
+    if (this.props.autoFocus) { this.input.select(); }
   }
 
   componentWillReceiveProps(props: *) {

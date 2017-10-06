@@ -18,7 +18,7 @@ A Link with an icon can use variants `before` and `after` to display the icon be
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | 
 | `href` | `string` | Required. The the destination of the link.
 | `icon` | 'string' | The content of the icon.
 | `variant` | <code>'before'&#124;'after'</code> | If set, determines where to display the link icon (`before` is default).

@@ -10,7 +10,7 @@ Shows the level of completion of a task. Takes a required `percent` prop that is
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `variant` | <code>'primary'&#124;'alternate'&#124;'affirmative'&#124;'warning'&#124;'danger'</code> | Alter the fill color of the Progress Bar.
 | `percent` | `number` between 0 and 1 | Required. The percent of fill.
 | `disabled` | `boolean` | If true, adds a disabled style to the className.

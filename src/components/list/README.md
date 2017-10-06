@@ -19,7 +19,7 @@ Lists are best suited to presenting a homogeneous data type or sets of data type
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `variant` | <code>'none'&#124;'numbered'</code> | Circle bullets are the default. If set, determines no bullets or numbered bullets.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the List.
 

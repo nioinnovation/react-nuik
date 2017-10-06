@@ -39,7 +39,7 @@ Use the Accordion's `single` variant to have only one Twofold open at a time. Us
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `variant` | <code>'single'&#124;'multiple'</code> | Determines whether only one Twofold can be expanded at a time, or whether multiple Twofolds can be open simultaneously. Default is `multiple`.
 | `singleActive` | 'string' | For the `single` accordion variant, contains the `key` of the single active Twofold.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Accordion.

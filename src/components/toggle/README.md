@@ -11,7 +11,7 @@ The Toggle is a basic binary selector. It can be toggled on or off and can inclu
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `offLabel` | `React.Node` | Specifies the label text for unchecked Toggle. Default is text 'off'.
 | `onLabel` | `React.Node` | Specifies the label text for checked Toggle. Default is text 'on'.
 | `noLabel` | `React.Node` | Renders the toggle only, without any label.

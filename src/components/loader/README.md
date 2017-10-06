@@ -10,7 +10,7 @@ A Loader/Message
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `loading` | `boolean` | Show the loading animation. |
 | `complete` | `boolean` | Show the result. |
 | `result` | <code>undefined&#124;'affirmative'&#124;'warning'&#124;'danger'</code> | The result type. |

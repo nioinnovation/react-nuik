@@ -42,7 +42,7 @@ class SampleTwofold extends React.Component {
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `active` | `boolean` | Required. If true, Twofold is open.
 | `key` | `string` | The unique id of the Twofold. Can be the same as the Twofold's key in its container's state. Required for Twofolds used in an Accordion with the `single` variant.
 | `heading` | `string` | The contents of the heading. Text only(?).

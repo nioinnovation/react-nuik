@@ -12,7 +12,7 @@ Single-line or multi-line text input of type: `email`, `number`, `password`, `te
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `type` | <code>'email'&#124;'number'&#124;'password'&#124;'tel'&#124;'text'&#124;'url'</code> | Specifies the `type` attribute of the `<input>` element.
 | `variant` | <code>'singleline'&#124;'multiline'</code> | `singleline` is full-width and scrolls left if necessary, `multiline` is a `<textarea>` element that wraps and scrolls down if necessary.
 | `mod` | <code>string&#124;Array<string></code> | Apply custom mods from the theme on the Text Input.

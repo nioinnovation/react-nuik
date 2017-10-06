@@ -17,7 +17,7 @@ The checkbox gives the ability to select an item with three possible states: tru
 ## Properties
 
 | Name | Type | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | 
 | `label` | `React.Node` | Specifies the label text for each Checkbox.
 | `checked` | <code>true &#124; false &#124; 'mixed'</code> | Required. One of three possible states for the Checkbox.
 | `disabled` | `boolean` | Checkbox is disabled.

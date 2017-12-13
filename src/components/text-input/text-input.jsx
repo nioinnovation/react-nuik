@@ -25,8 +25,6 @@ class TextInput extends Component {
     isFilled: boolean,
   };
 
-  input: HTMLInputElement;
-
   componentDidMount() {
     if (this.props.autoFocus) { this.input.select(); }
   }
@@ -34,6 +32,8 @@ class TextInput extends Component {
   componentWillReceiveProps(props: *) {
     this.setState({ isFilled: !!props.value });
   }
+
+  input: HTMLInputElement;
 
   handleOnFocus = (e: Event) => {
     this.setState({ isFocused: true });

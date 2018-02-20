@@ -13,7 +13,7 @@ Helper.propTypes = {
   theme: PropTypes.shape({
     helper: PropTypes.string,
   }),
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default Helper;

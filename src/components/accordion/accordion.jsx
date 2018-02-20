@@ -52,7 +52,7 @@ Accordion.propTypes = {
   ]),
   singleActive: PropTypes.string,
 
-  children: PropTypes.arrayOf(React.PropTypes.element).isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),

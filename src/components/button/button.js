@@ -1,6 +1,7 @@
 // @flow
 
-import { PropTypes, createElement, Component } from 'react';
+import { createElement, Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';

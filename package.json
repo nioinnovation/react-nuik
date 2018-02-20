@@ -22,10 +22,11 @@
   "author": "n.io <info@n.io>",
   "license": "ISC",
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.7"
   },
   "peerDependencies": {
-    "react": "^15.4.1",
+    "react": "^15.5.7",
     "react-css-themr": "^2.0.0"
   },
   "devDependencies": {

@@ -24,12 +24,12 @@ describe('A Progress Bar', () => {
 
   it('should have a fill class.', () => {
     const wrapper = shallow(<Progress theme={theme} percent={percent} />);
-    expect(wrapper.find(`.${theme.fill}`).exists()).to.be.true;
+    expect(wrapper.find('div > div').hasClass(theme.fill)).to.be.true;
   });
 
   it('should have an element with a fill class whose style has a width propotional to the percent value.', () => {
     const wrapper = shallow(<Progress theme={theme} percent={percent} />);
-    expect(wrapper.find(`.${theme.fill}`).prop('style').width).to.equal(`${percent * 100}%`);
+    expect(wrapper.findWhere(n => n.hasClass(theme.fill)).prop('style').width).to.equal(`${percent * 100}%`);
   });
 
   it('should include additional class names that are defined.', () => {
@@ -66,7 +66,7 @@ describe('A Progress Bar', () => {
       ];
       variantOptions.map((v) => {
           const wrapper = shallow(<Progress theme={themeDisabled} percent={percent} variant={v} disabled />);
-          expect(wrapper.find(`.${themeDisabled.fill}`).hasClass(themeDisabled[v])).to.be.false;
+          expect(wrapper.findWhere(n => n.hasClass(themeDisabled.fill)).hasClass(themeDisabled[v])).to.be.false;
       });
     });
   });
@@ -92,7 +92,7 @@ describe('A Progress Bar', () => {
       ];
       variantOptions.map(v => {
         const wrapper = shallow(<Progress theme={themeAll} percent={percent} variant={v} />);
-        expect(wrapper.find(`.${themeAll.fill}`).hasClass(themeAll[v])).to.be.true;
+        expect(wrapper.findWhere(n => n.hasClass(themeAll.fill)).hasClass(themeAll[v])).to.be.true;
       });
     });
   });
@@ -121,12 +121,12 @@ describe('A Progress Bar', () => {
   describe('with a minimal theme,', () => {
     it('should ignore variants it can\'t resolve.', () => {
       const wrapper = shallow(<Progress theme={theme} variant='primary' percent={percent} />);
-      expect(wrapper.find(`.${theme.fill}`).hasClass(theme.primary)).to.be.false;
+      expect(wrapper.findWhere(n => n.hasClass(theme.fill)).hasClass(theme.primary)).to.be.false;
     });
 
     it('should not have a class of "undefined" if the variant is not in the theme.', () => {
       const wrapper = shallow(<Progress theme={theme} variant='primary' percent={percent} />);
-      expect(wrapper.find(`.${theme.fill}`).hasClass('undefined')).to.be.false;
+      expect(wrapper.findWhere(n => n.hasClass(theme.fill)).hasClass('undefined')).to.be.false;
     });
   });
 });

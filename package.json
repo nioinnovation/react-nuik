@@ -16,7 +16,7 @@
     "prepare": "npm run build",
     "pretest": "npm run check",
     "test": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --require ./specs/testSetup.js --recursive -R tap ./specs/components",
-    "test:watch": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --recursive -R tap -w ./specs",
+    "test:watch": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --require ./specs/testSetup.js --recursive -R tap -w ./specs",
     "watch": "chokidar 'src/**/*.js' 'src/**/*.jsx' -c 'npm run build'"
   },
   "author": "n.io <info@n.io>",

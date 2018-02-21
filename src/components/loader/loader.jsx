@@ -1,5 +1,6 @@
 // @flow
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { themr } from 'react-css-themr';
 

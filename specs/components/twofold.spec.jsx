@@ -33,49 +33,49 @@ describe('A Twofold', () => {
   it('should contain a header.', () => {
     theme.header = uniqueid();
     const wrapper = shallow(<Twofold theme={theme} active={active} />);
-    expect(wrapper.find(`.${theme.header}`)).to.have.length(1);
+    expect(wrapper.findWhere(n => n.hasClass(theme.header))).to.have.length(1);
   });
 
   it('should contain a heading.', () => {
     theme.heading = uniqueid();
     const wrapper = shallow(<Twofold theme={theme} active={active} />);
-    expect(wrapper.find(`.${theme.heading}`)).to.have.length(1);
+    expect(wrapper.findWhere(n => n.hasClass(theme.header))).to.have.length(1);
   });
 
   it('should contain a subheading.', () => {
     theme.subheading = uniqueid();
     const wrapper = shallow(<Twofold theme={theme} active={active} />);
-    expect(wrapper.find(`.${theme.subheading}`)).to.have.length(1);
+    expect(wrapper.findWhere(n => n.hasClass(theme.subheading))).to.have.length(1);
   });
 
   it('should contain an icon.', () => {
     theme.icon = uniqueid();
     const wrapper = shallow(<Twofold theme={theme} active={active} />);
-    expect(wrapper.find(`.${theme.icon}`)).to.have.length(1);
+    expect(wrapper.findWhere(n => n.hasClass(theme.icon))).to.have.length(1);
   });
 
   it('should contain a detail element.', () => {
     theme.icon = uniqueid();
     const wrapper = shallow(<Twofold theme={theme} active={active} />);
-    expect(wrapper.find(`.${theme.detail}`)).to.have.length(1);
+    expect(wrapper.findWhere(n => n.hasClass(theme.detail))).to.have.length(1);
   });
 
   it('should render its children in the detail element.', () => {
     const wrapper = shallow(<Twofold theme={theme} active={active}>{child}</Twofold>);
-    expect(wrapper.find(`.${theme.detail}`).contains(child)).to.be.true;
+    expect(wrapper.findWhere(n => n.hasClass(theme.detail)).contains(child)).to.be.true;
   });
 
   describe('when active,', () => {
 
     it('should have an active class on on the detail.', () => {
       const wrapper = shallow(<Twofold theme={theme} active>{child}</Twofold>);
-      expect(wrapper.find(`.${theme.detail}`).hasClass(theme.active)).to.be.true;
+      expect(wrapper.findWhere(n => n.hasClass(theme.detail)).hasClass(theme.active)).to.be.true;
     });
 
     it('should have an open class on on the icon.', () => {
       theme.iconOpen = uniqueid();
       const wrapper = shallow(<Twofold theme={theme} active>{child}</Twofold>);
-      expect(wrapper.find(`.${theme.icon}`).hasClass(theme.iconOpen)).to.be.true;
+      expect(wrapper.findWhere(n => n.hasClass(theme.icon)).hasClass(theme.iconOpen)).to.be.true;
     });
   });
 
@@ -83,13 +83,13 @@ describe('A Twofold', () => {
 
     it('should not have an active class on on the detail.', () => {
       const wrapper = shallow(<Twofold theme={theme} active={false}>{child}</Twofold>);
-      expect(wrapper.find(`.${theme.detail}`).hasClass(theme.active)).to.be.false;
+      expect(wrapper.findWhere(n => n.hasClass(theme.detail)).hasClass(theme.active)).to.be.false;
     });
 
     it('should have a closed class on on the icon.', () => {
       theme.iconClosed = uniqueid();
       const wrapper = shallow(<Twofold theme={theme} active={false}>{child}</Twofold>);
-      expect(wrapper.find(`.${theme.icon}`).hasClass(theme.iconClosed)).to.be.true;
+      expect(wrapper.findWhere(n => n.hasClass(theme.icon)).hasClass(theme.iconClosed)).to.be.true;
     });
   });
 

@@ -1,6 +1,7 @@
 // @flow
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Helper = (props: *) => (
   props.theme.helper && React.Children.count(props.children) > 0
@@ -12,7 +13,7 @@ Helper.propTypes = {
   theme: PropTypes.shape({
     helper: PropTypes.string,
   }),
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 export default Helper;

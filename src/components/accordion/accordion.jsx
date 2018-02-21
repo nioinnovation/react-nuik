@@ -1,6 +1,8 @@
 // @flow
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 import resolveMods from '../../helpers/resolve-mods';
@@ -50,7 +52,7 @@ Accordion.propTypes = {
   ]),
   singleActive: PropTypes.string,
 
-  children: PropTypes.arrayOf(React.PropTypes.element).isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 
   mod: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),

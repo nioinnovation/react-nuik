@@ -38,7 +38,8 @@ describe('Pagination', () => {
   it('should have exactly one link with an active class.', () => {
     theme.active = uniqueid();
     const wrapper = shallow(<Pagination theme={theme}>{data}</Pagination>);
-    expect(wrapper.find(`.${theme.active}`)).to.have.length(1);
+    const active = wrapper.findWhere(n => n.hasClass(theme.active));
+    expect(active).to.have.length(1);
   });
 
   it('should render a page number for each child.', () => {

@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.0] - 2018-02-21
+### Added
+- - PropTypes so compatible with React 16
+
+### Updated
+- - React 16 and testrunners
+
 ## [0.0.7] - 2017-03-08
 ### Added
 - - New Component `<Accordion>`

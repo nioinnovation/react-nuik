@@ -1,0 +1,498 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>text-input · react-nuik: the n.io ui kit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="checkbox.html" />
+    
+    
+    <link rel="prev" href="link.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="buttons.html">
+            
+                <a href="buttons.html">
+            
+                    
+                    button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="link.html">
+            
+                <a href="link.html">
+            
+                    
+                    link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="text-input.html">
+            
+                <a href="text-input.html">
+            
+                    
+                    text-input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="checkbox.html">
+            
+                <a href="checkbox.html">
+            
+                    
+                    checkbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="toggle.html">
+            
+                <a href="toggle.html">
+            
+                    
+                    toggle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="loader.html">
+            
+                <a href="loader.html">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="list.html">
+            
+                <a href="list.html">
+            
+                    
+                    list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="progress.html">
+            
+                <a href="progress.html">
+            
+                    
+                    progress bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="twofold.html">
+            
+                <a href="twofold.html">
+            
+                    
+                    twofold
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="accordion.html">
+            
+                <a href="accordion.html">
+            
+                    
+                    accordion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="pagination.html">
+            
+                <a href="pagination.html">
+            
+                    
+                    pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >text-input</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="text-input-">Text Input <img src="https://img.shields.io/badge/status-prototype-orange.svg" alt="status: Prototype"></h1>
+<p>A text input asks for textual input. It comes in two variants: singleline and multiline.</p>
+<p>A singleline text input is for a single line of text. It could include the following types of input: <code>email</code>, <code>number</code>, <code>password</code>, <code>tel</code>, <code>text</code>, or <code>url</code>.</p>
+<p>A multiline text input is used when more than one line of text is expected, similar to a textarea.</p>
+<p>The value of the input is controlled in the container component.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SampleTextInputs</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-keyword">this</span>.state = {
+      value1: <span class="hljs-string">&apos;&apos;</span>,
+      value2: <span class="hljs-string">&apos;yo&apos;</span>
+    };
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+        &lt;h2&gt;Text Inputs&lt;/h2&gt;
+        &lt;TextInput variant=&quot;singleline&quot; label=&quot;uncontrolled&quot; helper=&quot;helper text here&quot; type=&quot;text&quot;/&gt;
+        &lt;TextInput value=&quot;foo&quot; variant=&quot;singleline&quot; label=&quot;controlled (static)&quot; helper=&quot;helper text here&quot; type=&quot;text&quot;/&gt;
+        &lt;TextInput value={this.state.value1} onChange={(e) =&gt; this.setState({ value1: e.currentTarget.value }) } variant=&quot;singleline&quot; label=&quot;controlled (dynamic)&quot; helper=&quot;helper text here&quot; type=&quot;text&quot;/&gt;
+        &lt;TextInput value={this.state.value2} onChange={(e) =&gt; this.setState({ value2: e.currentTarget.value }) } variant=&quot;singleline&quot; label=&quot;filled (dynamic)&quot; helper=&quot;helper text here&quot; type=&quot;text&quot;/&gt;
+        &lt;TextInput variant=&quot;multiline&quot; label=&quot;multiline&quot; helper=&quot;more text here&quot; type=&quot;text&quot;/&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2 id="try-it">Try it</h2>
+<p><em>an embedded Codepen here</em></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>&apos;email&apos;|&apos;number&apos;|&apos;password&apos;|&apos;tel&apos;|&apos;text&apos;|&apos;url&apos;</code></td>
+<td>Specifies the <code>type</code> attribute of the <code>&lt;input&gt;</code> element.</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>&apos;singleline&apos;|&apos;multiline&apos;</code></td>
+<td><code>singleline</code> is full-width and scrolls left if necessary, <code>multiline</code> is a <code>&lt;textarea&gt;</code> element that wraps and scrolls down if necessary.</td>
+</tr>
+<tr>
+<td><code>mod</code></td>
+<td><code>string|Array</code></td>
+<td>Apply custom mods from the theme on the Text Input.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>React.Node</code></td>
+<td>Specifies the label text for the Text Input.</td>
+</tr>
+<tr>
+<td><code>helper</code></td>
+<td><code>React.Node</code></td>
+<td>The content of the helper text that may appear below the input.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="theme">Theme</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>textInput</code></td>
+<td>Required. Used for the root element&#x2014;default is full-width, single-line.</td>
+</tr>
+<tr>
+<td><code>singleline</code></td>
+<td>Styles for single-line Text Input.</td>
+</tr>
+<tr>
+<td><code>multiline</code></td>
+<td>Styles for single-line Text Input.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>Styles for the label element.</td>
+</tr>
+<tr>
+<td><code>labelWithFocus</code></td>
+<td>Styles for the label element when the input has focus.</td>
+</tr>
+<tr>
+<td><code>labelWithValue</code></td>
+<td>Styles for the label element when the input has a value.</td>
+</tr>
+<tr>
+<td><code>helper</code></td>
+<td>Styles for the helper element.</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="link.html" class="navigation navigation-prev " aria-label="Previous page: link">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="checkbox.html" class="navigation navigation-next " aria-label="Next page: checkbox">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"text-input","level":"1.2.3","depth":2,"next":{"title":"checkbox","level":"1.2.4","depth":2,"path":"components/checkbox.md","ref":"components/checkbox.md","articles":[]},"previous":{"title":"link","level":"1.2.2","depth":2,"path":"components/link.md","ref":"components/link.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react-nuik: the n.io ui kit","gitbook":"*"},"file":{"path":"components/text-input.md","mtime":"2017-10-06T21:46:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-22T17:36:31.599Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,507 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>checkbox · react-nuik: the n.io ui kit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="toggle.html" />
+    
+    
+    <link rel="prev" href="text-input.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="buttons.html">
+            
+                <a href="buttons.html">
+            
+                    
+                    button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="link.html">
+            
+                <a href="link.html">
+            
+                    
+                    link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="text-input.html">
+            
+                <a href="text-input.html">
+            
+                    
+                    text-input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="checkbox.html">
+            
+                <a href="checkbox.html">
+            
+                    
+                    checkbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="toggle.html">
+            
+                <a href="toggle.html">
+            
+                    
+                    toggle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="loader.html">
+            
+                <a href="loader.html">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="list.html">
+            
+                <a href="list.html">
+            
+                    
+                    list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="progress.html">
+            
+                <a href="progress.html">
+            
+                    
+                    progress bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="twofold.html">
+            
+                <a href="twofold.html">
+            
+                    
+                    twofold
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="accordion.html">
+            
+                <a href="accordion.html">
+            
+                    
+                    accordion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="pagination.html">
+            
+                <a href="pagination.html">
+            
+                    
+                    pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >checkbox</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="checkbox-">Checkbox <img src="https://img.shields.io/badge/status-prototype-orange.svg" alt="status: Prototype"></h1>
+<p>The Checkbox gives the ability to select an item with three possible states: true, false, and &apos;mixed&apos; (indeterminate, unknown).</p>
+<p>The <code>checked</code> attribute is required. A <code>checked</code> attribute with the value <code>true</code> will add a checked class, a value of <code>false</code> will add an unchecked class, and a value of <code>&apos;mixed&apos;</code> will be add a mixed class to the label element.</p>
+<p>The click handler is defined outside the component, in the component&apos;s container, as shown in the example below. This allows you to define the criteria for the three possible styles/states. In the example, the click handler converts the state to a boolean and toggles between <code>true</code> and <code>false</code>.</p>
+<p>You can use a Checkbox as part of a List or as an element in a form. You can apply any logic you choose.</p>
+<p>See Radio Buttons for a container component that allows only one Checkbox in a group to be checked.</p>
+<p>See Toggle for a binary (off/on) selector.</p>
+<h2 id="try-it">Try it</h2>
+<p><em>an embedded Codepen here</em></p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SampleCheckboxes</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-keyword">this</span>.state = {
+      cars: <span class="hljs-literal">false</span>,
+      trucks: <span class="hljs-literal">false</span>,
+      boats: <span class="hljs-literal">true</span>,
+      planes: <span class="hljs-literal">false</span>,
+      other: <span class="hljs-string">&apos;mixed&apos;</span>,
+    };
+    <span class="hljs-keyword">this</span>.handleClick = <span class="hljs-keyword">this</span>.handleClick.bind(<span class="hljs-keyword">this</span>);
+  }
+
+  handleClick(key) {
+    <span class="hljs-keyword">const</span> stateValue = <span class="hljs-keyword">typeof</span> <span class="hljs-keyword">this</span>.state[key] === <span class="hljs-string">&apos;boolean&apos;</span> ? <span class="hljs-keyword">this</span>.state[key] : <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">this</span>.setState({ [key]: !stateValue });
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      &lt;div&gt;
+        &lt;h2&gt;Checkboxes&lt;/h2&gt;
+        &lt;Checkbox label=&apos;Cars&apos; onChange={() =&gt; this.handleClick(&apos;cars&apos;)} checked={this.state.cars} /&gt;
+        &lt;Checkbox label=&apos;Trucks&apos; onChange={() =&gt; this.handleClick(&apos;trucks&apos;)} checked={this.state.trucks} /&gt;
+        &lt;Checkbox label=&apos;Boats&apos; onChange={() =&gt; this.handleClick(&apos;boats&apos;)} checked={this.state.boats} /&gt;
+        &lt;Checkbox label=&apos;Planes&apos; onChange={() =&gt; this.handleClick(&apos;planes&apos;)} checked={this.state.planes} /&gt;
+        &lt;Checkbox label=&apos;initially undefined&apos; onChange={() =&gt; this.handleClick(&apos;other&apos;)} checked={this.state.other} /&gt;
+        &lt;Checkbox label=&apos;disabled unchecked&apos; disabled checked={false} /&gt;
+        &lt;Checkbox label=&apos;disabled checked&apos; onChange={() =&gt; this.handleClick(&apos;disabled&apos;)} disabled checked={true} /&gt;
+        &lt;Checkbox label=&apos;disabled undefined&apos; disabled checked=&apos;mixed&apos;/&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td><code>React.Node</code></td>
+<td>Specifies the label text for each Checkbox.</td>
+</tr>
+<tr>
+<td><code>checked</code></td>
+<td><code>true|false|&apos;mixed&apos;</code></td>
+<td>Required. One of three possible states for the Checkbox.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>Checkbox is disabled.</td>
+</tr>
+<tr>
+<td><code>mod</code></td>
+<td><code>string|Array</code></td>
+<td>Apply custom mods from the theme on the Checkbox.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="theme">Theme</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checkbox</code></td>
+<td>Required. Used to style the root element.</td>
+</tr>
+<tr>
+<td><code>input</code></td>
+<td>Used to style the input element.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>Used to style the label element.</td>
+</tr>
+<tr>
+<td><code>checked</code></td>
+<td>Styles to apply to the label when element is checked. Styles for the checkbox itself are found in <code>::before</code> and <code>::after</code> pseudo elements of the label class.</td>
+</tr>
+<tr>
+<td><code>unchecked</code></td>
+<td>Styles to apply to the label when element is not checked. Styles for the checkbox itself are found in <code>::before</code> and <code>::after</code> pseudo elements of the label class.</td>
+</tr>
+<tr>
+<td><code>mixed</code></td>
+<td>Styles to apply to the label when element is indeterminate, unknown, or partially checked. Styles for the checkbox itself are found in <code>::before</code> and <code>::after</code> pseudo elements of the label class.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td>Styles for a disabled Checkbox. Styles for the checkbox itself are found in <code>::before</code> and <code>::after</code> pseudo elements of the label class.</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="text-input.html" class="navigation navigation-prev " aria-label="Previous page: text-input">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="toggle.html" class="navigation navigation-next " aria-label="Next page: toggle">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"checkbox","level":"1.2.4","depth":2,"next":{"title":"toggle","level":"1.2.5","depth":2,"path":"components/toggle.md","ref":"components/toggle.md","articles":[]},"previous":{"title":"text-input","level":"1.2.3","depth":2,"path":"components/text-input.md","ref":"components/text-input.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"react-nuik: the n.io ui kit","gitbook":"*"},"file":{"path":"components/checkbox.md","mtime":"2017-10-06T21:46:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-22T17:36:31.599Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

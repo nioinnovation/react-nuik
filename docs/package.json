@@ -12,20 +12,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nioinnovation/react-nuik.git"
+    "url": "git+https://github.com/niolabs/react-nuik.git"
   },
   "keywords": [
     "react",
     "components",
-    "n.io"
+    "nio",
+    "niolabs"
   ],
-  "author": "n.io",
+  "author": "niolabs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nioinnovation/react-nuik/issues"
+    "url": "https://github.com/niolabs/react-nuik/issues"
   },
-  "homepage": "https://nioinnovation.github.io/react-nuik",
+  "homepage": "https://niolabs.github.io/react-nuik",
   "devDependencies": {
-    "gh-pages": "^0.12.0"
+    "gh-pages": "^1.1.0"
   }
 }

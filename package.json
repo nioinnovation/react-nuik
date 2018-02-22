@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nioinnovation/nuik"
+    "url": "https://github.com/niolabs/nuik"
   },
   "description": "nio UI Kit for react",
   "scripts": {
@@ -19,7 +19,7 @@
     "test:watch": "mocha --timeout 2000 --compilers jsx:babel-register,js:babel-register --require ./specs/testSetup.js --recursive -R tap -w ./specs",
     "watch": "chokidar 'src/**/*.js' 'src/**/*.jsx' -c 'npm run build'"
   },
-  "author": "n.io <info@n.io>",
+  "author": "niolabs <info@n.io>",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",

@@ -1,6 +1,7 @@
 # nuik
 
-n.io UIKit.
+nio UIKit.
+https://niolabs.github.io/react-nuik/
 
 
 ## Component Statuses

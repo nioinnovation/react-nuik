@@ -12,7 +12,7 @@ If wrapped in an Accordion, a Twofold's `active` and `onChange` props are automa
 const data = {
   title: 'Main Summary Here',
   summary: 'More information about the main topic. ',
-  details: 'An entire paragraph that goes more in depth and is revealed when the Twofold is opened. The header is always visible but the details expand only when the header bar is clicked. You can choose your own icon to indicate that there are more details, but the default icon is a chevron. You can use the default n.io theme or customize the theme to your liking with the class modules listed in the theme object.',
+  details: 'An entire paragraph that goes more in depth and is revealed when the Twofold is opened. The header is always visible but the details expand only when the header bar is clicked. You can choose your own icon to indicate that there are more details, but the default icon is a chevron. You can use the default niolabs theme or customize the theme to your liking with the class modules listed in the theme object.',
 };
 
 class SampleTwofold extends React.Component {
